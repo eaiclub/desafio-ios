@@ -9,7 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let controller = InfinityScrollViewController()
+        let viewModel = InfinityScrollViewModel()
+        let controller = InfinityScrollViewController(viewModel: viewModel)
         window.rootViewController = controller
         
         self.window = window
