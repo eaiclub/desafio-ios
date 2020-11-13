@@ -9,7 +9,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let viewModel = InfinityScrollViewModel()
+        let nasaService = NasaService()
+        let nasaRepository = NasaRepository(with: nasaService)
+        let viewModel = InfinityScrollViewModel(repository: nasaRepository, service: nasaService)
         let controller = InfinityScrollViewController(viewModel: viewModel)
         window.rootViewController = controller
         

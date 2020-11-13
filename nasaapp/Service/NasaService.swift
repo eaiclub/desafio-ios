@@ -4,19 +4,19 @@ import RxCocoa
 import Moya
 
 protocol NasaServiceContract {
-    func getNasaItem(apiKey: String, date: String, hdUrlImage: Bool) -> Single<NasaResponse>
+    func getNasaItem(apiKey: String, date: String, hdUrlImage: Bool) -> Single<NasaResponseItem>
 }
 
-class OpportunityService: NasaServiceContract {
+class NasaService: NasaServiceContract {
     
     private let provider = ApiProvider<NasaAPI>()
     private let providerMock = ApiProvider<NasaAPI>(stub: true)
     
-    func getNasaItem(apiKey: String, date: String, hdUrlImage: Bool) -> Single<NasaResponse> {
+    func getNasaItem(apiKey: String, date: String, hdUrlImage: Bool) -> Single<NasaResponseItem> {
         return self.provider
             .rx
             .request(.getNasaItem(apiKey: apiKey, date: date, hdUrlImage: hdUrlImage))
-            .mapDefault(NasaResponse.self)
+            .mapDefault(NasaResponseItem.self)
     }
     
 }
