@@ -28,7 +28,7 @@ extension NasaAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .getNasaItem:
-            return Data()
+            return "image".jsonData
         }
     }
     
@@ -48,3 +48,22 @@ extension NasaAPI: TargetType {
     
 }
 
+extension String {
+    
+    var jsonData: Data {
+        return Bundle.main.dataFromJsonFile(name: self)
+    }
+    
+}
+
+extension Bundle {
+    
+    func dataFromJsonFile(name: String) -> Data {
+        guard let path = self.path(forResource: name, ofType: "json"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            return Data()
+        }
+        return data
+    }
+    
+}

@@ -10,6 +10,8 @@
 		020BC42A255DDFEC007E62E5 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020BC429255DDFEC007E62E5 /* BaseViewModel.swift */; };
 		020BC433255DEAAA007E62E5 /* HandlerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020BC432255DEAAA007E62E5 /* HandlerError.swift */; };
 		020BC438255DEBC3007E62E5 /* Reacheability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020BC437255DEBC3007E62E5 /* Reacheability.swift */; };
+		020BC446255E4EEB007E62E5 /* NasaItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020BC445255E4EEB007E62E5 /* NasaItemCell.swift */; };
+		02528AA2256222AD00896D0E /* image.json in Resources */ = {isa = PBXBuildFile; fileRef = 02528AA1256222AD00896D0E /* image.json */; };
 		02F48D2A255D5E1D009B8DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D29255D5E1D009B8DED /* AppDelegate.swift */; };
 		02F48D2E255D5E1D009B8DED /* InfinityScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */; };
 		02F48D33255D5E20009B8DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F48D32255D5E20009B8DED /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		020BC429255DDFEC007E62E5 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		020BC432255DEAAA007E62E5 /* HandlerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerError.swift; sourceTree = "<group>"; };
 		020BC437255DEBC3007E62E5 /* Reacheability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Reacheability.swift; path = Views/Reacheability.swift; sourceTree = "<group>"; };
+		020BC445255E4EEB007E62E5 /* NasaItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaItemCell.swift; sourceTree = "<group>"; };
+		02528AA1256222AD00896D0E /* image.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image.json; sourceTree = "<group>"; };
 		02F48D26255D5E1D009B8DED /* nasaapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nasaapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F48D29255D5E1D009B8DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityScrollViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,14 @@
 				020BC429255DDFEC007E62E5 /* BaseViewModel.swift */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		02E71DF22561BE75009E77DB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				020BC445255E4EEB007E62E5 /* NasaItemCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		02F48D1D255D5E1D009B8DED = {
@@ -192,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				020BC431255DEA9D007E62E5 /* Base */,
+				02E71DF22561BE75009E77DB /* Cell */,
 				02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */,
 				02F48D65255D618B009B8DED /* InfinityScrollViewModel.swift */,
 				02F48DDA255DA87B009B8DED /* InfinityScrollView.swift */,
@@ -246,6 +259,7 @@
 		02F48DE8255DBDCF009B8DED /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				02528AA1256222AD00896D0E /* image.json */,
 			);
 			name = Mock;
 			sourceTree = "<group>";
@@ -382,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F48D36255D5E20009B8DED /* LaunchScreen.storyboard in Resources */,
+				02528AA2256222AD00896D0E /* image.json in Resources */,
 				02F48D33255D5E20009B8DED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +533,7 @@
 				02F48D9E255D972D009B8DED /* Single+Extesions.swift in Sources */,
 				02F48D2E255D5E1D009B8DED /* InfinityScrollViewController.swift in Sources */,
 				02F48D66255D618B009B8DED /* InfinityScrollViewModel.swift in Sources */,
+				020BC446255E4EEB007E62E5 /* NasaItemCell.swift in Sources */,
 				02F48D85255D80D0009B8DED /* APIProvider.swift in Sources */,
 				02F48DB6255D9A22009B8DED /* NasaResponseItem.swift in Sources */,
 				02F48D2A255D5E1D009B8DED /* AppDelegate.swift in Sources */,

@@ -3,12 +3,6 @@ import UIKit
 
 class InfinityScrollView: UIView {
     
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor.lightGray
-        return refreshControl
-    }()
-    
     var tableView: UITableView = {
         let view = UITableView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -23,13 +17,12 @@ class InfinityScrollView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 extension InfinityScrollView: RenderViewProtocol {
     func buildViewHierarchy() {
         addSubview(tableView)
-        tableView.refreshControl = refreshControl
-        tableView.addSubview(refreshControl)
     }
     
     func setupConstraints() {
@@ -43,7 +36,6 @@ extension InfinityScrollView: RenderViewProtocol {
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = 80
         backgroundColor = .darkGray
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
     }
     
 }

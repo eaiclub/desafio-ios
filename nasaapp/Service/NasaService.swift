@@ -10,7 +10,7 @@ protocol NasaServiceContract {
 class NasaService: NasaServiceContract {
     
     private let provider = ApiProvider<NasaAPI>()
-    private let providerMock = ApiProvider<NasaAPI>(stub: true)
+    private let providerMock = ApiProvider<NasaAPI>(stub: false)
     
     func getNasaItem(apiKey: String, date: String, hdUrlImage: Bool) -> Single<NasaResponseItem> {
         return self.provider

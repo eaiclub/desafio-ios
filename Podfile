@@ -10,6 +10,8 @@ target 'nasaapp' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'Moya/RxSwift', '~> 14.0'
+  #Image Cache
+  pod 'SDWebImage', '~> 5.0'
 
   target 'nasaappTests' do
     inherit! :search_paths
