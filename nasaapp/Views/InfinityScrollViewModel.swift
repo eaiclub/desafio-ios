@@ -32,7 +32,7 @@ class InfinityScrollViewModel: BaseViewModel {
     func setupInitialDates() {
         currentEndDate = Date()
         currentStartDate = getDateOffsetBy(date: currentEndDate, days: Constants.numberOfItems)
-        //print("EndDate: \(convertDateToString(date: currentEndDate)) StartDate: \(convertDateToString(date: currentStartDate))")
+        print("EndDate: \(convertDateToString(date: currentEndDate)) StartDate: \(convertDateToString(date: currentStartDate))")
     }
     
     func fetchObject() {
@@ -42,7 +42,7 @@ class InfinityScrollViewModel: BaseViewModel {
         isLoading = true
         //TODO - shimmer - loading method to be add
         self.repository
-            .getNasaItem(apiKey: Constants.API_KEY, start_date: currentStartDate, end_date: currentEndDate, hdUrlImage: Constants.hdUrlImage)
+            .getNasaItem(apiKey: Constants.API_KEY, start_date: convertDateToString(date: currentStartDate), end_date: convertDateToString(date: currentEndDate), hdUrlImage: Constants.hdUrlImage)
             .subscribe(onSuccess: { object in
                 self.items.append(contentsOf: object)
                 self.setupNewStartAndEndDates()

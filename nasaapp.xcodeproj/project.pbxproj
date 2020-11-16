@@ -15,6 +15,7 @@
 		02528AB02562436200896D0E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02528AAF2562436200896D0E /* UIViewController+Extensions.swift */; };
 		02528AC62562522C00896D0E /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = 02528AC52562522B00896D0E /* video.json */; };
 		02528B5A25626D3100896D0E /* array.json in Resources */ = {isa = PBXBuildFile; fileRef = 02528B5925626D3100896D0E /* array.json */; };
+		02528B5F256290AD00896D0E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02528B5E256290AD00896D0E /* AppCoordinator.swift */; };
 		02F48D2A255D5E1D009B8DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D29255D5E1D009B8DED /* AppDelegate.swift */; };
 		02F48D2E255D5E1D009B8DED /* InfinityScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */; };
 		02F48D33255D5E20009B8DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F48D32255D5E20009B8DED /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		02528AAF2562436200896D0E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		02528AC52562522B00896D0E /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		02528B5925626D3100896D0E /* array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array.json; sourceTree = "<group>"; };
+		02528B5E256290AD00896D0E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		02F48D26255D5E1D009B8DED /* nasaapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nasaapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F48D29255D5E1D009B8DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityScrollViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				02F48D29255D5E1D009B8DED /* AppDelegate.swift */,
+				02528B5E256290AD00896D0E /* AppCoordinator.swift */,
 				02F48D80255D7AC1009B8DED /* Components */,
 				02F48D6A255D6728009B8DED /* Data */,
 				02F48D7F255D7AB9009B8DED /* Extensions */,
@@ -560,6 +563,7 @@
 				020BC438255DEBC3007E62E5 /* Reacheability.swift in Sources */,
 				02F48DAE255D993D009B8DED /* NasaService.swift in Sources */,
 				02528AB02562436200896D0E /* UIViewController+Extensions.swift in Sources */,
+				02528B5F256290AD00896D0E /* AppCoordinator.swift in Sources */,
 				02F48D9E255D972D009B8DED /* Single+Extesions.swift in Sources */,
 				02F48D2E255D5E1D009B8DED /* InfinityScrollViewController.swift in Sources */,
 				02F48D66255D618B009B8DED /* InfinityScrollViewModel.swift in Sources */,
