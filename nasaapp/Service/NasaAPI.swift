@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum NasaAPI {
-    case getNasaItem(apiKey: String, date: String, hdUrlImage: Bool)
+    case getNasaItem(apiKey: String, start_date: String, end_date: String, hdUrlImage: Bool)
 }
 
 extension NasaAPI: TargetType {
@@ -13,7 +13,7 @@ extension NasaAPI: TargetType {
     
     var path: String {
         switch self {
-        case .getNasaItem(_, _, _):
+        case .getNasaItem(_, _, _, _):
             return "/planetary/apod"
         }
     }
@@ -28,16 +28,17 @@ extension NasaAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .getNasaItem:
-            return "video".jsonData
+            return "array".jsonData
         }
     }
     
     public var task: Task {
         switch self {
-        case .getNasaItem(let apiKey, let date ,let hdUrlImage):
+        case .getNasaItem(let apiKey, let start_date, let end_date, let hdUrlImage):
             return .requestParameters(parameters:
                 ["api_key" : apiKey,
-                "date": date,
+                "start_date": start_date,
+                "end_date": end_date,
                 "hd" : hdUrlImage], encoding: URLEncoding.default)
         }
     }

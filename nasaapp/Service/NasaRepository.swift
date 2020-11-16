@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 
 protocol NasaRepositoryContract {
-    func getNasaItem(apiKey: String, date: String, hdUrlImage: Bool) -> Single<NasaResponseItem>
+    func getNasaItem(apiKey: String, start_date: String, end_date: String, hdUrlImage: Bool) -> Single<[NasaResponseItem]>
 }
 
 class NasaRepository: NasaRepositoryContract {
@@ -13,9 +13,9 @@ class NasaRepository: NasaRepositoryContract {
         self.service = service
     }
     
-    func getNasaItem(apiKey: String, date: String, hdUrlImage: Bool) -> Single<NasaResponseItem> {
+    func getNasaItem(apiKey: String, start_date: String, end_date: String, hdUrlImage: Bool) -> Single<[NasaResponseItem]> {
         return self.service
-            .getNasaItem(apiKey: apiKey, date: date, hdUrlImage: hdUrlImage)
+            .getNasaItem(apiKey: apiKey, start_date: start_date, end_date: end_date, hdUrlImage: hdUrlImage)
     }
     
 }

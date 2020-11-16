@@ -64,10 +64,12 @@ class NasaItemCell: UITableViewCell {
         
         switch item.media_type {
         case "video":
+            webView.isHidden = false
             let request = URLRequest(url: item.url)
             webView.load(request)
             break
         case "image":
+            webView.isHidden = true
             if let hd = item.hdurl {
                 imageOfTheDayImgView.sd_setImage(with: hd)
             } else {
@@ -147,21 +149,21 @@ extension NasaItemCell: RenderViewProtocol {
     }
     
     func additionalViewSetup() {
-        titleLabel.backgroundColor = . gray
+        //titleLabel.backgroundColor = . gray
         titleLabel.textAlignment = .center
         
-        dateLabel.backgroundColor = .yellow
+        //dateLabel.backgroundColor = .yellow
         dateLabel.textAlignment = .center
         
-        imageOfTheDayImgView.contentMode = .scaleAspectFill
+        imageOfTheDayImgView.contentMode = .scaleAspectFit
         imageOfTheDayImgView.clipsToBounds = true
         imageOfTheDayImgView.layer.cornerRadius = 5.0
-        imageOfTheDayImgView.backgroundColor = .blue
+        //imageOfTheDayImgView.backgroundColor = .blue
         
-        webView.backgroundColor = .brown
+        //webView.backgroundColor = .brown
         
         copyrightLabel.textAlignment = .center
-        copyrightLabel.backgroundColor = .cyan
+        //copyrightLabel.backgroundColor = .cyan
         
         seeExplanationBtn.backgroundColor = .systemBlue
         seeExplanationBtn.setTitle("Click to See Explanation", for: .normal)
@@ -171,7 +173,7 @@ extension NasaItemCell: RenderViewProtocol {
         
         contentView.isUserInteractionEnabled = false
         selectionStyle = .none
-        backgroundColor = .green
+        //backgroundColor = .green
     }
     
     @objc func buttonClicked(sender: UIButton!) {

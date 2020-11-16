@@ -28,7 +28,8 @@ class InfinityScrollViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupBinds()
-        viewModel.fetchObject(dateOffset: 0)
+        viewModel.setupInitialDates()
+        viewModel.fetchObject()
     }
     
     private func setupTableView() {
@@ -69,9 +70,7 @@ extension InfinityScrollViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.item == viewModel.items.count-1 {
-            viewModel.fetchObject(dateOffset: indexPath.item)
-        }
+        viewModel.fetchObjectOnWillDisplay(indexPath: indexPath)
     }
     
 }
