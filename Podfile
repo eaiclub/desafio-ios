@@ -15,11 +15,13 @@ target 'nasaapp' do
 
   target 'nasaappTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Nimble'
+    pod 'Nimble-Snapshots'
+    pod 'Quick'
   end
 
   target 'nasaappUITests' do
-    # Pods for testing
+    pod 'KIF', :configurations => ['Debug']
   end
 
 end
