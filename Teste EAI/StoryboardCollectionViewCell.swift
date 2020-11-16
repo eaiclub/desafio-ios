@@ -52,7 +52,6 @@ class StoryboardCollectionViewCell: UICollectionViewCell {
                 videoPlayer.load(youtubeRequest)
             }
             videoPlayer.isHidden = false
-            print("video")
         default:
             print("default")
         }

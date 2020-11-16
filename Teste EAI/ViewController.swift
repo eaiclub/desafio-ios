@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = "CenteredCollectionView"
+        title = "Planetary Nasa"
                         
         setupUI()
         setupRequest()
@@ -81,11 +81,11 @@ extension UIView {
 
 extension UIColor {
     static var peach: UIColor {
-        return  UIColor(red: 1, green: 0.5764705882, blue: 0.5843137255, alpha: 1)
+        return  UIColor.black
     }
     
     static var orange: UIColor {
-        return UIColor(red: 1, green: 0.5764705882, blue: 0.462745098, alpha: 1)
+        return UIColor.gray
     }
 }
 
