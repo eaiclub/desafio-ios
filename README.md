@@ -18,19 +18,19 @@ O desafio é criar um aplicativo para mostrar as fotos de um dos conteúdos mais
 -   **Ref. conteúdo**: [https://apod.nasa.gov/apod/](https://apod.nasa.gov/apod/ "https://apod.nasa.gov/apod/")
 
 ### **Não pode faltar**
--   Linguagem Swift
--   Gerenciamento de dependências "Cocoapods/Carthage"
--   Mapeamento JSON utilizando protocolo Codable
+-   Linguagem Swift ✅
+-   Gerenciamento de dependências "Cocoapods/Carthage" ✅
+-   Mapeamento JSON utilizando protocolo Codable ✅
 
 
 ### **Plus**
 
 -   Tela com gestos para ampliar a foto do dia
--   Apresentar os vídeos
--   Testes unitários
+-   Apresentar os vídeos ✅
+-   Testes unitários ✅
 -   Testes de Interface
--   Testes funcionais
--   Cache de imagens e da API
+-   Testes funcionais ✅
+-   Cache de imagens ✅ e da API 
 -   Suporte a mudanças de orientação das telas sem perder estado
 
 
@@ -44,12 +44,12 @@ O desafio é criar um aplicativo para mostrar as fotos de um dos conteúdos mais
 • Descrição dos commits  
 
 - Arquitetura  
-• Qual a arquitetura escolhida  
-• Implementação  
+• Qual a arquitetura escolhida: MVVM
+• Implementação 
 
 - Otimização de recursos  
-• Cache de API  
-• Cache de Imagens  
+• Cache de API 
+• Cache de Imagens: SDWebImage
 
 - UX  
 • Fluidez na utilização do app  
@@ -57,3 +57,4 @@ O desafio é criar um aplicativo para mostrar as fotos de um dos conteúdos mais
 
 ### **Dica**
 Não existe uma api para trazer mais de um conteúdo por vez, como fazer?
+R: De acordo com a própri API é possível utilizar o endpoint com os parâmetros start_date e end_date para trazer um array ao invés de itens individuais.
