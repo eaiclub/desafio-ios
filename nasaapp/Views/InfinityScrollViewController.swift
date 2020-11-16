@@ -55,6 +55,7 @@ extension InfinityScrollViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! NasaItemCell
+        cell.delegate = self
         if (indexPath.item < viewModel.items.count) {
             cell.populateWithObject(item: viewModel.items[indexPath.item])
         } else {
@@ -74,11 +75,18 @@ extension InfinityScrollViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        /*let offset = viewModel.items.count-1
-        if indexPath.item == offset {
+        if indexPath.item == viewModel.items.count-1 {
+            //print("IndexPath.item: \(indexPath.item+1) ViewModelCount: \(viewModel.items.count)")
             viewModel.fetchObject(dateOffset: indexPath.item)
-        }*/
-        print("IndexPath.item: \(indexPath.item) ViewModelCount: \(viewModel.items.count)")
+        }
+    }
+    
+}
+
+extension InfinityScrollViewController: NasaItemCellDelegate {
+    
+    func showAlert(title: String, message: String) {
+        presentAlert(title: title, message: message, buttonText: "Ok")
     }
     
 }

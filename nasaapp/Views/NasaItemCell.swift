@@ -2,6 +2,10 @@ import Foundation
 import UIKit
 import SDWebImage
 
+protocol NasaItemCellDelegate {
+    func showAlert(title: String, message: String)
+}
+
 class NasaItemCell: UITableViewCell {
     
     struct Constants {
@@ -13,8 +17,12 @@ class NasaItemCell: UITableViewCell {
     let dateLabel = UILabel()
     let imageOfTheDayImgView = UIImageView()
     let copyrightLabel = UILabel()
-    let explanationLabel = UILabel()
     let activityIndicador = UIActivityIndicatorView()
+    let seeExplanationBtn = UIButton()
+    
+    private var explationExpanded = String()
+    
+    var delegate : NasaItemCellDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,7 +44,7 @@ class NasaItemCell: UITableViewCell {
         dateLabel.isHidden = true
         imageOfTheDayImgView.isHidden = true
         copyrightLabel.isHidden = true
-        explanationLabel.isHidden = true
+        seeExplanationBtn.isHidden = true
         activityIndicador.isHidden = false
         activityIndicador.startAnimating()
     }
@@ -46,7 +54,7 @@ class NasaItemCell: UITableViewCell {
         dateLabel.isHidden = false
         imageOfTheDayImgView.isHidden = false
         copyrightLabel.isHidden = false
-        explanationLabel.isHidden = false
+        seeExplanationBtn.isHidden = false
         activityIndicador.isHidden = true
         
         titleLabel.text = item.title
@@ -62,11 +70,10 @@ class NasaItemCell: UITableViewCell {
             copyrightLabel.isHidden = false
             copyrightLabel.text = "Copyright: \(copyright)"
         } else {
-            copyrightLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
             copyrightLabel.isHidden = true
         }
         
-        explanationLabel.text = "Explanation: \(item.explanation)"
+        explationExpanded = item.explanation
     }
     
 }
@@ -78,14 +85,14 @@ extension NasaItemCell: RenderViewProtocol {
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         imageOfTheDayImgView.translatesAutoresizingMaskIntoConstraints = false
         copyrightLabel.translatesAutoresizingMaskIntoConstraints = false
-        explanationLabel.translatesAutoresizingMaskIntoConstraints = false
+        seeExplanationBtn.translatesAutoresizingMaskIntoConstraints = false
         activityIndicador.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(titleLabel)
         addSubview(dateLabel)
         addSubview(imageOfTheDayImgView)
         addSubview(copyrightLabel)
-        addSubview(explanationLabel)
+        addSubview(seeExplanationBtn)
         addSubview(activityIndicador)
     }
     
@@ -93,7 +100,7 @@ extension NasaItemCell: RenderViewProtocol {
         activityIndicador.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         activityIndicador.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
         
-        titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 24).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.leftMargin).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
@@ -103,42 +110,53 @@ extension NasaItemCell: RenderViewProtocol {
         dateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
         dateLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
-        imageOfTheDayImgView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 16).isActive = true
+        imageOfTheDayImgView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 0).isActive = true
         imageOfTheDayImgView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.leftMargin).isActive = true
         imageOfTheDayImgView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
-        imageOfTheDayImgView.bottomAnchor.constraint(equalTo: copyrightLabel.topAnchor, constant: -16).isActive = true
+        imageOfTheDayImgView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width*1.2).isActive = true
         
         copyrightLabel.topAnchor.constraint(equalTo: imageOfTheDayImgView.bottomAnchor, constant: 0).isActive = true
         copyrightLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.leftMargin).isActive = true
         copyrightLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
-        copyrightLabel.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        copyrightLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
-        explanationLabel.topAnchor.constraint(equalTo: copyrightLabel.bottomAnchor, constant: 0).isActive = true
-        explanationLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.leftMargin).isActive = true
-        explanationLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
-        explanationLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        seeExplanationBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.leftMargin).isActive = true
+        seeExplanationBtn.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
+        seeExplanationBtn.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+        seeExplanationBtn.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     
     func additionalViewSetup() {
-        titleLabel.backgroundColor = . gray
+        //titleLabel.backgroundColor = . gray
         titleLabel.textAlignment = .center
         
-        dateLabel.backgroundColor = .yellow
+        //dateLabel.backgroundColor = .yellow
         dateLabel.textAlignment = .center
         
         imageOfTheDayImgView.contentMode = .scaleAspectFill
         imageOfTheDayImgView.clipsToBounds = true
-        imageOfTheDayImgView.layer.cornerRadius = 10.0
+        imageOfTheDayImgView.layer.cornerRadius = 5.0
         imageOfTheDayImgView.backgroundColor = .blue
         
         copyrightLabel.textAlignment = .center
-        copyrightLabel.backgroundColor = .cyan
+        //copyrightLabel.backgroundColor = .cyan
         
-        explanationLabel.numberOfLines = 0
-        explanationLabel.backgroundColor = .red
+        seeExplanationBtn.backgroundColor = .systemBlue
+        seeExplanationBtn.setTitle("Click to See Explanation", for: .normal)
+        seeExplanationBtn.setTitleColor(.white, for: .normal)
+        seeExplanationBtn.layer.cornerRadius = 5.0
+        seeExplanationBtn.addTarget(self, action:#selector(self.buttonClicked), for: .touchUpInside)
         
+        contentView.isUserInteractionEnabled = false
         selectionStyle = .none
-        backgroundColor = .white
+        //backgroundColor = .green
+    }
+    
+    @objc func buttonClicked(sender: UIButton!) {
+        if let title = titleLabel.text {
+            self.delegate?.showAlert(title: title, message: explationExpanded)
+        }
+        
     }
     
 }
