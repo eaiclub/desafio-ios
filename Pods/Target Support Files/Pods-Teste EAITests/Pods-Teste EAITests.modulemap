@@ -1,0 +1,6 @@
+framework module Pods_Teste_EAITests {
+  umbrella header "Pods-Teste EAITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
