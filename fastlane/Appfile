@@ -1,0 +1,8 @@
+app_identifier("br.com.yantrindade.nasaapp") # The bundle identifier of your app
+apple_id("yan_trindade@hotmail.com") # Your Apple email address
+
+itc_team_id("117738154") # App Store Connect Team ID
+team_id("3QEMLNUCL2") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

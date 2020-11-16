@@ -3,7 +3,7 @@ import RxSwift
 
 class InfinityScrollViewController: UIViewController {
     
-    private var uiController: InfinityScrollView
+    var uiController: InfinityScrollView
     private let viewModel: InfinityScrollViewModel
     
     private let reuseIdentifier = "cell"

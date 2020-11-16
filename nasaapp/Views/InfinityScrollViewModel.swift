@@ -16,8 +16,8 @@ class InfinityScrollViewModel: BaseViewModel {
     var items : [NasaResponseItem] = []
     
     private var isLoading = false
-    private var currentStartDate = Date()
-    private var currentEndDate = Date()
+    var currentStartDate = Date()
+    var currentEndDate = Date()
     
     private let _reload = PublishSubject<()>()
     var reload: Driver<()> {

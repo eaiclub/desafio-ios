@@ -15,9 +15,7 @@ class ApiProvider<Target: TargetType>: MoyaProvider<Target> {
             super.init(stubClosure: MoyaProvider.delayedStub(1),
                        plugins: networkLogger)
         } else {
-            super.init(stubClosure: MoyaProvider.delayedStub(1),
-                       plugins: networkLogger)
-            //super.init(plugins: networkLogger)
+            super.init(plugins: networkLogger)
         }
     }
 

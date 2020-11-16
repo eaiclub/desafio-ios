@@ -16,12 +16,13 @@
 		02528AC62562522C00896D0E /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = 02528AC52562522B00896D0E /* video.json */; };
 		02528B5A25626D3100896D0E /* array.json in Resources */ = {isa = PBXBuildFile; fileRef = 02528B5925626D3100896D0E /* array.json */; };
 		02528B5F256290AD00896D0E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02528B5E256290AD00896D0E /* AppCoordinator.swift */; };
+		02528B892562ABBE00896D0E /* InfinityScrollViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02528B882562ABBE00896D0E /* InfinityScrollViewModelTests.swift */; };
+		02528B912562B66700896D0E /* InfinityViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02528B902562B66700896D0E /* InfinityViewControllerTests.swift */; };
 		02F48D2A255D5E1D009B8DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D29255D5E1D009B8DED /* AppDelegate.swift */; };
 		02F48D2E255D5E1D009B8DED /* InfinityScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */; };
 		02F48D33255D5E20009B8DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F48D32255D5E20009B8DED /* Assets.xcassets */; };
 		02F48D36255D5E20009B8DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F48D34255D5E20009B8DED /* LaunchScreen.storyboard */; };
-		02F48D41255D5E21009B8DED /* nasaappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D40255D5E21009B8DED /* nasaappTests.swift */; };
-		02F48D4C255D5E21009B8DED /* nasaappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D4B255D5E21009B8DED /* nasaappUITests.swift */; };
+		02F48D41255D5E21009B8DED /* NasaResponseItemModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D40255D5E21009B8DED /* NasaResponseItemModelTests.swift */; };
 		02F48D66255D618B009B8DED /* InfinityScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D65255D618B009B8DED /* InfinityScrollViewModel.swift */; };
 		02F48D85255D80D0009B8DED /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D84255D80D0009B8DED /* APIProvider.swift */; };
 		02F48D8A255D821F009B8DED /* NasaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D89255D821F009B8DED /* NasaAPI.swift */; };
@@ -64,6 +65,8 @@
 		02528AC52562522B00896D0E /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		02528B5925626D3100896D0E /* array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array.json; sourceTree = "<group>"; };
 		02528B5E256290AD00896D0E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		02528B882562ABBE00896D0E /* InfinityScrollViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityScrollViewModelTests.swift; sourceTree = "<group>"; };
+		02528B902562B66700896D0E /* InfinityViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityViewControllerTests.swift; sourceTree = "<group>"; };
 		02F48D26255D5E1D009B8DED /* nasaapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nasaapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F48D29255D5E1D009B8DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityScrollViewController.swift; sourceTree = "<group>"; };
@@ -71,10 +74,9 @@
 		02F48D35255D5E20009B8DED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02F48D37255D5E20009B8DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F48D3C255D5E21009B8DED /* nasaappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nasaappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02F48D40255D5E21009B8DED /* nasaappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nasaappTests.swift; sourceTree = "<group>"; };
+		02F48D40255D5E21009B8DED /* NasaResponseItemModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaResponseItemModelTests.swift; sourceTree = "<group>"; };
 		02F48D42255D5E21009B8DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F48D47255D5E21009B8DED /* nasaappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nasaappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02F48D4B255D5E21009B8DED /* nasaappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nasaappUITests.swift; sourceTree = "<group>"; };
 		02F48D4D255D5E21009B8DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F48D65255D618B009B8DED /* InfinityScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityScrollViewModel.swift; sourceTree = "<group>"; };
 		02F48D84255D80D0009B8DED /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
@@ -183,7 +185,9 @@
 		02F48D3F255D5E21009B8DED /* nasaappTests */ = {
 			isa = PBXGroup;
 			children = (
-				02F48D40255D5E21009B8DED /* nasaappTests.swift */,
+				02528B902562B66700896D0E /* InfinityViewControllerTests.swift */,
+				02528B882562ABBE00896D0E /* InfinityScrollViewModelTests.swift */,
+				02F48D40255D5E21009B8DED /* NasaResponseItemModelTests.swift */,
 				02F48D42255D5E21009B8DED /* Info.plist */,
 			);
 			path = nasaappTests;
@@ -192,7 +196,6 @@
 		02F48D4A255D5E21009B8DED /* nasaappUITests */ = {
 			isa = PBXGroup;
 			children = (
-				02F48D4B255D5E21009B8DED /* nasaappUITests.swift */,
 				02F48D4D255D5E21009B8DED /* Info.plist */,
 			);
 			path = nasaappUITests;
@@ -582,7 +585,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02F48D41255D5E21009B8DED /* nasaappTests.swift in Sources */,
+				02528B912562B66700896D0E /* InfinityViewControllerTests.swift in Sources */,
+				02F48D41255D5E21009B8DED /* NasaResponseItemModelTests.swift in Sources */,
+				02528B892562ABBE00896D0E /* InfinityScrollViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +595,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02F48D4C255D5E21009B8DED /* nasaappUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

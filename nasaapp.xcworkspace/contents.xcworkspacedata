@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TestUIClass.swift">
+   </FileRef>
+   <FileRef
       location = "group:nasaapp.xcodeproj">
    </FileRef>
    <FileRef
