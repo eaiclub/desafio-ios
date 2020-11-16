@@ -44,4 +44,9 @@ class InfinityScrollViewModel: BaseViewModel {
         let dateString = dateFormatter.string(from: futureDate!)
         return dateString
     }
+    
+    func getNumberOfRows()-> Int {
+        return items.count+1
+    }
+    
 }

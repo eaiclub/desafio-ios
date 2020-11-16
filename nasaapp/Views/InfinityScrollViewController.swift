@@ -50,7 +50,7 @@ class InfinityScrollViewController: UIViewController {
 extension InfinityScrollViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.items.count+1
+        return viewModel.getNumberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,18 +65,11 @@ extension InfinityScrollViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var statusHeight: CGFloat!
-        if #available(iOS 13.0, *) {
-            statusHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        } else {
-            statusHeight = UIApplication.shared.statusBarFrame.height
-        }
-        return view.bounds.height-statusHeight
+        return uiController.getCellHeight()
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.item == viewModel.items.count-1 {
-            //print("IndexPath.item: \(indexPath.item+1) ViewModelCount: \(viewModel.items.count)")
             viewModel.fetchObject(dateOffset: indexPath.item)
         }
     }

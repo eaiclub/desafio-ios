@@ -13,6 +13,7 @@
 		020BC446255E4EEB007E62E5 /* NasaItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020BC445255E4EEB007E62E5 /* NasaItemCell.swift */; };
 		02528AA2256222AD00896D0E /* image.json in Resources */ = {isa = PBXBuildFile; fileRef = 02528AA1256222AD00896D0E /* image.json */; };
 		02528AB02562436200896D0E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02528AAF2562436200896D0E /* UIViewController+Extensions.swift */; };
+		02528AC62562522C00896D0E /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = 02528AC52562522B00896D0E /* video.json */; };
 		02F48D2A255D5E1D009B8DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D29255D5E1D009B8DED /* AppDelegate.swift */; };
 		02F48D2E255D5E1D009B8DED /* InfinityScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */; };
 		02F48D33255D5E20009B8DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F48D32255D5E20009B8DED /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		020BC445255E4EEB007E62E5 /* NasaItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaItemCell.swift; sourceTree = "<group>"; };
 		02528AA1256222AD00896D0E /* image.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image.json; sourceTree = "<group>"; };
 		02528AAF2562436200896D0E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		02528AC52562522B00896D0E /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		02F48D26255D5E1D009B8DED /* nasaapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nasaapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F48D29255D5E1D009B8DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F48D2D255D5E1D009B8DED /* InfinityScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityScrollViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				02528AA1256222AD00896D0E /* image.json */,
+				02528AC52562522B00896D0E /* video.json */,
 			);
 			name = Mock;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F48D36255D5E20009B8DED /* LaunchScreen.storyboard in Resources */,
+				02528AC62562522C00896D0E /* video.json in Resources */,
 				02528AA2256222AD00896D0E /* image.json in Resources */,
 				02F48D33255D5E20009B8DED /* Assets.xcassets in Resources */,
 			);

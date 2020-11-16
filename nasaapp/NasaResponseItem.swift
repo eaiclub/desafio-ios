@@ -1,7 +1,7 @@
 import Foundation
 
 struct NasaResponseItem: Decodable {
-    let copyright: String?
+    var copyright: String?
     let date: String
     let explanation: String
     let hdurl: URL?

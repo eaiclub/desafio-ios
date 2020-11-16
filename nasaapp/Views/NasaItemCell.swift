@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import SDWebImage
+import WebKit
 
 protocol NasaItemCellDelegate {
     func showAlert(title: String, message: String)
@@ -19,6 +20,7 @@ class NasaItemCell: UITableViewCell {
     let copyrightLabel = UILabel()
     let activityIndicador = UIActivityIndicatorView()
     let seeExplanationBtn = UIButton()
+    let webView = WKWebView()
     
     private var explationExpanded = String()
     
@@ -60,10 +62,21 @@ class NasaItemCell: UITableViewCell {
         titleLabel.text = item.title
         dateLabel.text = item.date
         
-        if let hd = item.hdurl {
-            imageOfTheDayImgView.sd_setImage(with: hd)
-        } else {
-            imageOfTheDayImgView.sd_setImage(with: item.url)
+        switch item.media_type {
+        case "video":
+            let request = URLRequest(url: item.url)
+            webView.load(request)
+            break
+        case "image":
+            if let hd = item.hdurl {
+                imageOfTheDayImgView.sd_setImage(with: hd)
+            } else {
+                imageOfTheDayImgView.sd_setImage(with: item.url)
+            }
+            break
+        default:
+            //nada-faz
+            break
         }
         
         if let copyright = item.copyright {
@@ -87,6 +100,7 @@ extension NasaItemCell: RenderViewProtocol {
         copyrightLabel.translatesAutoresizingMaskIntoConstraints = false
         seeExplanationBtn.translatesAutoresizingMaskIntoConstraints = false
         activityIndicador.translatesAutoresizingMaskIntoConstraints = false
+        webView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(titleLabel)
         addSubview(dateLabel)
@@ -94,6 +108,7 @@ extension NasaItemCell: RenderViewProtocol {
         addSubview(copyrightLabel)
         addSubview(seeExplanationBtn)
         addSubview(activityIndicador)
+        addSubview(webView)
     }
     
     func setupConstraints() {
@@ -115,6 +130,11 @@ extension NasaItemCell: RenderViewProtocol {
         imageOfTheDayImgView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
         imageOfTheDayImgView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width*1.2).isActive = true
         
+        webView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 0).isActive = true
+        webView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.leftMargin).isActive = true
+        webView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
+        webView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width*1.2).isActive = true
+        
         copyrightLabel.topAnchor.constraint(equalTo: imageOfTheDayImgView.bottomAnchor, constant: 0).isActive = true
         copyrightLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.leftMargin).isActive = true
         copyrightLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Constants.rightMargin).isActive = true
@@ -127,10 +147,10 @@ extension NasaItemCell: RenderViewProtocol {
     }
     
     func additionalViewSetup() {
-        //titleLabel.backgroundColor = . gray
+        titleLabel.backgroundColor = . gray
         titleLabel.textAlignment = .center
         
-        //dateLabel.backgroundColor = .yellow
+        dateLabel.backgroundColor = .yellow
         dateLabel.textAlignment = .center
         
         imageOfTheDayImgView.contentMode = .scaleAspectFill
@@ -138,8 +158,10 @@ extension NasaItemCell: RenderViewProtocol {
         imageOfTheDayImgView.layer.cornerRadius = 5.0
         imageOfTheDayImgView.backgroundColor = .blue
         
+        webView.backgroundColor = .brown
+        
         copyrightLabel.textAlignment = .center
-        //copyrightLabel.backgroundColor = .cyan
+        copyrightLabel.backgroundColor = .cyan
         
         seeExplanationBtn.backgroundColor = .systemBlue
         seeExplanationBtn.setTitle("Click to See Explanation", for: .normal)
@@ -149,7 +171,7 @@ extension NasaItemCell: RenderViewProtocol {
         
         contentView.isUserInteractionEnabled = false
         selectionStyle = .none
-        //backgroundColor = .green
+        backgroundColor = .green
     }
     
     @objc func buttonClicked(sender: UIButton!) {

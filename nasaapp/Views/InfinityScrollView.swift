@@ -18,6 +18,15 @@ class InfinityScrollView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func getCellHeight()-> CGFloat {
+        var statusHeight: CGFloat!
+        if #available(iOS 13.0, *) {
+            statusHeight = self.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            statusHeight = UIApplication.shared.statusBarFrame.height
+        }
+        return self.bounds.height-statusHeight
+    }
 }
 
 extension InfinityScrollView: RenderViewProtocol {

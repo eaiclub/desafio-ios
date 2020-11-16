@@ -28,7 +28,7 @@ extension NasaAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .getNasaItem:
-            return "image".jsonData
+            return "video".jsonData
         }
     }
     
