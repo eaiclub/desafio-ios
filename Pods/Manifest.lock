@@ -1,0 +1,26 @@
+PODS:
+  - lottie-ios (3.1.8)
+  - RKDropdownAlert (0.3.0)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
+
+DEPENDENCIES:
+  - lottie-ios
+  - RKDropdownAlert
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+    - RKDropdownAlert
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
+
+PODFILE CHECKSUM: c62989cb1d3a019ddb1ca715f8a5c1df381feee1
+
+COCOAPODS: 1.9.3
