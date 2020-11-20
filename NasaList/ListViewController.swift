@@ -75,6 +75,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == postArray.count - 1 {
+            page = page + 1
+            getPostList()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
@@ -86,7 +93,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func configUI() {
 
         let hour = Calendar.current.component(.hour, from: Date())
-        let minutes = Calendar.current.component(.minute, from: Date())
         
         if hour < 18 {
             self.view.setGradientBackgroundUpDown(bottomColor: Constants.Color.Orange, topColor: Constants.Color.Yellow)
@@ -137,7 +143,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func getPost(date: String) {
-        
         
         RequestManager().loadData(date: date) { (success, object, message) in
             if success {

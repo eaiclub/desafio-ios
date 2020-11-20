@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class PostCell: UITableViewCell {
+class PostCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet var lblAuthor: UILabel?
     @IBOutlet var imgPhoto: UIImageView?
     @IBOutlet var lblTitle: UILabel?
@@ -17,7 +17,14 @@ class PostCell: UITableViewCell {
     @IBOutlet var lblDate: UILabel?
     @IBOutlet var vwBackground: UIView?
     
+    @IBOutlet var svImage: UIScrollView?
+    
     func loadUI(item: Post) {
+        
+        svImage?.delegate = self
+        svImage?.minimumZoomScale = 1.0
+        svImage?.maximumZoomScale = 10.0
+        
         lblAuthor?.text = item.author
         imgPhoto?.sd_setImage(with: URL(string: item.image ?? ""))
         lblTitle?.text = item.title
@@ -33,4 +40,8 @@ class PostCell: UITableViewCell {
             vwAuthor?.alpha = 0
         }
     }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imgPhoto
+      }
 }
