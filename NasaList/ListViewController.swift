@@ -12,6 +12,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var page = 1
     var dateSubtraction = -1
     var loadingStarted: Bool? = false
+    var paginating: Bool = false
     
     @IBOutlet var lblHeader: UILabel?
     @IBOutlet var tbPosts: UITableView?
@@ -34,7 +35,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        loadUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,15 +47,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    
     //-----------------------------------------------------------------------
     //    MARK: UIScrollView Delegate
     //-----------------------------------------------------------------------
-    
-    //    scroll
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
@@ -64,6 +60,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.getPostList()
         }
     }
+    
+    //-----------------------------------------------------------------------
+    //    MARK: UITableView Delegate
+    //-----------------------------------------------------------------------
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Cache.posts.count
@@ -92,15 +92,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     //-----------------------------------------------------------------------
     
     func configUI() {
+        
+        self.view.setGradientBackgroundUpDown(bottomColor: Constants.Color.Purple, topColor: Constants.Color.LightPurple)
 
-        let hour = Calendar.current.component(.hour, from: Date())
-        
-        if hour < 18 {
-            self.view.setGradientBackgroundUpDown(bottomColor: Constants.Color.Orange, topColor: Constants.Color.Yellow)
-        }else {
-            self.view.setGradientBackgroundUpDown(bottomColor: Constants.Color.Purple, topColor: Constants.Color.LightPurple)
-        }
-        
         tbPosts?.alpha = 0
         
         lblHeader?.layer.shadowColor = UIColor.black.cgColor
@@ -111,13 +105,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         getPostList()
     }
     
-    func loadUI() {
-        
-    }
-    
     func getPostList() {
         
-        if Cache.posts.count <= 10 * page {
+        if Cache.posts.count <= 11 * page {
+            paginating = true
             
             if loadingStarted == false {
                 Util.showHUD(in: self.view)
@@ -133,12 +124,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             if Cache.posts.count == 10 * page {
                 tbPosts?.reloadData()
                 Util.hideHUD()
+                self.loadingStarted = false
                 
                 UIView.animate(withDuration: 0.4) {
                     self.tbPosts?.alpha = 1
                 }
-                
-                self.loadingStarted = false
             }
         }
     }
@@ -149,6 +139,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             if success {
                 if let post = object {
                     Cache.posts.append(post)
+                    
+                    if Cache.posts.count == self.page * 10 {
+                        self.paginating = false
+                    }
                     
                     if Cache.posts.count <= 10 * self.page {
                         self.getPostList()

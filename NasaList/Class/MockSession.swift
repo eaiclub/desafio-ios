@@ -12,9 +12,11 @@ class MockSession {
     
     func request<T:Decodable>(method: RequestType, endpoint: String, parameters: Dictionary<String, Any>, responseType: T.Type, completion: @escaping (_ response: Any?, _ code: Int) -> Void) {
         
-        let baseURL = "https://api.nasa.gov/planetary/apod/?api_key=QBH0Z2pOyTPdbCIPRlfg9gnzqsFueZ9SLKklAqCE"
+        let key: String = "QBH0Z2pOyTPdbCIPRlfg9gnzqsFueZ9SLKklAqCE"
         
-        var serverURL:String = baseURL + endpoint
+        let baseURL = "https://api.nasa.gov/planetary/apod/?api_key=\(key)"
+        
+        var serverURL: String = baseURL + endpoint
         
         switch method {
         case .get:

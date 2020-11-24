@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		028365890A5A0806CCA58E83 /* Pods_NasaList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF875ADA664366DEC3204B /* Pods_NasaList.framework */; };
+		5404268B256D8AC9002C5AE3 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5404268A256D8AC9002C5AE3 /* ImageSaver.swift */; };
 		549F6C1E256D264B00A8E0A1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F6C1D256D264B00A8E0A1 /* Cache.swift */; };
 		549F6C38256D2C3800A8E0A1 /* planet.json in Resources */ = {isa = PBXBuildFile; fileRef = 549F6C37256D2C3800A8E0A1 /* planet.json */; };
 		54AE8DC825670B4D0019F46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DC725670B4D0019F46B /* AppDelegate.swift */; };
@@ -19,7 +20,6 @@
 		54AE8DE225670CD80019F46B /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DE125670CD80019F46B /* MockSession.swift */; };
 		54AE8DE725670D1D0019F46B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DE625670D1D0019F46B /* Extension.swift */; };
 		54AE8DEA25670D400019F46B /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DE925670D400019F46B /* Enum.swift */; };
-		54AE8DED256717110019F46B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DEC256717110019F46B /* ShadowView.swift */; };
 		54AE8DF0256717AB0019F46B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DEF256717AB0019F46B /* RequestManager.swift */; };
 		54AE8DF4256718400019F46B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DF3256718400019F46B /* Post.swift */; };
 		54AE8DF825671AEB0019F46B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DF725671AEB0019F46B /* Constants.swift */; };
@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5404268A256D8AC9002C5AE3 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		549F6C1D256D264B00A8E0A1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		549F6C37256D2C3800A8E0A1 /* planet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = planet.json; sourceTree = "<group>"; };
 		54AE8DC425670B4D0019F46B /* NasaList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +43,6 @@
 		54AE8DE125670CD80019F46B /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 		54AE8DE625670D1D0019F46B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		54AE8DE925670D400019F46B /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
-		54AE8DEC256717110019F46B /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		54AE8DEF256717AB0019F46B /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		54AE8DF3256718400019F46B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		54AE8DF725671AEB0019F46B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -116,12 +116,12 @@
 				54AE8DE125670CD80019F46B /* MockSession.swift */,
 				54AE8DE625670D1D0019F46B /* Extension.swift */,
 				54AE8DE925670D400019F46B /* Enum.swift */,
-				54AE8DEC256717110019F46B /* ShadowView.swift */,
 				54AE8DEF256717AB0019F46B /* RequestManager.swift */,
 				54AE8DF725671AEB0019F46B /* Constants.swift */,
 				54AE8E02256739200019F46B /* PostCell.swift */,
 				54BA5FB52568332500C55D6E /* Util.swift */,
 				549F6C1D256D264B00A8E0A1 /* Cache.swift */,
+				5404268A256D8AC9002C5AE3 /* ImageSaver.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -278,6 +278,7 @@
 				54AE8DE725670D1D0019F46B /* Extension.swift in Sources */,
 				54AE8DE225670CD80019F46B /* MockSession.swift in Sources */,
 				54AE8DEA25670D400019F46B /* Enum.swift in Sources */,
+				5404268B256D8AC9002C5AE3 /* ImageSaver.swift in Sources */,
 				54AE8DF0256717AB0019F46B /* RequestManager.swift in Sources */,
 				54AE8DCC25670B4D0019F46B /* ListViewController.swift in Sources */,
 				54AE8DF825671AEB0019F46B /* Constants.swift in Sources */,
@@ -287,7 +288,6 @@
 				54AE8DF4256718400019F46B /* Post.swift in Sources */,
 				54AE8E03256739200019F46B /* PostCell.swift in Sources */,
 				54AE8DCA25670B4D0019F46B /* SceneDelegate.swift in Sources */,
-				54AE8DED256717110019F46B /* ShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
