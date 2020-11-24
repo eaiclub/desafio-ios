@@ -33,6 +33,8 @@ O desafio é criar um aplicativo para mostrar as fotos de um dos conteúdos mais
 -   Cache de imagens e da API / 🤖 DEV MARK : OK
 -   Suporte a mudanças de orientação das telas sem perder estado / 🤖 DEV MARK : OK
 
+🤖 DEV MARK : EXTRA - Utilizei o ContextMenu com LongPress para salvar a imagem na galeria do celular.
+
 
 ### **Como enviar?**
 
