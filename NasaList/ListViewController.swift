@@ -7,16 +7,14 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
-    var postArray: Array<Post> = []
     var page = 1
     var dateSubtraction = -1
     var loadingStarted: Bool? = false
     
     @IBOutlet var lblHeader: UILabel?
     @IBOutlet var tbPosts: UITableView?
-    
     
     //-----------------------------------------------------------------------
     //    MARK: UIViewController
@@ -49,16 +47,26 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    
     //-----------------------------------------------------------------------
-    //    MARK: UITableView Delegate / Datasource
+    //    MARK: UIScrollView Delegate
     //-----------------------------------------------------------------------
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    //    scroll
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.size.height {
+            page = page + 1
+            self.getPostList()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postArray.count
+        return Cache.posts.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,19 +75,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let post = postArray[indexPath.row]
+        let post = Cache.posts[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell
         cell?.loadUI(item: post)
         
         return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == postArray.count - 1 {
-            page = page + 1
-            getPostList()
-        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -116,7 +117,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func getPostList() {
         
-        if postArray.count <= 10 * page {
+        if Cache.posts.count <= 10 * page {
             
             if loadingStarted == false {
                 Util.showHUD(in: self.view)
@@ -129,7 +130,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.getPost(date: date)
             dateSubtraction -= 1
             
-            if postArray.count == 10 * page {
+            if Cache.posts.count == 10 * page {
                 tbPosts?.reloadData()
                 Util.hideHUD()
                 
@@ -147,9 +148,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         RequestManager().loadData(date: date) { (success, object, message) in
             if success {
                 if let post = object {
-                    self.postArray.append(post)
+                    Cache.posts.append(post)
                     
-                    if self.postArray.count <= 10 * self.page {
+                    if Cache.posts.count <= 10 * self.page {
                         self.getPostList()
                     }
                 }

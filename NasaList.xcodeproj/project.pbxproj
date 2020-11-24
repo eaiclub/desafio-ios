@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		028365890A5A0806CCA58E83 /* Pods_NasaList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF875ADA664366DEC3204B /* Pods_NasaList.framework */; };
+		549F6C1E256D264B00A8E0A1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F6C1D256D264B00A8E0A1 /* Cache.swift */; };
 		54AE8DC825670B4D0019F46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DC725670B4D0019F46B /* AppDelegate.swift */; };
 		54AE8DCA25670B4D0019F46B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DC925670B4D0019F46B /* SceneDelegate.swift */; };
 		54AE8DCC25670B4D0019F46B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DCB25670B4D0019F46B /* ListViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		549F6C1D256D264B00A8E0A1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		54AE8DC425670B4D0019F46B /* NasaList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54AE8DC725670B4D0019F46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54AE8DC925670B4D0019F46B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				54AE8DF725671AEB0019F46B /* Constants.swift */,
 				54AE8E02256739200019F46B /* PostCell.swift */,
 				54BA5FB52568332500C55D6E /* Util.swift */,
+				549F6C1D256D264B00A8E0A1 /* Cache.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				54AE8DF0256717AB0019F46B /* RequestManager.swift in Sources */,
 				54AE8DCC25670B4D0019F46B /* ListViewController.swift in Sources */,
 				54AE8DF825671AEB0019F46B /* Constants.swift in Sources */,
+				549F6C1E256D264B00A8E0A1 /* Cache.swift in Sources */,
 				54AE8DC825670B4D0019F46B /* AppDelegate.swift in Sources */,
 				54BA5FB62568332500C55D6E /* Util.swift in Sources */,
 				54AE8DF4256718400019F46B /* Post.swift in Sources */,
