@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		028365890A5A0806CCA58E83 /* Pods_NasaList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF875ADA664366DEC3204B /* Pods_NasaList.framework */; };
 		549F6C1E256D264B00A8E0A1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549F6C1D256D264B00A8E0A1 /* Cache.swift */; };
+		549F6C2F256D2B4A00A8E0A1 /* planet.json in Resources */ = {isa = PBXBuildFile; fileRef = 549F6C2E256D2B4A00A8E0A1 /* planet.json */; };
 		54AE8DC825670B4D0019F46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DC725670B4D0019F46B /* AppDelegate.swift */; };
 		54AE8DCA25670B4D0019F46B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DC925670B4D0019F46B /* SceneDelegate.swift */; };
 		54AE8DCC25670B4D0019F46B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8DCB25670B4D0019F46B /* ListViewController.swift */; };
@@ -25,11 +26,11 @@
 		54AE8E00256735710019F46B /* campton_semi_bold_bit.otf in Resources */ = {isa = PBXBuildFile; fileRef = 54AE8DFF256735710019F46B /* campton_semi_bold_bit.otf */; };
 		54AE8E03256739200019F46B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8E02256739200019F46B /* PostCell.swift */; };
 		54BA5FB62568332500C55D6E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA5FB52568332500C55D6E /* Util.swift */; };
-		54BA5FBA256835BD00C55D6E /* planet.json in Resources */ = {isa = PBXBuildFile; fileRef = 54BA5FB9256835BD00C55D6E /* planet.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		549F6C1D256D264B00A8E0A1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		549F6C2E256D2B4A00A8E0A1 /* planet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = planet.json; path = ../../../../../Desktop/planet.json; sourceTree = "<group>"; };
 		54AE8DC425670B4D0019F46B /* NasaList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54AE8DC725670B4D0019F46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54AE8DC925670B4D0019F46B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		54AE8DFF256735710019F46B /* campton_semi_bold_bit.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = campton_semi_bold_bit.otf; sourceTree = "<group>"; };
 		54AE8E02256739200019F46B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		54BA5FB52568332500C55D6E /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		54BA5FB9256835BD00C55D6E /* planet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = planet.json; path = ../../../../../Downloads/planet.json; sourceTree = "<group>"; };
 		6643E5C6F3F28B2CA7659AE1 /* Pods-NasaList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaList.release.xcconfig"; path = "Target Support Files/Pods-NasaList/Pods-NasaList.release.xcconfig"; sourceTree = "<group>"; };
 		E643258A7679AF6BB3399FA5 /* Pods-NasaList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaList.debug.xcconfig"; path = "Target Support Files/Pods-NasaList/Pods-NasaList.debug.xcconfig"; sourceTree = "<group>"; };
 		EBDF875ADA664366DEC3204B /* Pods_NasaList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NasaList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,8 +100,8 @@
 		54AE8DDC25670B840019F46B /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				54BA5FB9256835BD00C55D6E /* planet.json */,
 				54AE8DC725670B4D0019F46B /* AppDelegate.swift */,
+				549F6C2E256D2B4A00A8E0A1 /* planet.json */,
 				54AE8DC925670B4D0019F46B /* SceneDelegate.swift */,
 				54AE8DD025670B4E0019F46B /* Assets.xcassets */,
 				54AE8DD225670B4E0019F46B /* LaunchScreen.storyboard */,
@@ -221,7 +221,7 @@
 				54AE8DD425670B4E0019F46B /* LaunchScreen.storyboard in Resources */,
 				54AE8E00256735710019F46B /* campton_semi_bold_bit.otf in Resources */,
 				54AE8DD125670B4E0019F46B /* Assets.xcassets in Resources */,
-				54BA5FBA256835BD00C55D6E /* planet.json in Resources */,
+				549F6C2F256D2B4A00A8E0A1 /* planet.json in Resources */,
 				54AE8DCF25670B4D0019F46B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
