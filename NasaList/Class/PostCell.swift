@@ -7,6 +7,8 @@
 
 import UIKit
 import SDWebImage
+import AVKit
+import YoutubeSourceParserKit
 
 class PostCell: UITableViewCell, UIScrollViewDelegate, UIContextMenuInteractionDelegate {
     
@@ -18,21 +20,32 @@ class PostCell: UITableViewCell, UIScrollViewDelegate, UIContextMenuInteractionD
     @IBOutlet var lblDate: UILabel?
     @IBOutlet var vwBackground: UIView?
     @IBOutlet var vwContent: UIView?
+    @IBOutlet var vwVideo: UIView?
     
     @IBOutlet var svImage: UIScrollView?
+    
+    var player: AVPlayer?
     
     func loadUI(item: Post) {
         
         let interaction = UIContextMenuInteraction(delegate: self)
         vwContent?.addInteraction(interaction)
         
-        svImage?.delegate = self
-        svImage?.minimumZoomScale = 1.0
-        svImage?.maximumZoomScale = 10.0
-        
         lblAuthor?.text = item.author
         
-        imgPhoto?.sd_setImage(with: URL(string: item.image ?? ""))
+        if item.type == "video" {
+            svImage?.isHidden = true
+            playVideoWithYoutubeURL(url: URL(string: item.image ?? "")!)
+        }else{
+            vwVideo?.isHidden = true
+            
+            svImage?.delegate = self
+            svImage?.minimumZoomScale = 1.0
+            svImage?.maximumZoomScale = 10.0
+            
+            imgPhoto?.sd_setImage(with: URL(string: item.image ?? ""))
+        }
+        
         lblTitle?.text = item.title
         lblDescription?.text = item.description
         lblDate?.text = item.date
@@ -47,6 +60,24 @@ class PostCell: UITableViewCell, UIScrollViewDelegate, UIContextMenuInteractionD
         }
     }
     
+    func playVideoWithYoutubeURL(url: URL) {
+        Youtube.h264videosWithYoutubeURL(url, completion: { (videoInfo, error) -> Void in
+            
+            if error != nil {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            if let videoURLString = videoInfo?["url"] as? String {
+                self.player = AVPlayer(url: URL(string: videoURLString)!)
+                let playerLayer = AVPlayerLayer(player: self.player)
+                playerLayer.frame = self.vwVideo!.bounds
+                self.vwVideo!.layer.addSublayer(playerLayer)
+                self.player?.play()
+            }
+        })
+    }
+    
     func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
             return self.makeContextMenu()
@@ -55,7 +86,7 @@ class PostCell: UITableViewCell, UIScrollViewDelegate, UIContextMenuInteractionD
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imgPhoto
-      }
+    }
     
     func makeContextMenu() -> UIMenu {
         let delete = UIAction(title: "Save Image", image: UIImage(systemName: "square.and.arrow.down.fill")) { action in

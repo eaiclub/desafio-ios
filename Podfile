@@ -10,5 +10,6 @@ target 'NasaList' do
   pod 'SDWebImage'
   pod 'lottie-ios'
   pod 'RKDropdownAlert'
+  pod 'YoutubeSourceParserKit', :git => 'https://github.com/douglastaquary/YoutubeSourceParserKit'
 
 end

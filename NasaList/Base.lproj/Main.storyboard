@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -73,6 +74,13 @@
                                                                 <constraint firstItem="8Nj-Uo-3Pg" firstAttribute="leading" secondItem="N9y-0B-DoV" secondAttribute="leading" id="zZc-2R-dcU"/>
                                                             </constraints>
                                                         </scrollView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMJ-b1-Juo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="225"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="225" id="601-fS-TUi"/>
+                                                            </constraints>
+                                                        </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b44-xy-u9e">
                                                             <rect key="frame" x="15" y="15" width="100" height="20"/>
                                                             <subviews>
@@ -129,11 +137,14 @@
                                                         <constraint firstItem="N9y-0B-DoV" firstAttribute="top" secondItem="tzv-AF-iOV" secondAttribute="top" id="39r-Tq-8P9"/>
                                                         <constraint firstItem="dVB-Qr-hax" firstAttribute="top" secondItem="HoL-AC-NZQ" secondAttribute="bottom" constant="33" id="CXw-K0-AjT"/>
                                                         <constraint firstAttribute="trailing" secondItem="mdP-nd-eZH" secondAttribute="trailing" constant="10" id="HOg-GL-w63"/>
+                                                        <constraint firstItem="NMJ-b1-Juo" firstAttribute="top" secondItem="tzv-AF-iOV" secondAttribute="top" id="Mq3-pc-219"/>
                                                         <constraint firstAttribute="bottom" secondItem="dVB-Qr-hax" secondAttribute="bottom" constant="15" id="PSB-ge-Z12"/>
                                                         <constraint firstItem="HoL-AC-NZQ" firstAttribute="top" secondItem="mdP-nd-eZH" secondAttribute="bottom" constant="10" id="S7p-YM-Ca8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NMJ-b1-Juo" secondAttribute="trailing" id="X5a-1c-x6g"/>
                                                         <constraint firstItem="mdP-nd-eZH" firstAttribute="leading" secondItem="tzv-AF-iOV" secondAttribute="leading" constant="10" id="XKF-Zc-hKx"/>
                                                         <constraint firstAttribute="trailing" secondItem="HoL-AC-NZQ" secondAttribute="trailing" constant="10" id="XoN-PA-bBh"/>
                                                         <constraint firstAttribute="trailing" secondItem="dVB-Qr-hax" secondAttribute="trailing" constant="10" id="bXX-Xm-pf1"/>
+                                                        <constraint firstItem="NMJ-b1-Juo" firstAttribute="leading" secondItem="tzv-AF-iOV" secondAttribute="leading" id="cMD-kD-Cnj"/>
                                                         <constraint firstItem="HoL-AC-NZQ" firstAttribute="leading" secondItem="tzv-AF-iOV" secondAttribute="leading" constant="10" id="fp5-pa-Rrr"/>
                                                         <constraint firstItem="mdP-nd-eZH" firstAttribute="top" secondItem="N9y-0B-DoV" secondAttribute="bottom" constant="10" id="kKG-c2-3B9"/>
                                                         <constraint firstItem="N9y-0B-DoV" firstAttribute="leading" secondItem="tzv-AF-iOV" secondAttribute="leading" id="ljZ-UK-tba"/>
@@ -166,6 +177,7 @@
                                             <outlet property="vwAuthor" destination="b44-xy-u9e" id="CHL-YD-pAE"/>
                                             <outlet property="vwBackground" destination="Wd5-dz-bgd" id="wl2-Ui-hvv"/>
                                             <outlet property="vwContent" destination="tzv-AF-iOV" id="l48-Sw-qJ5"/>
+                                            <outlet property="vwVideo" destination="NMJ-b1-Juo" id="hBH-NI-7Pk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -196,4 +208,9 @@
             <point key="canvasLocation" x="121.73913043478262" y="89.732142857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
