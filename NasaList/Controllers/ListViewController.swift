@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
@@ -85,6 +86,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let post = Cache.posts[indexPath.row]
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(identifier: "DetailView") as DetailViewController
+        detailVC.imageURL = post.image
+        
+        self.present(detailVC, animated: true, completion: nil)
     }
     
     //-----------------------------------------------------------------------
