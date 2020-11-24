@@ -25,13 +25,13 @@ O desafio é criar um aplicativo para mostrar as fotos de um dos conteúdos mais
 
 ### **Plus**
 
--   Tela com gestos para ampliar a foto do dia
+-   Tela com gestos para ampliar a foto do dia / DEV MARK : OK
 -   Apresentar os vídeos
 -   Testes unitários
 -   Testes de Interface
 -   Testes funcionais
--   Cache de imagens e da API
--   Suporte a mudanças de orientação das telas sem perder estado
+-   Cache de imagens e da API / DEV MARK : OK
+-   Suporte a mudanças de orientação das telas sem perder estado / DEV MARK : OK
 
 
 ### **Como enviar?**
@@ -56,16 +56,16 @@ Se possível deixe o fork público para facilitar a inspeção do código.
 • Descrição dos commits  
 
 - Arquitetura  
-• Qual a arquitetura escolhida  
+• Qual a arquitetura escolhida   / DEV MARK : Utilizei MVC (Hoje trabalho com Viper, tenho conhecimento de quase todas as arquiteturas.)
 • Implementação  
 
 - Otimização de recursos  
-• Cache de API  
-• Cache de Imagens  
+• Cache de API / DEV MARK : Toda a request foi feita de forma nativa.
+• Cache de Imagens / DEV MARK : Para exibição das imagens foi utilizado o SDWebImage.
 
 - UX  
 • Fluidez na utilização do app  
 
 
 ### **Dica**
-Não existe uma api para trazer mais de um conteúdo por vez, como fazer?
+Não existe uma api para trazer mais de um conteúdo por vez, como fazer? / DEV MARK : Segundo a documentação, existe uma forma de passar a Data Inicial / Data final. Mas como foi passado um endpoint específico, resolvi aplicar de uma forma requisitando ele e realizando a paginação.
