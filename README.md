@@ -59,10 +59,12 @@ Se possível deixe o fork público para facilitar a inspeção do código.
 
 - Arquitetura  
 • Qual a arquitetura escolhida   / 🤖 DEV MARK : Utilizei MVC (Hoje trabalho com Viper, tenho conhecimento de quase todas as arquiteturas.)
+
 • Implementação  
 
 - Otimização de recursos  
 • Cache de API / 🤖 DEV MARK : Toda a request foi feita de forma nativa.
+
 • Cache de Imagens / 🤖 DEV MARK : Para exibição das imagens foi utilizado o SDWebImage.
 
 - UX  
