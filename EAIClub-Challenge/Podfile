@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'EAIClub-Challenge' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for EAIClub-Challenge
+  pod 'Alamofire'
+
+  target 'EAIClub-ChallengeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'EAIClub-ChallengeUITests' do
+    # Pods for testing
+  end
+
+end
