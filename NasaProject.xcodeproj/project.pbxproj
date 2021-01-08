@@ -154,7 +154,6 @@
 				C38618667CC977274377808E /* Pods-NasaProjectTests.debug.xcconfig */,
 				E86CE81DB696A140FEFA361E /* Pods-NasaProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
