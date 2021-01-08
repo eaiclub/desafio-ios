@@ -14,7 +14,18 @@ enum Scene {
     func viewController(coordinator: Coordinator) -> UIViewController {
         switch self {
         case .feed(let presenter):
-            return FeedViewController(coordinator: coordinator, presenter: presenter)
+            return getFeedSplitViewController(coordinator: coordinator, presenter: presenter)
         }
+    }
+
+    private func getFeedSplitViewController(coordinator: Coordinator, presenter: FeedPresenter) -> UISplitViewController {
+        let feedViewController = FeedViewController(coordinator: coordinator, presenter: presenter)
+
+        let splitViewController = UISplitViewController()
+        splitViewController.preferredDisplayMode = .allVisible
+
+        splitViewController.viewControllers = [feedViewController]
+
+        return splitViewController
     }
 }
