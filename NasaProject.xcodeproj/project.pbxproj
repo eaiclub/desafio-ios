@@ -14,7 +14,6 @@
 		E1BB944325A90E3000B67C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BB944225A90E3000B67C7A /* Assets.xcassets */; };
 		E1BB944625A90E3000B67C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BB944425A90E3000B67C7A /* LaunchScreen.storyboard */; };
 		E1BB945125A90E3000B67C7A /* NasaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB945025A90E3000B67C7A /* NasaProjectTests.swift */; };
-		E1BB945C25A90E3000B67C7A /* NasaProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB945B25A90E3000B67C7A /* NasaProjectUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +46,6 @@
 		E1BB945025A90E3000B67C7A /* NasaProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaProjectTests.swift; sourceTree = "<group>"; };
 		E1BB945225A90E3000B67C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1BB945725A90E3000B67C7A /* NasaProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NasaProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1BB945B25A90E3000B67C7A /* NasaProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaProjectUITests.swift; sourceTree = "<group>"; };
-		E1BB945D25A90E3000B67C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +78,6 @@
 			children = (
 				E1BB943825A90E2D00B67C7A /* NasaProject */,
 				E1BB944F25A90E3000B67C7A /* NasaProjectTests */,
-				E1BB945A25A90E3000B67C7A /* NasaProjectUITests */,
 				E1BB943725A90E2D00B67C7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,15 +113,6 @@
 				E1BB945225A90E3000B67C7A /* Info.plist */,
 			);
 			path = NasaProjectTests;
-			sourceTree = "<group>";
-		};
-		E1BB945A25A90E3000B67C7A /* NasaProjectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E1BB945B25A90E3000B67C7A /* NasaProjectUITests.swift */,
-				E1BB945D25A90E3000B67C7A /* Info.plist */,
-			);
-			path = NasaProjectUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1BB945C25A90E3000B67C7A /* NasaProjectUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
