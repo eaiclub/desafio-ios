@@ -116,6 +116,7 @@ fastlane/test_output
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcuserdata/
 /*.gcno
 
 # Do not track any sketch files or screenflow files:
