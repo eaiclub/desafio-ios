@@ -6,14 +6,10 @@ target 'NasaProject' do
   use_frameworks!
 
   # Pods for NasaProject
+  pod 'Alamofire'
 
   target 'NasaProjectTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
-  target 'NasaProjectUITests' do
-    # Pods for testing
-  end
-
 end

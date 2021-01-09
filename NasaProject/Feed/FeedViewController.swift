@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 final class FeedViewController: UIViewController, SceneViewController {
     typealias T = FeedPresenter
@@ -27,5 +28,6 @@ final class FeedViewController: UIViewController, SceneViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
+
     }
 }
