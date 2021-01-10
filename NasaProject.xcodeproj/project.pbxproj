@@ -16,6 +16,10 @@
 		E140A57025A919BD005A0A0A /* SceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140A56F25A919BD005A0A0A /* SceneController.swift */; };
 		E1B463F425AA0122008F4B6C /* NasaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B463F325AA0122008F4B6C /* NasaService.swift */; };
 		E1B463F925AA018D008F4B6C /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B463F825AA018D008F4B6C /* CelestialBody.swift */; };
+		E1B4640425AB4AAB008F4B6C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4640325AB4AAB008F4B6C /* DateExtension.swift */; };
+		E1B4640925AB4ACB008F4B6C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4640825AB4ACB008F4B6C /* Endpoint.swift */; };
+		E1B4640E25AB4AE6008F4B6C /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4640D25AB4AE6008F4B6C /* CustomError.swift */; };
+		E1B4641A25AB4D6E008F4B6C /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4641925AB4D6E008F4B6C /* ViewConfigurator.swift */; };
 		E1BB943A25A90E2D00B67C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB943925A90E2D00B67C7A /* AppDelegate.swift */; };
 		E1BB944325A90E3000B67C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BB944225A90E3000B67C7A /* Assets.xcassets */; };
 		E1BB944625A90E3000B67C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BB944425A90E3000B67C7A /* LaunchScreen.storyboard */; };
@@ -53,6 +57,10 @@
 		E140A56F25A919BD005A0A0A /* SceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneController.swift; sourceTree = "<group>"; };
 		E1B463F325AA0122008F4B6C /* NasaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaService.swift; sourceTree = "<group>"; };
 		E1B463F825AA018D008F4B6C /* CelestialBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialBody.swift; sourceTree = "<group>"; };
+		E1B4640325AB4AAB008F4B6C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		E1B4640825AB4ACB008F4B6C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E1B4640D25AB4AE6008F4B6C /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		E1B4641925AB4D6E008F4B6C /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
 		E1BB943625A90E2D00B67C7A /* NasaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BB943925A90E2D00B67C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1BB944225A90E3000B67C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +128,40 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		E1B4641225AB4B07008F4B6C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E1B4640325AB4AAB008F4B6C /* DateExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E1B4641325AB4B13008F4B6C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E1B4640D25AB4AE6008F4B6C /* CustomError.swift */,
+				E1B4640825AB4ACB008F4B6C /* Endpoint.swift */,
+				E1B4641925AB4D6E008F4B6C /* ViewConfigurator.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E1B4641425AB4B1C008F4B6C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E1B463F325AA0122008F4B6C /* NasaService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E1B4641825AB4B26008F4B6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1B463F825AA018D008F4B6C /* CelestialBody.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E1BB942D25A90E2D00B67C7A = {
 			isa = PBXGroup;
 			children = (
@@ -146,11 +188,13 @@
 			children = (
 				E10E9B1C25A914AC00CDFF83 /* NasaProject.entitlements */,
 				E1BB943925A90E2D00B67C7A /* AppDelegate.swift */,
-				E140A57825A91AF0005A0A0A /* Coordinator */,
 				E1BB944225A90E3000B67C7A /* Assets.xcassets */,
 				E1BB944425A90E3000B67C7A /* LaunchScreen.storyboard */,
-				E1B463F325AA0122008F4B6C /* NasaService.swift */,
-				E1B463F825AA018D008F4B6C /* CelestialBody.swift */,
+				E140A57825A91AF0005A0A0A /* Coordinator */,
+				E1B4641425AB4B1C008F4B6C /* Service */,
+				E1B4641325AB4B13008F4B6C /* Util */,
+				E1B4641225AB4B07008F4B6C /* Extension */,
+				E1B4641825AB4B26008F4B6C /* Model */,
 				E1BB944725A90E3000B67C7A /* Info.plist */,
 				E140A57425A91AE8005A0A0A /* Feed */,
 			);
@@ -377,10 +421,14 @@
 				E140A54E25A91828005A0A0A /* Coordinator.swift in Sources */,
 				E1B463F925AA018D008F4B6C /* CelestialBody.swift in Sources */,
 				E140A55325A91861005A0A0A /* Scene.swift in Sources */,
+				E1B4640925AB4ACB008F4B6C /* Endpoint.swift in Sources */,
+				E1B4640425AB4AAB008F4B6C /* DateExtension.swift in Sources */,
 				E1BB943A25A90E2D00B67C7A /* AppDelegate.swift in Sources */,
+				E1B4640E25AB4AE6008F4B6C /* CustomError.swift in Sources */,
 				E140A56825A91949005A0A0A /* FeedViewController.swift in Sources */,
 				E1B463F425AA0122008F4B6C /* NasaService.swift in Sources */,
 				E140A57025A919BD005A0A0A /* SceneController.swift in Sources */,
+				E1B4641A25AB4D6E008F4B6C /* ViewConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

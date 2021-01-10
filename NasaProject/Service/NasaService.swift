@@ -8,46 +8,8 @@
 import Foundation
 import Alamofire
 
-enum Endpoint {
-    static let nasaUrl = "https://api.nasa.gov"
-
-    case celestialBody
-
-    var url: String {
-        switch self {
-        case .celestialBody:
-            return "\(Endpoint.nasaUrl)/planetary/apod"
-        }
-    }
-}
-
 protocol NasaServiceProtocol {
     func fetchCelestialBodies(for dates: [Date], completion: @escaping (Result<[CelestialBody], Error>) -> Void)
-}
-
-extension DateFormatter {
-    static var current: DateFormatter {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD"
-        return dateFormatter
-    }
-}
-
-extension Date {
-    var description: String {
-        DateFormatter.current.string(from: self)
-    }
-}
-
-enum CustomError: Error {
-    case fetchBodiesError
-
-    var description: String {
-        switch self {
-        case .fetchBodiesError:
-            return "Failed to fetch Celestial Bodies"
-        }
-    }
 }
 
 final class NasaService: NasaServiceProtocol {
