@@ -29,5 +29,6 @@ final class FeedViewController: UIViewController, SceneViewController {
         super.viewDidLoad()
         view.backgroundColor = .green
 
+        presenter.fetchBodies()
     }
 }

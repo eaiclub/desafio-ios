@@ -22,18 +22,31 @@ enum Endpoint {
 }
 
 protocol NasaServiceProtocol {
-
+    func fetchCelestialBodies(for dates: [Date], completion: @escaping (Result<[CelestialBody], Error>) -> Void)
 }
 
-extension Date {
-    private var dateFormatter: DateFormatter {
+extension DateFormatter {
+    static var current: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-DD"
         return dateFormatter
     }
+}
+
+extension Date {
+    var description: String {
+        DateFormatter.current.string(from: self)
+    }
+}
+
+enum CustomError: Error {
+    case fetchBodiesError
 
     var description: String {
-        dateFormatter.string(from: self)
+        switch self {
+        case .fetchBodiesError:
+            return "Failed to fetch Celestial Bodies"
+        }
     }
 }
 
@@ -41,6 +54,30 @@ final class NasaService: NasaServiceProtocol {
 
     //in a real project we would move it to a plist and not push to the repository
     private let apiKey = "kZj8UK7DEsncdy0OTb64URlOSdFaDnCTx79h6Ceh"
+
+    func fetchCelestialBodies(for dates: [Date], completion: @escaping (Result<[CelestialBody], Error>) -> Void) {
+        let group = DispatchGroup()
+
+        var bodies: [CelestialBody] = []
+
+        dates.forEach {
+            group.enter()
+            fetchCelestialBody(for: $0) { result in
+                switch result {
+                case .success(let body):
+                    bodies.append(body)
+                case .failure(let error):
+                    print(error)
+                }
+
+                group.leave()
+            }
+        }
+
+        group.notify(queue: .main) {
+            bodies.isEmpty ? completion(.failure(CustomError.fetchBodiesError)) : completion(.success(bodies))
+        }
+    }
 
     func fetchCelestialBody(for date: Date, completion: @escaping (Result<CelestialBody, Error>) -> Void) {
         let url = Endpoint.celestialBody.url
