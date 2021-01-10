@@ -20,6 +20,9 @@
 		E1B4640925AB4ACB008F4B6C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4640825AB4ACB008F4B6C /* Endpoint.swift */; };
 		E1B4640E25AB4AE6008F4B6C /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4640D25AB4AE6008F4B6C /* CustomError.swift */; };
 		E1B4641A25AB4D6E008F4B6C /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4641925AB4D6E008F4B6C /* ViewConfigurator.swift */; };
+		E1B4641F25AB4F54008F4B6C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4641E25AB4F54008F4B6C /* Color.swift */; };
+		E1B4642425AB58B4008F4B6C /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4642325AB58B4008F4B6C /* ReusableView.swift */; };
+		E1B4642925AB58DB008F4B6C /* CelestialBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4642825AB58DB008F4B6C /* CelestialBodyCell.swift */; };
 		E1BB943A25A90E2D00B67C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB943925A90E2D00B67C7A /* AppDelegate.swift */; };
 		E1BB944325A90E3000B67C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BB944225A90E3000B67C7A /* Assets.xcassets */; };
 		E1BB944625A90E3000B67C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BB944425A90E3000B67C7A /* LaunchScreen.storyboard */; };
@@ -61,6 +64,9 @@
 		E1B4640825AB4ACB008F4B6C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E1B4640D25AB4AE6008F4B6C /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		E1B4641925AB4D6E008F4B6C /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
+		E1B4641E25AB4F54008F4B6C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E1B4642325AB58B4008F4B6C /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		E1B4642825AB58DB008F4B6C /* CelestialBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialBodyCell.swift; sourceTree = "<group>"; };
 		E1BB943625A90E2D00B67C7A /* NasaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BB943925A90E2D00B67C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1BB944225A90E3000B67C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 			children = (
 				E140A56725A91949005A0A0A /* FeedViewController.swift */,
 				E140A55A25A9191B005A0A0A /* FeedPresenter.swift */,
+				E1B4642825AB58DB008F4B6C /* CelestialBodyCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -142,6 +149,8 @@
 				E1B4640D25AB4AE6008F4B6C /* CustomError.swift */,
 				E1B4640825AB4ACB008F4B6C /* Endpoint.swift */,
 				E1B4641925AB4D6E008F4B6C /* ViewConfigurator.swift */,
+				E1B4641E25AB4F54008F4B6C /* Color.swift */,
+				E1B4642325AB58B4008F4B6C /* ReusableView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -421,9 +430,12 @@
 				E140A54E25A91828005A0A0A /* Coordinator.swift in Sources */,
 				E1B463F925AA018D008F4B6C /* CelestialBody.swift in Sources */,
 				E140A55325A91861005A0A0A /* Scene.swift in Sources */,
+				E1B4641F25AB4F54008F4B6C /* Color.swift in Sources */,
+				E1B4642425AB58B4008F4B6C /* ReusableView.swift in Sources */,
 				E1B4640925AB4ACB008F4B6C /* Endpoint.swift in Sources */,
 				E1B4640425AB4AAB008F4B6C /* DateExtension.swift in Sources */,
 				E1BB943A25A90E2D00B67C7A /* AppDelegate.swift in Sources */,
+				E1B4642925AB58DB008F4B6C /* CelestialBodyCell.swift in Sources */,
 				E1B4640E25AB4AE6008F4B6C /* CustomError.swift in Sources */,
 				E140A56825A91949005A0A0A /* FeedViewController.swift in Sources */,
 				E1B463F425AA0122008F4B6C /* NasaService.swift in Sources */,

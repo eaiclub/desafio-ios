@@ -20,11 +20,13 @@ enum Scene {
 
     private func getFeedSplitViewController(coordinator: Coordinator, presenter: FeedPresenter) -> UISplitViewController {
         let feedViewController = FeedViewController(coordinator: coordinator, presenter: presenter)
+        let feedNavigationController = feedViewController.embedInNavigation()
+        presenter.view = feedViewController
 
         let splitViewController = UISplitViewController()
         splitViewController.preferredDisplayMode = .allVisible
 
-        splitViewController.viewControllers = [feedViewController]
+        splitViewController.viewControllers = [feedNavigationController]
 
         return splitViewController
     }

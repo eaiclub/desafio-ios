@@ -15,19 +15,11 @@ final class FeedPresenter: Presenter {
 
     private var celestialBodies: [CelestialBody] = []
 
+    weak var view: FeedViewProtocol?
+
     init(nasaService: NasaServiceProtocol = NasaService(), currentDate: Date = Date()) {
         self.nasaService = nasaService
         self.currentDate = currentDate
-
-
-        NasaService().fetchCelestialBody(for: Date()) { result in
-            switch result {
-            case .success(let body):
-                print(body)
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
 
     func fetchBodies() {
@@ -36,10 +28,12 @@ final class FeedPresenter: Presenter {
         let dates = getPreviousDates(of: date)
 
         nasaService.fetchCelestialBodies(for: dates) { [weak self] result in
+            guard let self = self else { return }
+
             switch result {
             case .success(let bodies):
-                self?.celestialBodies.append(contentsOf: bodies)
-                print(bodies)
+                self.celestialBodies.append(contentsOf: bodies)
+                self.view?.reload(indexes: self.getIndexPathsToInsert(bodies))
             case .failure(let error):
                 print(error)
             }
@@ -70,5 +64,20 @@ final class FeedPresenter: Presenter {
 
     private func getDate(for index: Int, relativeTo date: Date) -> Date? {
         Calendar.current.date(byAdding: .day, value: -index, to: date)
+    }
+
+    func numberOfItems() -> Int {
+        celestialBodies.count
+    }
+
+    func item(for index: Int) -> CelestialBody {
+        celestialBodies[index]
+    }
+
+    ///due to pagination, we only insert the new rows instead of reload all table
+    private func getIndexPathsToInsert(_ newBodies: [CelestialBody]) -> [IndexPath] {
+       let startIndex = celestialBodies.count - newBodies.count
+       let endIndex = startIndex + newBodies.count
+       return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
 }
