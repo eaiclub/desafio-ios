@@ -7,6 +7,7 @@ target 'NasaProject' do
 
   # Pods for NasaProject
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
   target 'NasaProjectTests' do
     inherit! :search_paths
