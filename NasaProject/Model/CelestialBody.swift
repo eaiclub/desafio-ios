@@ -12,4 +12,9 @@ struct CelestialBody: Codable {
     let url: String
     let explanation: String
     let date: String
+    let media_type: String
+
+    var isVideo: Bool {
+        media_type == "video"
+    }
 }

@@ -15,7 +15,7 @@ final class CelestialBodyCell: UITableViewCell {
     private let bodyImageView = UIImageView()
     private let titleLabel = UILabel()
 
-    private lazy var stackView = UIStackView(arrangedSubviews: [dateLabel, bodyImageView, titleLabel])
+    private lazy var stackView = UIStackView(arrangedSubviews: [dateLabel, titleLabel, bodyImageView])
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,19 +30,20 @@ final class CelestialBodyCell: UITableViewCell {
         dateLabel.text = body.date
         titleLabel.text = body.title
 
-        bodyImageView.backgroundColor = .lightGray
         bodyImageView.image = nil
 
+        if body.isVideo {
+            bodyImageView.isHidden = true
+        } else {
+            setupImage(of: body)
+        }
+    }
+
+    private func setupImage(of body: CelestialBody) {
         guard let url = URL(string: body.url) else { return }
 
-        bodyImageView.af.setImage(withURL: url, cacheKey: body.url, completion: { response in
-            switch response.result {
-            case .success:
-                break
-            case .failure(let error):
-                print(error)
-            }
-        })
+        bodyImageView.isHidden = false
+        bodyImageView.af.setImage(withURL: url, cacheKey: body.url)
     }
 }
 
@@ -59,7 +60,7 @@ extension CelestialBodyCell: ViewConfigurator {
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
 
         bodyImageView.translatesAutoresizingMaskIntoConstraints = false
-        bodyImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        bodyImageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
     }
 
     func configureViews() {
@@ -68,5 +69,10 @@ extension CelestialBodyCell: ViewConfigurator {
 
         bodyImageView.contentMode = .scaleAspectFill
         bodyImageView.clipsToBounds = true
+        bodyImageView.layer.cornerRadius = 8
+        bodyImageView.backgroundColor = .lightGray
+
+        dateLabel.font = .systemFont(ofSize: 17, weight: .bold)
+        titleLabel.font = .systemFont(ofSize: 16, weight: .regular)
     }
 }
