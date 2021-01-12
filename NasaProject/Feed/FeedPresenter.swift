@@ -47,6 +47,10 @@ final class FeedPresenter: Presenter {
         }
     }
 
+    func getDetailPresenter(for indexPath: IndexPath) -> DetailPresenter {
+        DetailPresenter(body: celestialBodies[indexPath.row])
+    }
+
     private func getPreviousDates(of date: Date) -> [Date] {
         var dates: [Date] = []
 

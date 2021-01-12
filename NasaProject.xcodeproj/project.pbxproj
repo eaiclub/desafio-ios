@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6D9371542F81FDCD9E25D69A /* Pods_NasaProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D688BFEFC83D358145362E1F /* Pods_NasaProjectTests.framework */; };
 		AFF48DD8D43066E8F64B5039 /* Pods_NasaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082026F0D3E6E4D2F1B9A82F /* Pods_NasaProject.framework */; };
+		E119329225AE66AE003814C9 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119329125AE66AE003814C9 /* DetailPresenter.swift */; };
+		E11932B425AE6760003814C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11932B325AE6760003814C9 /* DetailViewController.swift */; };
 		E140A54E25A91828005A0A0A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140A54D25A91828005A0A0A /* Coordinator.swift */; };
 		E140A55325A91861005A0A0A /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140A55225A91861005A0A0A /* Scene.swift */; };
 		E140A55B25A9191B005A0A0A /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140A55A25A9191B005A0A0A /* FeedPresenter.swift */; };
@@ -53,6 +55,8 @@
 		D688BFEFC83D358145362E1F /* Pods_NasaProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NasaProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE570922086D0AFBCE1BBEAD /* Pods-NasaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaProject.debug.xcconfig"; path = "Target Support Files/Pods-NasaProject/Pods-NasaProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E10E9B1C25A914AC00CDFF83 /* NasaProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NasaProject.entitlements; sourceTree = "<group>"; };
+		E119329125AE66AE003814C9 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		E11932B325AE6760003814C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E140A54D25A91828005A0A0A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E140A55225A91861005A0A0A /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		E140A55A25A9191B005A0A0A /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 				D688BFEFC83D358145362E1F /* Pods_NasaProjectTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E119329625AE66B1003814C9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E119329125AE66AE003814C9 /* DetailPresenter.swift */,
+				E11932B325AE6760003814C9 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		E140A57425A91AE8005A0A0A /* Feed */ = {
@@ -206,6 +219,7 @@
 				E1B4641825AB4B26008F4B6C /* Model */,
 				E1BB944725A90E3000B67C7A /* Info.plist */,
 				E140A57425A91AE8005A0A0A /* Feed */,
+				E119329625AE66B1003814C9 /* Detail */,
 			);
 			path = NasaProject;
 			sourceTree = "<group>";
@@ -434,6 +448,7 @@
 				E1B4642425AB58B4008F4B6C /* ReusableView.swift in Sources */,
 				E1B4640925AB4ACB008F4B6C /* Endpoint.swift in Sources */,
 				E1B4640425AB4AAB008F4B6C /* DateExtension.swift in Sources */,
+				E11932B425AE6760003814C9 /* DetailViewController.swift in Sources */,
 				E1BB943A25A90E2D00B67C7A /* AppDelegate.swift in Sources */,
 				E1B4642925AB58DB008F4B6C /* CelestialBodyCell.swift in Sources */,
 				E1B4640E25AB4AE6008F4B6C /* CustomError.swift in Sources */,
@@ -441,6 +456,7 @@
 				E1B463F425AA0122008F4B6C /* NasaService.swift in Sources */,
 				E140A57025A919BD005A0A0A /* SceneController.swift in Sources */,
 				E1B4641A25AB4D6E008F4B6C /* ViewConfigurator.swift in Sources */,
+				E119329225AE66AE003814C9 /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

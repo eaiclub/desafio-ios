@@ -8,7 +8,7 @@
 import Foundation
 
 struct CelestialBody: Codable {
-    let title: String?
+    let title: String
     let url: String
     let explanation: String
     let date: String

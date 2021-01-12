@@ -59,6 +59,9 @@ extension FeedViewController: UITableViewDataSource {
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let detailPresenter = presenter.getDetailPresenter(for: indexPath)
+        transition(to: .detail(detailPresenter), type: .detail)
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -80,8 +83,9 @@ extension FeedViewController: ViewConfigurator {
     }
 
     func configureViews() {
-        title = "Cosmos"
         navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = Color.background
+        title = "Cosmos"
 
         tableView.register(type: CelestialBodyCell.self)
         tableView.dataSource = self

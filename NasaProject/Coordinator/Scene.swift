@@ -10,11 +10,14 @@ import UIKit
 //Each ViewController has a correspondent Scene witch holds its presenter
 enum Scene {
     case feed(FeedPresenter)
+    case detail(DetailPresenter)
 
     func viewController(coordinator: Coordinator) -> UIViewController {
         switch self {
         case .feed(let presenter):
             return getFeedSplitViewController(coordinator: coordinator, presenter: presenter)
+        case .detail(let presenter):
+            return DetailViewController(coordinator: coordinator, presenter: presenter)
         }
     }
 
