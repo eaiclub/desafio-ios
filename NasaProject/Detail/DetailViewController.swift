@@ -17,6 +17,7 @@ final class DetailViewController: UIViewController, SceneViewController {
     private let titleLabel = UILabel()
     private let explanationLabel = UILabel()
 
+    private let scrollView = UIScrollView()
     private lazy var stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, explanationLabel])
 
     init(coordinator: Coordinator, presenter: DetailPresenter) {
@@ -38,15 +39,23 @@ final class DetailViewController: UIViewController, SceneViewController {
 
 extension DetailViewController: ViewConfigurator {
     func buildViewHierarchy() {
-        view.addSubview(stackView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
     }
 
     func setupConstraints() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
 
     func configureViews() {
@@ -69,5 +78,8 @@ extension DetailViewController: ViewConfigurator {
 
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
+
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.alwaysBounceVertical = true
     }
 }
