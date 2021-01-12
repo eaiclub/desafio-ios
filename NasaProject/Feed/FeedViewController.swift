@@ -60,6 +60,10 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        presenter.checkPagination(for: indexPath)
+    }
 }
 
 extension FeedViewController: ViewConfigurator {
@@ -82,5 +86,9 @@ extension FeedViewController: ViewConfigurator {
         tableView.register(type: CelestialBodyCell.self)
         tableView.dataSource = self
         tableView.delegate = self
+
+        let indicator = UIActivityIndicatorView()
+        indicator.startAnimating()
+        tableView.tableFooterView = indicator
     }
 }

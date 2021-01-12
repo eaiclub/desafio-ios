@@ -8,13 +8,20 @@
 import Foundation
 
 struct CelestialBody: Codable {
-    let title: String
+    let title: String?
     let url: String
     let explanation: String
     let date: String
-    let media_type: String
+    let mediaType: String
+    let thumbnail: String?
 
     var isVideo: Bool {
-        media_type == "video"
+        mediaType == "video"
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case title, url, explanation, date
+        case mediaType = "media_type"
+        case thumbnail = "thumbnail_url"
     }
 }

@@ -32,18 +32,21 @@ final class CelestialBodyCell: UITableViewCell {
 
         bodyImageView.image = nil
 
-        if body.isVideo {
-            bodyImageView.isHidden = true
+        if !body.isVideo {
+            setup(imageURL: body.url)
+        } else if let thumbnail = body.thumbnail {
+            setup(imageURL: thumbnail)
         } else {
-            setupImage(of: body)
+            bodyImageView.isHidden = true
         }
     }
 
-    private func setupImage(of body: CelestialBody) {
-        guard let url = URL(string: body.url) else { return }
+    private func setup(imageURL: String) {
+        guard let url = URL(string: imageURL) else { return }
 
         bodyImageView.isHidden = false
-        bodyImageView.af.setImage(withURL: url, cacheKey: body.url)
+
+        bodyImageView.af.setImage(withURL: url, cacheKey: imageURL)
     }
 }
 

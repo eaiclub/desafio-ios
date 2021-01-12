@@ -11,7 +11,7 @@ final class FeedPresenter: Presenter {
 
     private let nasaService: NasaServiceProtocol
     private let currentDate: Date
-    private let offset = 10
+    private let offset = 5
 
     private var celestialBodies: [CelestialBody] = []
 
@@ -25,18 +25,25 @@ final class FeedPresenter: Presenter {
     func fetchBodies() {
         let date = getDate(from: celestialBodies.last?.date) ?? currentDate
 
-        let dates = getPreviousDates(of: date)
+        var dates = getPreviousDates(of: date)
+        dates.reverse()
 
         nasaService.fetchCelestialBodies(for: dates) { [weak self] result in
             guard let self = self else { return }
 
             switch result {
             case .success(let bodies):
-                self.celestialBodies.append(contentsOf: bodies)
+                self.celestialBodies.append(contentsOf: bodies.reversed())
                 self.view?.reload(indexes: self.getIndexPathsToInsert(bodies))
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+
+    func checkPagination(for index: IndexPath) {
+        if index.row == celestialBodies.count - offset {
+            fetchBodies()
         }
     }
 
