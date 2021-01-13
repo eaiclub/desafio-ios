@@ -60,7 +60,10 @@ extension CelestialBodyCell: ViewConfigurator {
         stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+
+        let bottomConstraint = stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+        bottomConstraint.priority = .defaultLow
+        bottomConstraint.isActive = true
 
         bodyImageView.translatesAutoresizingMaskIntoConstraints = false
         bodyImageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
