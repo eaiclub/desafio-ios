@@ -36,7 +36,7 @@ final class FeedPresenter: Presenter {
                 self.celestialBodies.append(contentsOf: bodies.reversed())
                 self.view?.reload(indexes: self.getIndexPathsToInsert(bodies))
             case .failure(let error):
-                print(error)
+                self.view?.failedToFetchNewItems(error: error)
             }
         }
     }

@@ -10,6 +10,7 @@ import Alamofire
 
 protocol FeedViewProtocol: NSObject {
     func reload(indexes: [IndexPath])
+    func failedToFetchNewItems(error: Error)
 }
 
 final class FeedViewController: UIViewController, SceneViewController {
@@ -41,6 +42,19 @@ extension FeedViewController: FeedViewProtocol {
     func reload(indexes: [IndexPath]) {
         tableView.insertRows(at: indexes, with: .automatic)
     }
+
+    func failedToFetchNewItems(error: Error) {
+        print(error)
+        let alert = UIAlertController(title: "Erro", message: "Não foi possível buscar os dados", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Tentar novamente", style: .default, handler: { [weak self] _ in
+            self?.presenter.fetchBodies()
+        }))
+
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { _ in }))
+
+        present(alert, animated: true)
+    }
 }
 
 extension FeedViewController: UITableViewDataSource {
@@ -67,6 +81,10 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         presenter.checkPagination(for: indexPath)
     }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        getIndicatorView()
+    }
 }
 
 extension FeedViewController: ViewConfigurator {
@@ -90,9 +108,21 @@ extension FeedViewController: ViewConfigurator {
         tableView.register(type: CelestialBodyCell.self)
         tableView.dataSource = self
         tableView.delegate = self
+    }
+
+    private func getIndicatorView() -> UIView {
+        let containerView = UIView()
 
         let indicator = UIActivityIndicatorView()
         indicator.startAnimating()
-        tableView.tableFooterView = indicator
+
+        containerView.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 40).isActive = true
+        indicator.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -40).isActive = true
+        indicator.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        indicator.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+
+        return containerView
     }
 }
