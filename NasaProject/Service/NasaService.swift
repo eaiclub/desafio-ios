@@ -40,15 +40,22 @@ final class NasaService: NasaServiceProtocol {
         fetch(url: url, parameters: parameters, completion: completion)
     }
 
-    func fetchCelestialBody(for date: Date, completion: @escaping (Result<[CelestialBody], Error>) -> Void) {
+    private func fetchCelestialBody(for date: Date, completion: @escaping (Result<[CelestialBody], Error>) -> Void) {
         let url = Endpoint.celestialBody.url
 
         let parameters: [String: Any] = ["api_key": apiKey, "date": date.description, "thumbs": true]
 
-        fetch(url: url, parameters: parameters, completion: completion)
+        fetch(url: url, parameters: parameters) { (response: Result<CelestialBody, Error>) in
+            switch response {
+            case .success(let body):
+                completion(.success([body]))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 
-    func fetch<T: Codable>(url: String, parameters: [String: Any], completion: @escaping (Result<T, Error>) -> Void) {
+    private func fetch<T: Codable>(url: String, parameters: [String: Any], completion: @escaping (Result<T, Error>) -> Void) {
         AF.request(url, method: .get, parameters: parameters).responseDecodable(of: T.self) { response in
             switch response.result {
             case .success(let value):
