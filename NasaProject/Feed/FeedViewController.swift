@@ -8,11 +8,6 @@
 import UIKit
 import Alamofire
 
-protocol FeedViewProtocol: NSObject {
-    func reload(indexes: [IndexPath])
-    func failedToFetchNewItems(error: Error)
-}
-
 final class FeedViewController: UIViewController, SceneViewController {
     typealias T = FeedPresenter
     var presenter: FeedPresenter

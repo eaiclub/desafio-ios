@@ -25,7 +25,7 @@ final class Coordinator {
     }
 
     func start() {
-        let feedPresenter = FeedPresenter()
+        let feedPresenter = FeedPresenter(nasaService: NasaService())
         window?.rootViewController = Scene.feed(feedPresenter).viewController(coordinator: self)
     }
 

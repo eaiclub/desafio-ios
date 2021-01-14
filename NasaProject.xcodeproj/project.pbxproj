@@ -19,6 +19,12 @@
 		E17F86FE25B0D2C300405E7A /* NasaServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F86FD25B0D2C300405E7A /* NasaServiceProtocol.swift */; };
 		E17F870325B0D2E800405E7A /* NasaServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F86FD25B0D2C300405E7A /* NasaServiceProtocol.swift */; };
 		E17F870C25B0D2FD00405E7A /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140A55A25A9191B005A0A0A /* FeedPresenter.swift */; };
+		E17F870F25B0D61500405E7A /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B463F825AA018D008F4B6C /* CelestialBody.swift */; };
+		E17F871225B0D64B00405E7A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4640325AB4AAB008F4B6C /* DateExtension.swift */; };
+		E17F871B25B0D68F00405E7A /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4640D25AB4AE6008F4B6C /* CustomError.swift */; };
+		E17F872225B0D6BA00405E7A /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F872125B0D6BA00405E7A /* Presenter.swift */; };
+		E17F872525B0D6BF00405E7A /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F872125B0D6BA00405E7A /* Presenter.swift */; };
+		E17F872825B0D6DE00405E7A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119329125AE66AE003814C9 /* DetailPresenter.swift */; };
 		E1B463F425AA0122008F4B6C /* NasaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B463F325AA0122008F4B6C /* NasaService.swift */; };
 		E1B463F925AA018D008F4B6C /* CelestialBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B463F825AA018D008F4B6C /* CelestialBody.swift */; };
 		E1B4640425AB4AAB008F4B6C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B4640325AB4AAB008F4B6C /* DateExtension.swift */; };
@@ -59,6 +65,7 @@
 		E140A56725A91949005A0A0A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E140A56F25A919BD005A0A0A /* SceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneController.swift; sourceTree = "<group>"; };
 		E17F86FD25B0D2C300405E7A /* NasaServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaServiceProtocol.swift; sourceTree = "<group>"; };
+		E17F872125B0D6BA00405E7A /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		E1B463F325AA0122008F4B6C /* NasaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaService.swift; sourceTree = "<group>"; };
 		E1B463F825AA018D008F4B6C /* CelestialBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialBody.swift; sourceTree = "<group>"; };
 		E1B4640325AB4AAB008F4B6C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -133,6 +140,7 @@
 				E140A54D25A91828005A0A0A /* Coordinator.swift */,
 				E140A56F25A919BD005A0A0A /* SceneController.swift */,
 				E140A55225A91861005A0A0A /* Scene.swift */,
+				E17F872125B0D6BA00405E7A /* Presenter.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -408,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E140A55B25A9191B005A0A0A /* FeedPresenter.swift in Sources */,
+				E17F872225B0D6BA00405E7A /* Presenter.swift in Sources */,
 				E140A54E25A91828005A0A0A /* Coordinator.swift in Sources */,
 				E17F86FE25B0D2C300405E7A /* NasaServiceProtocol.swift in Sources */,
 				E1B463F925AA018D008F4B6C /* CelestialBody.swift in Sources */,
@@ -433,8 +442,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E17F870325B0D2E800405E7A /* NasaServiceProtocol.swift in Sources */,
+				E17F871225B0D64B00405E7A /* DateExtension.swift in Sources */,
+				E17F872825B0D6DE00405E7A /* DetailPresenter.swift in Sources */,
+				E17F872525B0D6BF00405E7A /* Presenter.swift in Sources */,
 				E17F870C25B0D2FD00405E7A /* FeedPresenter.swift in Sources */,
+				E17F870F25B0D61500405E7A /* CelestialBody.swift in Sources */,
 				E1BB945125A90E3000B67C7A /* NasaProjectTests.swift in Sources */,
+				E17F871B25B0D68F00405E7A /* CustomError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,23 +10,47 @@ import XCTest
 
 class NasaProjectTests: XCTestCase {
 
-    var feedPresenter: FeedPresenter?
+    var feedPresenter: FeedPresenter!
     let date = DateFormatter.current.date(from: "2021-01-10")!
 
     override func setUpWithError() throws {
         feedPresenter = FeedPresenter(nasaService: NasaServiceMock(), currentDate: date)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFetchBodies() throws {
+        feedPresenter.fetchBodies()
+
+        XCTAssertEqual(feedPresenter?.numberOfItems(), 5)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testPaginationShouldFetchMoreItems() throws {
+        feedPresenter.fetchBodies()
+
+        XCTAssertEqual(feedPresenter.numberOfItems(), 5)
+
+        feedPresenter.checkPagination(for: IndexPath(row: 0, section: 0))
+
+        XCTAssertEqual(feedPresenter.numberOfItems(), 10)
     }
 
+    func testPaginationShouldNotFetchMoreItems() throws {
+        feedPresenter.fetchBodies()
+
+        XCTAssertEqual(feedPresenter.numberOfItems(), 5)
+
+        feedPresenter.checkPagination(for: IndexPath(row: 1, section: 0))
+
+        XCTAssertEqual(feedPresenter.numberOfItems(), 5)
+    }
+
+    func testGetDetailPresenter() throws {
+
+        feedPresenter.fetchBodies()
+
+        let index = IndexPath(row: 0, section: 0)
+        let body = feedPresenter.item(for: 0)
+
+        let detailPresenter = feedPresenter.getDetailPresenter(for: index)
+        XCTAssertEqual(detailPresenter.body.date, body.date)
+    }
 }

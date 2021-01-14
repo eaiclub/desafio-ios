@@ -7,6 +7,12 @@
 
 import Foundation
 
+//FeedViewController must conform to it, it is declared here so we doesn't need to import the view controller to the test target
+protocol FeedViewProtocol: NSObject {
+    func reload(indexes: [IndexPath])
+    func failedToFetchNewItems(error: Error)
+}
+
 final class FeedPresenter: Presenter {
 
     private let nasaService: NasaServiceProtocol
@@ -17,7 +23,7 @@ final class FeedPresenter: Presenter {
 
     weak var view: FeedViewProtocol?
 
-    init(nasaService: NasaServiceProtocol = NasaService(), currentDate: Date = Date()) {
+    init(nasaService: NasaServiceProtocol, currentDate: Date = Date()) {
         self.nasaService = nasaService
         self.currentDate = currentDate
     }

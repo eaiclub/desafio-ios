@@ -7,9 +7,6 @@
 
 import UIKit
 
-//presenters must conform to this protocol
-protocol Presenter { }
-
 //view controllers must conform to this protocol
 protocol SceneViewController {
     associatedtype T: Presenter
