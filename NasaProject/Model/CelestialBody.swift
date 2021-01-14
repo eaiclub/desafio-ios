@@ -24,4 +24,14 @@ struct CelestialBody: Codable {
         case mediaType = "media_type"
         case thumbnail = "thumbnail_url"
     }
+
+    // just used for mock purpose
+    init(date: Date) {
+        self.date = date.description
+        self.title = "title"
+        self.explanation = "explanation"
+        self.url = "url.com"
+        self.mediaType = "photo"
+        self.thumbnail = nil
+    }
 }

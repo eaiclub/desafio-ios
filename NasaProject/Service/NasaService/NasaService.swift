@@ -8,10 +8,6 @@
 import Foundation
 import Alamofire
 
-protocol NasaServiceProtocol {
-    func fetchCelestialBodies(for dates: [Date], completion: @escaping (Result<[CelestialBody], Error>) -> Void)
-}
-
 final class NasaService: NasaServiceProtocol {
 
     //in a real project we would move it to a plist and not push to the repository
