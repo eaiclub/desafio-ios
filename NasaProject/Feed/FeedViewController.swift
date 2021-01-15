@@ -76,10 +76,6 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         presenter.checkPagination(for: indexPath)
     }
-
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        getIndicatorView()
-    }
 }
 
 extension FeedViewController: ViewConfigurator {
@@ -103,6 +99,8 @@ extension FeedViewController: ViewConfigurator {
         tableView.register(type: CelestialBodyCell.self)
         tableView.dataSource = self
         tableView.delegate = self
+
+        tableView.tableFooterView = getIndicatorView()
     }
 
     private func getIndicatorView() -> UIView {
