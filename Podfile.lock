@@ -1,0 +1,38 @@
+PODS:
+  - lottie-ios (3.1.8)
+  - RKDropdownAlert (0.3.0)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
+  - YoutubeSourceParserKit (0.2.4)
+
+DEPENDENCIES:
+  - lottie-ios
+  - RKDropdownAlert
+  - SDWebImage
+  - YoutubeSourceParserKit (from `https://github.com/douglastaquary/YoutubeSourceParserKit`)
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+    - RKDropdownAlert
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  YoutubeSourceParserKit:
+    :git: https://github.com/douglastaquary/YoutubeSourceParserKit
+
+CHECKOUT OPTIONS:
+  YoutubeSourceParserKit:
+    :commit: 98f3bcf9886c20eefd82249a6cfbb3068ad86b80
+    :git: https://github.com/douglastaquary/YoutubeSourceParserKit
+
+SPEC CHECKSUMS:
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
+  YoutubeSourceParserKit: d1506222a62718ed41f18ab52ebbc1b1d9ecabcc
+
+PODFILE CHECKSUM: 03b456c9daccf11d5870d81335510e22738b13e3
+
+COCOAPODS: 1.9.3
