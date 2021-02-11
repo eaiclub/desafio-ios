@@ -24,6 +24,21 @@
 		9C27DB6B25D4B4BE00DE2420 /* PlanetsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */; };
 		9C27DB6D25D4B60F00DE2420 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */; };
 		9C27DB7125D4B78200DE2420 /* LayoutVerticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */; };
+		9C27DB7525D4C0D900DE2420 /* PlanetsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB7325D4C0D900DE2420 /* PlanetsListTableViewCell.swift */; };
+		9C27DB7625D4C0D900DE2420 /* PlanetsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7425D4C0D900DE2420 /* PlanetsListTableViewCell.xib */; };
+		9C27DB7825D4C27C00DE2420 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB7725D4C27C00DE2420 /* UITableViewExtension.swift */; };
+		9C27DB8425D4C5FF00DE2420 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7B25D4C5FF00DE2420 /* Ubuntu-Medium.ttf */; };
+		9C27DB8525D4C5FF00DE2420 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7C25D4C5FF00DE2420 /* Ubuntu-Regular.ttf */; };
+		9C27DB8625D4C5FF00DE2420 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7D25D4C5FF00DE2420 /* Ubuntu-Bold.ttf */; };
+		9C27DB8725D4C5FF00DE2420 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7E25D4C5FF00DE2420 /* Ubuntu-Light.ttf */; };
+		9C27DB8825D4C5FF00DE2420 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB8025D4C5FF00DE2420 /* Montserrat-Medium.ttf */; };
+		9C27DB8925D4C5FF00DE2420 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB8125D4C5FF00DE2420 /* Montserrat-Light.ttf */; };
+		9C27DB8A25D4C5FF00DE2420 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB8225D4C5FF00DE2420 /* Montserrat-Bold.ttf */; };
+		9C27DB8B25D4C5FF00DE2420 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB8325D4C5FF00DE2420 /* Montserrat-Regular.ttf */; };
+		9C27DB8D25D58B2B00DE2420 /* HTTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB8C25D58B2A00DE2420 /* HTTRequest.swift */; };
+		9C27DB8F25D58B5F00DE2420 /* HTTPRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB8E25D58B5F00DE2420 /* HTTPRequestable.swift */; };
+		9C27DB9125D58B7900DE2420 /* HTTPDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB9025D58B7900DE2420 /* HTTPDomain.swift */; };
+		9C27DB9325D58B9400DE2420 /* HTTPEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB9225D58B9400DE2420 /* HTTPEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +61,21 @@
 		9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsListView.xib; sourceTree = "<group>"; };
 		9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutVerticalViewController.swift; sourceTree = "<group>"; };
+		9C27DB7325D4C0D900DE2420 /* PlanetsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsListTableViewCell.swift; sourceTree = "<group>"; };
+		9C27DB7425D4C0D900DE2420 /* PlanetsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsListTableViewCell.xib; sourceTree = "<group>"; };
+		9C27DB7725D4C27C00DE2420 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		9C27DB7B25D4C5FF00DE2420 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		9C27DB7C25D4C5FF00DE2420 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		9C27DB7D25D4C5FF00DE2420 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		9C27DB7E25D4C5FF00DE2420 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
+		9C27DB8025D4C5FF00DE2420 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		9C27DB8125D4C5FF00DE2420 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		9C27DB8225D4C5FF00DE2420 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		9C27DB8325D4C5FF00DE2420 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		9C27DB8C25D58B2A00DE2420 /* HTTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTRequest.swift; sourceTree = "<group>"; };
+		9C27DB8E25D58B5F00DE2420 /* HTTPRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestable.swift; sourceTree = "<group>"; };
+		9C27DB9025D58B7900DE2420 /* HTTPDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDomain.swift; sourceTree = "<group>"; };
+		9C27DB9225D58B9400DE2420 /* HTTPEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +139,7 @@
 		9C27DB5225D47EA100DE2420 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9C27DB7925D4C5DC00DE2420 /* Fonts */,
 				9C27DB4325D473C400DE2420 /* Assets.xcassets */,
 				9C27DB4525D473C400DE2420 /* LaunchScreen.storyboard */,
 			);
@@ -136,6 +167,10 @@
 		9C27DB5525D47F1D00DE2420 /* HTTPServices */ = {
 			isa = PBXGroup;
 			children = (
+				9C27DB8C25D58B2A00DE2420 /* HTTRequest.swift */,
+				9C27DB8E25D58B5F00DE2420 /* HTTPRequestable.swift */,
+				9C27DB9025D58B7900DE2420 /* HTTPDomain.swift */,
+				9C27DB9225D58B9400DE2420 /* HTTPEnvironment.swift */,
 			);
 			path = HTTPServices;
 			sourceTree = "<group>";
@@ -144,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */,
+				9C27DB7725D4C27C00DE2420 /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +212,7 @@
 			children = (
 				9C27DB6825D4B4BE00DE2420 /* PlanetsListView.swift */,
 				9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */,
+				9C27DB7225D4C0AF00DE2420 /* Cell */,
 			);
 			path = PlanetsListView;
 			sourceTree = "<group>";
@@ -194,6 +231,46 @@
 				9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */,
 			);
 			path = LayoutVerticalViewController;
+			sourceTree = "<group>";
+		};
+		9C27DB7225D4C0AF00DE2420 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7325D4C0D900DE2420 /* PlanetsListTableViewCell.swift */,
+				9C27DB7425D4C0D900DE2420 /* PlanetsListTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9C27DB7925D4C5DC00DE2420 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7F25D4C5FF00DE2420 /* Montserrat */,
+				9C27DB7A25D4C5FF00DE2420 /* Ubuntu */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9C27DB7A25D4C5FF00DE2420 /* Ubuntu */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7B25D4C5FF00DE2420 /* Ubuntu-Medium.ttf */,
+				9C27DB7C25D4C5FF00DE2420 /* Ubuntu-Regular.ttf */,
+				9C27DB7D25D4C5FF00DE2420 /* Ubuntu-Bold.ttf */,
+				9C27DB7E25D4C5FF00DE2420 /* Ubuntu-Light.ttf */,
+			);
+			path = Ubuntu;
+			sourceTree = "<group>";
+		};
+		9C27DB7F25D4C5FF00DE2420 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB8025D4C5FF00DE2420 /* Montserrat-Medium.ttf */,
+				9C27DB8125D4C5FF00DE2420 /* Montserrat-Light.ttf */,
+				9C27DB8225D4C5FF00DE2420 /* Montserrat-Bold.ttf */,
+				9C27DB8325D4C5FF00DE2420 /* Montserrat-Regular.ttf */,
+			);
+			path = Montserrat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,11 +331,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C27DB8925D4C5FF00DE2420 /* Montserrat-Light.ttf in Resources */,
+				9C27DB8525D4C5FF00DE2420 /* Ubuntu-Regular.ttf in Resources */,
+				9C27DB8B25D4C5FF00DE2420 /* Montserrat-Regular.ttf in Resources */,
 				9C27DB4725D473C400DE2420 /* LaunchScreen.storyboard in Resources */,
+				9C27DB8725D4C5FF00DE2420 /* Ubuntu-Light.ttf in Resources */,
+				9C27DB8A25D4C5FF00DE2420 /* Montserrat-Bold.ttf in Resources */,
 				9C27DB4425D473C400DE2420 /* Assets.xcassets in Resources */,
+				9C27DB8425D4C5FF00DE2420 /* Ubuntu-Medium.ttf in Resources */,
 				9C27DB4225D473C300DE2420 /* Main.storyboard in Resources */,
+				9C27DB7625D4C0D900DE2420 /* PlanetsListTableViewCell.xib in Resources */,
 				9C27DB5B25D4B16100DE2420 /* HomeViewController.xib in Resources */,
 				9C27DB6B25D4B4BE00DE2420 /* PlanetsListView.xib in Resources */,
+				9C27DB8825D4C5FF00DE2420 /* Montserrat-Medium.ttf in Resources */,
+				9C27DB8625D4C5FF00DE2420 /* Ubuntu-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,17 +356,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C27DB6A25D4B4BE00DE2420 /* PlanetsListView.swift in Sources */,
+				9C27DB8D25D58B2B00DE2420 /* HTTRequest.swift in Sources */,
 				9C27DB6125D4B1B500DE2420 /* HomePresenter.swift in Sources */,
+				9C27DB7525D4C0D900DE2420 /* PlanetsListTableViewCell.swift in Sources */,
 				9C27DB6D25D4B60F00DE2420 /* UIViewExtension.swift in Sources */,
 				9C27DB6525D4B1E000DE2420 /* HomeModels.swift in Sources */,
 				9C27DB5025D4783700DE2420 /* AppNavigationController.swift in Sources */,
+				9C27DB9325D58B9400DE2420 /* HTTPEnvironment.swift in Sources */,
 				9C27DB3F25D473C300DE2420 /* ViewController.swift in Sources */,
+				9C27DB9125D58B7900DE2420 /* HTTPDomain.swift in Sources */,
 				9C27DB3B25D473C300DE2420 /* AppDelegate.swift in Sources */,
 				9C27DB5D25D4B18700DE2420 /* HomeInteractor.swift in Sources */,
 				9C27DB7125D4B78200DE2420 /* LayoutVerticalViewController.swift in Sources */,
 				9C27DB6325D4B1C700DE2420 /* HomeRouter.swift in Sources */,
 				9C27DB5F25D4B19F00DE2420 /* HomeWorker.swift in Sources */,
+				9C27DB8F25D58B5F00DE2420 /* HTTPRequestable.swift in Sources */,
 				9C27DB5A25D4B16100DE2420 /* HomeViewController.swift in Sources */,
+				9C27DB7825D4C27C00DE2420 /* UITableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
