@@ -13,6 +13,17 @@
 		9C27DB4425D473C400DE2420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB4325D473C400DE2420 /* Assets.xcassets */; };
 		9C27DB4725D473C400DE2420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB4525D473C400DE2420 /* LaunchScreen.storyboard */; };
 		9C27DB5025D4783700DE2420 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB4F25D4783700DE2420 /* AppNavigationController.swift */; };
+		9C27DB5A25D4B16100DE2420 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB5825D4B16100DE2420 /* HomeViewController.swift */; };
+		9C27DB5B25D4B16100DE2420 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB5925D4B16100DE2420 /* HomeViewController.xib */; };
+		9C27DB5D25D4B18700DE2420 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB5C25D4B18700DE2420 /* HomeInteractor.swift */; };
+		9C27DB5F25D4B19F00DE2420 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB5E25D4B19F00DE2420 /* HomeWorker.swift */; };
+		9C27DB6125D4B1B500DE2420 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6025D4B1B500DE2420 /* HomePresenter.swift */; };
+		9C27DB6325D4B1C700DE2420 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6225D4B1C700DE2420 /* HomeRouter.swift */; };
+		9C27DB6525D4B1E000DE2420 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6425D4B1E000DE2420 /* HomeModels.swift */; };
+		9C27DB6A25D4B4BE00DE2420 /* PlanetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6825D4B4BE00DE2420 /* PlanetsListView.swift */; };
+		9C27DB6B25D4B4BE00DE2420 /* PlanetsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */; };
+		9C27DB6D25D4B60F00DE2420 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */; };
+		9C27DB7125D4B78200DE2420 /* LayoutVerticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,17 @@
 		9C27DB4625D473C400DE2420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C27DB4825D473C400DE2420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C27DB4F25D4783700DE2420 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		9C27DB5825D4B16100DE2420 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9C27DB5925D4B16100DE2420 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9C27DB5C25D4B18700DE2420 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		9C27DB5E25D4B19F00DE2420 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		9C27DB6025D4B1B500DE2420 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		9C27DB6225D4B1C700DE2420 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		9C27DB6425D4B1E000DE2420 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		9C27DB6825D4B4BE00DE2420 /* PlanetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsListView.swift; sourceTree = "<group>"; };
+		9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsListView.xib; sourceTree = "<group>"; };
+		9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutVerticalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +84,7 @@
 				9C27DB5225D47EA100DE2420 /* SupportingFiles */,
 				9C27DB3E25D473C300DE2420 /* ViewController.swift */,
 				9C27DB4025D473C300DE2420 /* Main.storyboard */,
+				9C27DB4825D473C400DE2420 /* Info.plist */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -88,7 +111,6 @@
 			children = (
 				9C27DB4325D473C400DE2420 /* Assets.xcassets */,
 				9C27DB4525D473C400DE2420 /* LaunchScreen.storyboard */,
-				9C27DB4825D473C400DE2420 /* Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -96,6 +118,7 @@
 		9C27DB5325D47EE600DE2420 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				9C27DB6E25D4B73800DE2420 /* Views */,
 				9C27DB5425D47F1100DE2420 /* Networking */,
 				9C27DB5625D47F3300DE2420 /* Extensions */,
 			);
@@ -120,6 +143,7 @@
 		9C27DB5625D47F3300DE2420 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,8 +151,49 @@
 		9C27DB5725D47FB600DE2420 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9C27DB5825D4B16100DE2420 /* HomeViewController.swift */,
+				9C27DB5925D4B16100DE2420 /* HomeViewController.xib */,
+				9C27DB5C25D4B18700DE2420 /* HomeInteractor.swift */,
+				9C27DB5E25D4B19F00DE2420 /* HomeWorker.swift */,
+				9C27DB6025D4B1B500DE2420 /* HomePresenter.swift */,
+				9C27DB6225D4B1C700DE2420 /* HomeRouter.swift */,
+				9C27DB6425D4B1E000DE2420 /* HomeModels.swift */,
+				9C27DB6625D4B3F400DE2420 /* Views */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		9C27DB6625D4B3F400DE2420 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB6725D4B44100DE2420 /* PlanetsListView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C27DB6725D4B44100DE2420 /* PlanetsListView */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB6825D4B4BE00DE2420 /* PlanetsListView.swift */,
+				9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */,
+			);
+			path = PlanetsListView;
+			sourceTree = "<group>";
+		};
+		9C27DB6E25D4B73800DE2420 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB6F25D4B77300DE2420 /* LayoutVerticalViewController */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C27DB6F25D4B77300DE2420 /* LayoutVerticalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */,
+			);
+			path = LayoutVerticalViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +257,8 @@
 				9C27DB4725D473C400DE2420 /* LaunchScreen.storyboard in Resources */,
 				9C27DB4425D473C400DE2420 /* Assets.xcassets in Resources */,
 				9C27DB4225D473C300DE2420 /* Main.storyboard in Resources */,
+				9C27DB5B25D4B16100DE2420 /* HomeViewController.xib in Resources */,
+				9C27DB6B25D4B4BE00DE2420 /* PlanetsListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,9 +269,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C27DB6A25D4B4BE00DE2420 /* PlanetsListView.swift in Sources */,
+				9C27DB6125D4B1B500DE2420 /* HomePresenter.swift in Sources */,
+				9C27DB6D25D4B60F00DE2420 /* UIViewExtension.swift in Sources */,
+				9C27DB6525D4B1E000DE2420 /* HomeModels.swift in Sources */,
 				9C27DB5025D4783700DE2420 /* AppNavigationController.swift in Sources */,
 				9C27DB3F25D473C300DE2420 /* ViewController.swift in Sources */,
 				9C27DB3B25D473C300DE2420 /* AppDelegate.swift in Sources */,
+				9C27DB5D25D4B18700DE2420 /* HomeInteractor.swift in Sources */,
+				9C27DB7125D4B78200DE2420 /* LayoutVerticalViewController.swift in Sources */,
+				9C27DB6325D4B1C700DE2420 /* HomeRouter.swift in Sources */,
+				9C27DB5F25D4B19F00DE2420 /* HomeWorker.swift in Sources */,
+				9C27DB5A25D4B16100DE2420 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
