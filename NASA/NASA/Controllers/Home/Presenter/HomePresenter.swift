@@ -7,33 +7,54 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomePresenter: NSObject {
     let roverCameras = RoverCameras()
-    open var selectedCamera: RoverPhotoCamera = .fhaz
-    open var selectedCameraType: RoverPhotoCameraType = .curiosity
+    private(set) var selectedCamera: RoverPhotoCamera = .fhaz
+    private(set) var selectedCameraType: RoverPhotoCameraType = .curiosity
+    private(set) var apod: APOD?
+    private(set) var roverPhotos: [RoverPhoto] = []
+    private var page = 1
     
-    func getPictureOfTheDay() {
+    func getPictureOfTheDay(success: SuccessHandler, failure: FailureHandler) {
         APODService().getPictureOfTheDay(success: { result in
             guard let apod = result as? APOD else {
-                print("erro)")
+                failure?(AFError.explicitlyCancelled)
                 return
             }
-            print(apod)
+            self.apod = apod
+            success?(nil)
         }) { (error) in
-            print("erro - \(error.debugDescription)")
+            failure?(error)
         }
     }
     
-    func getRoversPhotos() {
-        RoverPhotosService().getRoversPhotos(type: selectedCameraType, camera: selectedCamera, success: { (result) in
+    func getRoversPhotos(type: RoverPhotoCameraType, camera: RoverPhotoCamera, success: SuccessHandler, failure: FailureHandler) {
+        self.resetRequestIfNeeded(type: type, camera: camera)
+        RoverPhotosService().getRoversPhotos(type: type, camera: camera, page: self.page, success: { (result) in
             guard let roverPhotos = result as? RoverPhotos else {
-                print("erro)")
+                failure?(AFError.explicitlyCancelled)
                 return
             }
-            print(roverPhotos)
+            self.roverPhotos += roverPhotos.photos
+            success?(nil)
         }) { (error) in
-            print("erro - \(error.debugDescription)")
+            failure?(error)
         }
+    }
+    
+    private func resetRequestIfNeeded(type: RoverPhotoCameraType, camera: RoverPhotoCamera) {
+        if type != self.selectedCameraType {
+            self.page = 1
+            self.roverPhotos.removeAll()
+        }
+        
+        if camera != self.selectedCamera {
+            self.page = 1
+            self.roverPhotos.removeAll()
+        }
+        self.selectedCamera = camera
+        self.selectedCameraType = type
     }
 }

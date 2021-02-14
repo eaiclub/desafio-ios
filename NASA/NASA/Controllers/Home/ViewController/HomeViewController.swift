@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
 
     let presenter = HomePresenter()
+    private var selectedCamera: RoverPhotoCamera = .fhaz
+    private var selectedCameraType: RoverPhotoCameraType = .curiosity
     
     private let cameraTypePicker = ToolbarPickerView()
     private let cameraPicker = ToolbarPickerView()
-    @IBOutlet weak var cameraTypeTextField: UITextField!
-    @IBOutlet weak var cameraTextField: UITextField!
+    @IBOutlet private weak var cameraTypeTextField: UITextField!
+    @IBOutlet private weak var cameraTextField: UITextField!
+    @IBOutlet private weak var apodImageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -47,12 +51,34 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func requestAPODButtonClicked(_ sender: Any) {
-        
+        self.presenter.getPictureOfTheDay(success: { _ in
+            guard let apod = self.presenter.apod, let _url = URL(string: apod.hdUrl) else { return }
+            
+            let processor = DownsamplingImageProcessor(size: self.apodImageView.bounds.size)
+                        |> RoundCornerImageProcessor(cornerRadius: 20)
+            self.apodImageView.kf.indicatorType = .activity
+            self.apodImageView.kf.setImage(
+                with: _url,
+                placeholder: UIImage(named: "placeholderImage"),
+                options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+                ])
+            
+        }) { (error) in
+            
+        }
     }
     
     
     @IBAction func requestRoverPhotosButtonClicked(_ sender: Any) {
-        
+        self.presenter.getRoversPhotos(type: self.selectedCameraType, camera: self.selectedCamera, success: { _ in
+            
+        }) { (error) in
+            
+        }
     }
     
 }
@@ -67,7 +93,7 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case 1:
             return self.presenter.roverCameras.types.count
         case 2:
-            return self.presenter.roverCameras.camerasForType(self.presenter.selectedCameraType).count
+            return self.presenter.roverCameras.camerasForType(self.selectedCameraType).count
         default:
             return 0
         }
@@ -78,7 +104,7 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case 1:
             return self.presenter.roverCameras.types[row].rawValue
         case 2:
-            return self.presenter.roverCameras.camerasForType(self.presenter.selectedCameraType)[row].abbreviation.rawValue
+            return self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation.rawValue
         default:
             return ""
         }
@@ -88,11 +114,11 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         switch pickerView.tag {
         case 1:
             self.cameraTypeTextField.text = self.presenter.roverCameras.types[row].rawValue
-            self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.presenter.selectedCameraType)[0].abbreviation.rawValue
-            self.presenter.selectedCameraType = self.presenter.roverCameras.types[row]
+            self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[0].abbreviation.rawValue
+            self.selectedCameraType = self.presenter.roverCameras.types[row]
         case 2:
-            self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.presenter.selectedCameraType)[row].abbreviation.rawValue
-            self.presenter.selectedCamera = self.presenter.roverCameras.camerasForType(self.presenter.selectedCameraType)[row].abbreviation
+            self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation.rawValue
+            self.selectedCamera = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation
         default:
             break
         }
@@ -107,7 +133,7 @@ extension HomeViewController: ToolbarPickerViewDelegate {
         if pickerView == self.cameraTypePicker {
             self.cameraTypeTextField.text = self.presenter.roverCameras.types[row].rawValue
         } else if pickerView == self.cameraPicker {
-            self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.presenter.selectedCameraType)[row].abbreviation.rawValue
+            self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation.rawValue
         }
         self.view.endEditing(true)
     }

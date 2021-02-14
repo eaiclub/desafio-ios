@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-typealias SuccessHandler  = ((_ anyObject: Any) -> Void)?
+typealias SuccessHandler  = ((_ anyObject: Any?) -> Void)?
 typealias FailureHandler  = ((AFError?)-> Swift.Void)?
 
 struct Constants {

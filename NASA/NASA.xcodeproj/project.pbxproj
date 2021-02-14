@@ -122,6 +122,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9F42FF4025D9CC7B000200F0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5EC8425D85B9C00829D1F /* ToolbarPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9F42FF4125D9CC89000200F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9FA7C94525D73E4000C374FD /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,11 +221,12 @@
 				9FB5EC8C25D9B33300829D1F /* Controllers */,
 				9FA7C94A25D74BF400C374FD /* Models */,
 				9FA7C94525D73E4000C374FD /* Services */,
+				9F42FF4025D9CC7B000200F0 /* Components */,
+				9F42FF4125D9CC89000200F0 /* Extensions */,
 				9FC9667B25D71F1300830EF7 /* Assets.xcassets */,
 				9FC9667D25D71F1300830EF7 /* LaunchScreen.storyboard */,
 				9FC9668025D71F1300830EF7 /* Info.plist */,
 				9FC9667825D71F1200830EF7 /* NASA.xcdatamodeld */,
-				9FB5EC8425D85B9C00829D1F /* ToolbarPickerView.swift */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
