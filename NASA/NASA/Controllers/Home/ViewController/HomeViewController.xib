@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="NASA" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraTextField" destination="FUc-4G-N0o" id="9kF-PE-UDC"/>
+                <outlet property="cameraTypeTextField" destination="qIj-Ga-pqV" id="6qz-E1-6Tq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy8-hC-lD6">
+                    <rect key="frame" x="165.5" y="76" width="83" height="30"/>
+                    <state key="normal" title="Teste APOD"/>
+                    <connections>
+                        <action selector="requestAPODButtonClicked:" destination="-1" eventType="touchUpInside" id="jDx-R8-0kP"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dD5-PT-vgH">
+                    <rect key="frame" x="32" y="138" width="350" height="34"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIj-Ga-pqV">
+                            <rect key="frame" x="0.0" y="0.0" width="171" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-4G-N0o">
+                            <rect key="frame" x="179" y="0.0" width="171" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9u-f7-9Vt">
+                    <rect key="frame" x="140.5" y="204" width="133" height="30"/>
+                    <state key="normal" title="Teste Rover Photos"/>
+                    <connections>
+                        <action selector="requestRoverPhotosButtonClicked:" destination="-1" eventType="touchUpInside" id="2OH-vM-Dtl"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wy8-hC-lD6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="05n-a1-OtF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dD5-PT-vgH" secondAttribute="trailing" constant="32" id="0Qv-4S-6cV"/>
+                <constraint firstItem="dD5-PT-vgH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="0fu-zy-F62"/>
+                <constraint firstItem="Y9u-f7-9Vt" firstAttribute="top" secondItem="dD5-PT-vgH" secondAttribute="bottom" constant="32" id="17i-Eb-jza"/>
+                <constraint firstItem="dD5-PT-vgH" firstAttribute="top" secondItem="wy8-hC-lD6" secondAttribute="bottom" constant="32" id="5Ul-zv-x8z"/>
+                <constraint firstItem="Y9u-f7-9Vt" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Zq3-1n-cVo"/>
+                <constraint firstItem="wy8-hC-lD6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="lfV-fD-Phv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="126"/>
+        </view>
+    </objects>
+</document>

@@ -13,10 +13,15 @@
 		9FA7C94725D73E5400C374FD /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94625D73E5400C374FD /* BaseService.swift */; };
 		9FA7C94925D74BC400C374FD /* APODService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94825D74BC400C374FD /* APODService.swift */; };
 		9FA7C94C25D74D7900C374FD /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94B25D74D7900C374FD /* APOD.swift */; };
+		9FB5EC7F25D8474700829D1F /* RoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5EC7E25D8474700829D1F /* RoverPhotos.swift */; };
+		9FB5EC8125D848E300829D1F /* RoverPhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5EC8025D848E300829D1F /* RoverPhotosService.swift */; };
+		9FB5EC8325D8521000829D1F /* RoverCameras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5EC8225D8521000829D1F /* RoverCameras.swift */; };
+		9FB5EC8525D85B9C00829D1F /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5EC8425D85B9C00829D1F /* ToolbarPickerView.swift */; };
+		9FB5EC8A25D9B25100829D1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5EC8825D9B25100829D1F /* HomeViewController.swift */; };
+		9FB5EC8B25D9B25100829D1F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB5EC8925D9B25100829D1F /* HomeViewController.xib */; };
+		9FB5EC9125D9B3C300829D1F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5EC9025D9B3C300829D1F /* HomePresenter.swift */; };
 		9FC9667025D71F1200830EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9666F25D71F1200830EF7 /* AppDelegate.swift */; };
 		9FC9667225D71F1200830EF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9667125D71F1200830EF7 /* SceneDelegate.swift */; };
-		9FC9667425D71F1200830EF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9667325D71F1200830EF7 /* ViewController.swift */; };
-		9FC9667725D71F1200830EF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC9667525D71F1200830EF7 /* Main.storyboard */; };
 		9FC9667A25D71F1200830EF7 /* NASA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9667825D71F1200830EF7 /* NASA.xcdatamodeld */; };
 		9FC9667C25D71F1300830EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC9667B25D71F1300830EF7 /* Assets.xcassets */; };
 		9FC9667F25D71F1300830EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC9667D25D71F1300830EF7 /* LaunchScreen.storyboard */; };
@@ -49,11 +54,16 @@
 		9FA7C94625D73E5400C374FD /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		9FA7C94825D74BC400C374FD /* APODService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService.swift; sourceTree = "<group>"; };
 		9FA7C94B25D74D7900C374FD /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
+		9FB5EC7E25D8474700829D1F /* RoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotos.swift; sourceTree = "<group>"; };
+		9FB5EC8025D848E300829D1F /* RoverPhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotosService.swift; sourceTree = "<group>"; };
+		9FB5EC8225D8521000829D1F /* RoverCameras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverCameras.swift; sourceTree = "<group>"; };
+		9FB5EC8425D85B9C00829D1F /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
+		9FB5EC8825D9B25100829D1F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9FB5EC8925D9B25100829D1F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9FB5EC9025D9B3C300829D1F /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		9FC9666C25D71F1200830EF7 /* NASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC9666F25D71F1200830EF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FC9667125D71F1200830EF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9FC9667325D71F1200830EF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9FC9667625D71F1200830EF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FC9667925D71F1200830EF7 /* NASA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NASA.xcdatamodel; sourceTree = "<group>"; };
 		9FC9667B25D71F1300830EF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FC9667E25D71F1300830EF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,6 +127,7 @@
 			children = (
 				9FA7C94625D73E5400C374FD /* BaseService.swift */,
 				9FA7C94825D74BC400C374FD /* APODService.swift */,
+				9FB5EC8025D848E300829D1F /* RoverPhotosService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -125,8 +136,44 @@
 			isa = PBXGroup;
 			children = (
 				9FA7C94B25D74D7900C374FD /* APOD.swift */,
+				9FB5EC7E25D8474700829D1F /* RoverPhotos.swift */,
+				9FB5EC8225D8521000829D1F /* RoverCameras.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9FB5EC8C25D9B33300829D1F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5EC8D25D9B34100829D1F /* Home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9FB5EC8D25D9B34100829D1F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5EC8F25D9B3A900829D1F /* Presenter */,
+				9FB5EC8E25D9B39F00829D1F /* ViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9FB5EC8E25D9B39F00829D1F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5EC8825D9B25100829D1F /* HomeViewController.swift */,
+				9FB5EC8925D9B25100829D1F /* HomeViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9FB5EC8F25D9B3A900829D1F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5EC9025D9B3C300829D1F /* HomePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		9FC9666325D71F1200830EF7 = {
@@ -156,14 +203,14 @@
 			children = (
 				9FC9666F25D71F1200830EF7 /* AppDelegate.swift */,
 				9FC9667125D71F1200830EF7 /* SceneDelegate.swift */,
-				9FC9667325D71F1200830EF7 /* ViewController.swift */,
-				9FC9667525D71F1200830EF7 /* Main.storyboard */,
+				9FB5EC8C25D9B33300829D1F /* Controllers */,
 				9FA7C94A25D74BF400C374FD /* Models */,
 				9FA7C94525D73E4000C374FD /* Services */,
 				9FC9667B25D71F1300830EF7 /* Assets.xcassets */,
 				9FC9667D25D71F1300830EF7 /* LaunchScreen.storyboard */,
 				9FC9668025D71F1300830EF7 /* Info.plist */,
 				9FC9667825D71F1200830EF7 /* NASA.xcdatamodeld */,
+				9FB5EC8425D85B9C00829D1F /* ToolbarPickerView.swift */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -307,7 +354,7 @@
 			files = (
 				9FC9667F25D71F1300830EF7 /* LaunchScreen.storyboard in Resources */,
 				9FC9667C25D71F1300830EF7 /* Assets.xcassets in Resources */,
-				9FC9667725D71F1200830EF7 /* Main.storyboard in Resources */,
+				9FB5EC8B25D9B25100829D1F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,12 +483,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FC9667A25D71F1200830EF7 /* NASA.xcdatamodeld in Sources */,
-				9FC9667425D71F1200830EF7 /* ViewController.swift in Sources */,
 				9FC9667025D71F1200830EF7 /* AppDelegate.swift in Sources */,
+				9FB5EC8125D848E300829D1F /* RoverPhotosService.swift in Sources */,
 				9FA7C94C25D74D7900C374FD /* APOD.swift in Sources */,
 				9FA7C94725D73E5400C374FD /* BaseService.swift in Sources */,
 				9FC9667225D71F1200830EF7 /* SceneDelegate.swift in Sources */,
 				9FA7C94925D74BC400C374FD /* APODService.swift in Sources */,
+				9FB5EC7F25D8474700829D1F /* RoverPhotos.swift in Sources */,
+				9FB5EC9125D9B3C300829D1F /* HomePresenter.swift in Sources */,
+				9FB5EC8525D85B9C00829D1F /* ToolbarPickerView.swift in Sources */,
+				9FB5EC8325D8521000829D1F /* RoverCameras.swift in Sources */,
+				9FB5EC8A25D9B25100829D1F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,14 +529,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9FC9667525D71F1200830EF7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FC9667625D71F1200830EF7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9FC9667D25D71F1300830EF7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
