@@ -12,6 +12,7 @@
                 <outlet property="apodImageView" destination="CO6-RP-pPi" id="iOl-KQ-otg"/>
                 <outlet property="cameraTextField" destination="FUc-4G-N0o" id="9kF-PE-UDC"/>
                 <outlet property="cameraTypeTextField" destination="qIj-Ga-pqV" id="6qz-E1-6Tq"/>
+                <outlet property="tableView" destination="Qg6-Ze-l9g" id="lXu-QH-A0K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,56 +22,107 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CO6-RP-pPi">
-                    <rect key="frame" x="0.0" y="44" width="414" height="128"/>
+                    <rect key="frame" x="0.0" y="78" width="414" height="128"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="aPJ-3m-gph"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy8-hC-lD6">
-                    <rect key="frame" x="165.5" y="180" width="83" height="30"/>
-                    <state key="normal" title="Teste APOD"/>
-                    <connections>
-                        <action selector="requestAPODButtonClicked:" destination="-1" eventType="touchUpInside" id="jDx-R8-0kP"/>
-                    </connections>
-                </button>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dD5-PT-vgH">
-                    <rect key="frame" x="32" y="218" width="350" height="34"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dD5-PT-vgH">
+                    <rect key="frame" x="16" y="256" width="382" height="76"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIj-Ga-pqV">
-                            <rect key="frame" x="0.0" y="0.0" width="171" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-4G-N0o">
-                            <rect key="frame" x="179" y="0.0" width="171" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MVV-vi-hj3">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2J-Ey-PWh">
+                                    <rect key="frame" x="0.0" y="0.0" width="87" height="34"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIj-Ga-pqV">
+                                    <rect key="frame" x="95" y="0.0" width="287" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ywq-N5-OsV">
+                            <rect key="frame" x="0.0" y="42" width="382" height="34"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDo-5T-1wT">
+                                    <rect key="frame" x="0.0" y="0.0" width="51" height="34"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-4G-N0o">
+                                    <rect key="frame" x="59" y="0.0" width="323" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9u-f7-9Vt">
-                    <rect key="frame" x="140.5" y="260" width="133" height="30"/>
-                    <state key="normal" title="Teste Rover Photos"/>
+                    <rect key="frame" x="151" y="340" width="112" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="bE4-mF-lFj"/>
+                    </constraints>
+                    <state key="normal" title="Search" image="ic-search">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                    </state>
                     <connections>
                         <action selector="requestRoverPhotosButtonClicked:" destination="-1" eventType="touchUpInside" id="2OH-vM-Dtl"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronomy Picture of the Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tj-cp-NbM">
+                    <rect key="frame" x="16" y="44" width="398" height="26"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qg6-Ze-l9g">
+                    <rect key="frame" x="0.0" y="380" width="414" height="482"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="T6Y-dd-bb3"/>
+                        <outlet property="delegate" destination="-1" id="a6m-gj-h4m"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mars Rovers Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHx-J3-td9">
+                    <rect key="frame" x="16" y="214" width="398" height="26"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="wy8-hC-lD6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="05n-a1-OtF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dD5-PT-vgH" secondAttribute="trailing" constant="32" id="0Qv-4S-6cV"/>
-                <constraint firstItem="dD5-PT-vgH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="0fu-zy-F62"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dD5-PT-vgH" secondAttribute="trailing" constant="16" id="0Qv-4S-6cV"/>
+                <constraint firstItem="dD5-PT-vgH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0fu-zy-F62"/>
                 <constraint firstItem="Y9u-f7-9Vt" firstAttribute="top" secondItem="dD5-PT-vgH" secondAttribute="bottom" constant="8" id="17i-Eb-jza"/>
-                <constraint firstItem="dD5-PT-vgH" firstAttribute="top" secondItem="wy8-hC-lD6" secondAttribute="bottom" constant="8" id="5Ul-zv-x8z"/>
-                <constraint firstItem="wy8-hC-lD6" firstAttribute="top" secondItem="CO6-RP-pPi" secondAttribute="bottom" constant="8" id="7Ri-6I-PX2"/>
+                <constraint firstItem="dD5-PT-vgH" firstAttribute="top" secondItem="uHx-J3-td9" secondAttribute="bottom" constant="16" id="1GD-wE-yNz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Qg6-Ze-l9g" secondAttribute="bottom" id="3I9-fb-RUd"/>
+                <constraint firstItem="9Tj-cp-NbM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="D9P-xj-x5h"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qg6-Ze-l9g" secondAttribute="trailing" id="E4K-Om-kvS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uHx-J3-td9" secondAttribute="trailing" id="JwT-ew-rYy"/>
+                <constraint firstItem="Qg6-Ze-l9g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RS6-5N-DnO"/>
                 <constraint firstItem="Y9u-f7-9Vt" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Zq3-1n-cVo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Tj-cp-NbM" secondAttribute="trailing" id="cAo-sG-xzT"/>
+                <constraint firstItem="Qg6-Ze-l9g" firstAttribute="top" secondItem="Y9u-f7-9Vt" secondAttribute="bottom" constant="8" id="exe-Bm-dtb"/>
+                <constraint firstItem="uHx-J3-td9" firstAttribute="top" secondItem="CO6-RP-pPi" secondAttribute="bottom" constant="8" id="gKo-8e-0ke"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CO6-RP-pPi" secondAttribute="trailing" id="hb0-Hl-tmi"/>
-                <constraint firstItem="CO6-RP-pPi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lGl-Ym-Wqf"/>
+                <constraint firstItem="uHx-J3-td9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="hdo-0l-TOf"/>
+                <constraint firstItem="9Tj-cp-NbM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="k52-yF-JEr"/>
                 <constraint firstItem="CO6-RP-pPi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="q1b-Mw-9nx"/>
+                <constraint firstItem="CO6-RP-pPi" firstAttribute="top" secondItem="9Tj-cp-NbM" secondAttribute="bottom" constant="8" id="w1S-Ec-O5K"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="126"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic-search" width="64" height="64"/>
+    </resources>
 </document>

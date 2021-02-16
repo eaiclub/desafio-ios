@@ -16,6 +16,7 @@ class HomePresenter: NSObject {
     private(set) var apod: APOD?
     private(set) var roverPhotos: [RoverPhoto] = []
     private var page = 1
+    var hasMorePhotos: Bool = false
     
     func getPictureOfTheDay(success: SuccessHandler, failure: FailureHandler) {
         APODService().getPictureOfTheDay(success: { result in
@@ -38,6 +39,13 @@ class HomePresenter: NSObject {
                 return
             }
             self.roverPhotos += roverPhotos.photos
+            if roverPhotos.photos.count == 0 || roverPhotos.photos.count < 25 {
+                self.hasMorePhotos = false
+                self.page = 1
+            } else {
+                self.hasMorePhotos = true
+                self.page += 1
+            }
             success?(nil)
         }) { (error) in
             failure?(error)

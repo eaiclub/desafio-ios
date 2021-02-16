@@ -20,12 +20,22 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var cameraTypeTextField: UITextField!
     @IBOutlet private weak var cameraTextField: UITextField!
     @IBOutlet private weak var apodImageView: UIImageView!
+    @IBOutlet private weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupTableView()
         self.configureCameraTypePicker()
         self.configureCameraPicker()
+        self.getPictureOfTheDay()
+        self.getRoversPhotos()
+    }
+    
+    private func setupTableView() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.register(class: RoverPhotoTableViewCell.self)
     }
     
     private func configureCameraTypePicker() {
@@ -49,38 +59,45 @@ class HomeViewController: UIViewController {
         self.cameraPicker.selectRow(0, inComponent: 0, animated: true)
         self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.presenter.selectedCameraType)[0].abbreviation.rawValue
     }
-
-    @IBAction func requestAPODButtonClicked(_ sender: Any) {
-        self.presenter.getPictureOfTheDay(success: { _ in
-            guard let apod = self.presenter.apod, let _url = URL(string: apod.hdUrl) else { return }
-            
-            let processor = DownsamplingImageProcessor(size: self.apodImageView.bounds.size)
-                        |> RoundCornerImageProcessor(cornerRadius: 20)
-            self.apodImageView.kf.indicatorType = .activity
-            self.apodImageView.kf.setImage(
-                with: _url,
-                placeholder: UIImage(named: "placeholderImage"),
-                options: [
-                    .processor(processor),
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(1)),
-                    .cacheOriginalImage
-                ])
-            
-        }) { (error) in
-            
-        }
+    
+    private func getPictureOfTheDay() {
+        self.apodImageView.kf.indicatorType = .activity
+                self.presenter.getPictureOfTheDay(success: { _ in
+                    guard let apod = self.presenter.apod, let _url = URL(string: apod.hdUrl) else { return }
+                    
+                    let processor = DownsamplingImageProcessor(size: self.apodImageView.bounds.size)
+                                |> RoundCornerImageProcessor(cornerRadius: 20)
+                    self.apodImageView.kf.setImage(
+                        with: _url,
+        //                placeholder: UIImage(named: "placeholderImage"),
+                        options: [
+                            .processor(processor),
+        //                    .scaleFactor(UIScreen.main.scale),
+                            .transition(.fade(1)),
+                            .cacheOriginalImage
+                        ])
+                    
+                }) { (error) in
+                    
+                }
     }
     
+    private func getRoversPhotos() {
+        self.presenter.getRoversPhotos(type: self.selectedCameraType, camera: self.selectedCamera, success: { _ in
+            if self.presenter.roverPhotos.count == 0 {
+                self.tableView.setEmptyMessage("There is no Mars Photos with the current filters. Try another combination :P")
+            } else {
+                self.tableView.restore()
+                self.tableView.reloadData()
+            }
+        }) { (error) in
+            self.tableView.setEmptyMessage("An error occurred. Try again later :(")
+        }
+    }
     
     @IBAction func requestRoverPhotosButtonClicked(_ sender: Any) {
-        self.presenter.getRoversPhotos(type: self.selectedCameraType, camera: self.selectedCamera, success: { _ in
-            
-        }) { (error) in
-            
-        }
+        self.getRoversPhotos()
     }
-    
 }
 
 extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -136,5 +153,20 @@ extension HomeViewController: ToolbarPickerViewDelegate {
             self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation.rawValue
         }
         self.view.endEditing(true)
+    }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.presenter.roverPhotos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(cell: RoverPhotoTableViewCell.self, indexPath: indexPath)
+        if indexPath.row == self.presenter.roverPhotos.count - 1 && self.presenter.hasMorePhotos {
+            self.getRoversPhotos()
+        }
+        cell.setRoverPhoto(self.presenter.roverPhotos[indexPath.row])
+        return cell
     }
 }
