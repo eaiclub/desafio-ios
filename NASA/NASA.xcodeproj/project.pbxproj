@@ -1,0 +1,844 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C13E88B25D6011B0053AD22 /* NSStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C13E88A25D6011B0053AD22 /* NSStringExtension.swift */; };
+		9C13E88D25D601770053AD22 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C13E88C25D601770053AD22 /* DateExtension.swift */; };
+		9C13E89025D609160053AD22 /* HomeWorkerRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C13E88F25D609160053AD22 /* HomeWorkerRequestable.swift */; };
+		9C13E89325D60B7D0053AD22 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C13E89225D60B7D0053AD22 /* AppStyle.swift */; };
+		9C13E89B25D6E3E60053AD22 /* PlanetariumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C13E89925D6E3E60053AD22 /* PlanetariumDetailsViewController.swift */; };
+		9C13E8A025D6E6820053AD22 /* PlanetariumDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C13E89E25D6E6820053AD22 /* PlanetariumDetailsView.swift */; };
+		9C13E8A125D6E6820053AD22 /* PlanetariumDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C13E89F25D6E6820053AD22 /* PlanetariumDetailsView.xib */; };
+		9C27DB3B25D473C300DE2420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB3A25D473C300DE2420 /* AppDelegate.swift */; };
+		9C27DB4425D473C400DE2420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB4325D473C400DE2420 /* Assets.xcassets */; };
+		9C27DB4725D473C400DE2420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB4525D473C400DE2420 /* LaunchScreen.storyboard */; };
+		9C27DB5025D4783700DE2420 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB4F25D4783700DE2420 /* AppNavigationController.swift */; };
+		9C27DB5A25D4B16100DE2420 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB5825D4B16100DE2420 /* HomeViewController.swift */; };
+		9C27DB5D25D4B18700DE2420 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB5C25D4B18700DE2420 /* HomeInteractor.swift */; };
+		9C27DB5F25D4B19F00DE2420 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB5E25D4B19F00DE2420 /* HomeWorker.swift */; };
+		9C27DB6125D4B1B500DE2420 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6025D4B1B500DE2420 /* HomePresenter.swift */; };
+		9C27DB6325D4B1C700DE2420 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6225D4B1C700DE2420 /* HomeRouter.swift */; };
+		9C27DB6525D4B1E000DE2420 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6425D4B1E000DE2420 /* HomeModels.swift */; };
+		9C27DB6A25D4B4BE00DE2420 /* PlanetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6825D4B4BE00DE2420 /* PlanetsListView.swift */; };
+		9C27DB6B25D4B4BE00DE2420 /* PlanetsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */; };
+		9C27DB6D25D4B60F00DE2420 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */; };
+		9C27DB7125D4B78200DE2420 /* LayoutVerticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */; };
+		9C27DB7525D4C0D900DE2420 /* PlanetsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB7325D4C0D900DE2420 /* PlanetsListTableViewCell.swift */; };
+		9C27DB7625D4C0D900DE2420 /* PlanetsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7425D4C0D900DE2420 /* PlanetsListTableViewCell.xib */; };
+		9C27DB7825D4C27C00DE2420 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB7725D4C27C00DE2420 /* UITableViewExtension.swift */; };
+		9C27DB8425D4C5FF00DE2420 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7B25D4C5FF00DE2420 /* Ubuntu-Medium.ttf */; };
+		9C27DB8525D4C5FF00DE2420 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7C25D4C5FF00DE2420 /* Ubuntu-Regular.ttf */; };
+		9C27DB8625D4C5FF00DE2420 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7D25D4C5FF00DE2420 /* Ubuntu-Bold.ttf */; };
+		9C27DB8725D4C5FF00DE2420 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB7E25D4C5FF00DE2420 /* Ubuntu-Light.ttf */; };
+		9C27DB8825D4C5FF00DE2420 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB8025D4C5FF00DE2420 /* Montserrat-Medium.ttf */; };
+		9C27DB8925D4C5FF00DE2420 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB8125D4C5FF00DE2420 /* Montserrat-Light.ttf */; };
+		9C27DB8A25D4C5FF00DE2420 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB8225D4C5FF00DE2420 /* Montserrat-Bold.ttf */; };
+		9C27DB8B25D4C5FF00DE2420 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27DB8325D4C5FF00DE2420 /* Montserrat-Regular.ttf */; };
+		9C27DB8D25D58B2B00DE2420 /* HTTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB8C25D58B2A00DE2420 /* HTTRequest.swift */; };
+		9C27DB8F25D58B5F00DE2420 /* HTTPRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB8E25D58B5F00DE2420 /* HTTPRequestable.swift */; };
+		9C27DB9125D58B7900DE2420 /* HTTPDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB9025D58B7900DE2420 /* HTTPDomain.swift */; };
+		9C27DB9325D58B9400DE2420 /* HTTPEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB9225D58B9400DE2420 /* HTTPEnvironment.swift */; };
+		9C27DB9625D5BC6700DE2420 /* PlanetariumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB9525D5BC6700DE2420 /* PlanetariumModel.swift */; };
+		9C27DB9825D5BF0100DE2420 /* NSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB9725D5BF0100DE2420 /* NSErrorExtension.swift */; };
+		9C27DB9A25D5F1AA00DE2420 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27DB9925D5F1AA00DE2420 /* UIImageViewExtension.swift */; };
+		9C992A5C25D772B600A5DC37 /* HomeWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C992A5B25D772B600A5DC37 /* HomeWorkerTests.swift */; };
+		E7C43F5C8E25860DF4BA3A20 /* Pods_NASA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 088C0F8FEFFCF40C7C38CB1D /* Pods_NASA.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C13E8AF25D75E310053AD22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C27DB2F25D473C300DE2420 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C27DB3625D473C300DE2420;
+			remoteInfo = NASA;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		088C0F8FEFFCF40C7C38CB1D /* Pods_NASA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A8657B4CBE2E547BB54913 /* Pods-NASA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASA.debug.xcconfig"; path = "Target Support Files/Pods-NASA/Pods-NASA.debug.xcconfig"; sourceTree = "<group>"; };
+		703BED736F0A8E86207C8FD1 /* Pods-NASA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASA.release.xcconfig"; path = "Target Support Files/Pods-NASA/Pods-NASA.release.xcconfig"; sourceTree = "<group>"; };
+		9C13E88A25D6011B0053AD22 /* NSStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStringExtension.swift; sourceTree = "<group>"; };
+		9C13E88C25D601770053AD22 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		9C13E88F25D609160053AD22 /* HomeWorkerRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerRequestable.swift; sourceTree = "<group>"; };
+		9C13E89225D60B7D0053AD22 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		9C13E89925D6E3E60053AD22 /* PlanetariumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetariumDetailsViewController.swift; sourceTree = "<group>"; };
+		9C13E89E25D6E6820053AD22 /* PlanetariumDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetariumDetailsView.swift; sourceTree = "<group>"; };
+		9C13E89F25D6E6820053AD22 /* PlanetariumDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetariumDetailsView.xib; sourceTree = "<group>"; };
+		9C13E8AA25D75E310053AD22 /* NASATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C13E8AE25D75E310053AD22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C27DB3725D473C300DE2420 /* NASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C27DB3A25D473C300DE2420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C27DB4325D473C400DE2420 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C27DB4625D473C400DE2420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C27DB4825D473C400DE2420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C27DB4F25D4783700DE2420 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		9C27DB5825D4B16100DE2420 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9C27DB5C25D4B18700DE2420 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		9C27DB5E25D4B19F00DE2420 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		9C27DB6025D4B1B500DE2420 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		9C27DB6225D4B1C700DE2420 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		9C27DB6425D4B1E000DE2420 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		9C27DB6825D4B4BE00DE2420 /* PlanetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsListView.swift; sourceTree = "<group>"; };
+		9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsListView.xib; sourceTree = "<group>"; };
+		9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutVerticalViewController.swift; sourceTree = "<group>"; };
+		9C27DB7325D4C0D900DE2420 /* PlanetsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsListTableViewCell.swift; sourceTree = "<group>"; };
+		9C27DB7425D4C0D900DE2420 /* PlanetsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsListTableViewCell.xib; sourceTree = "<group>"; };
+		9C27DB7725D4C27C00DE2420 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		9C27DB7B25D4C5FF00DE2420 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		9C27DB7C25D4C5FF00DE2420 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		9C27DB7D25D4C5FF00DE2420 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		9C27DB7E25D4C5FF00DE2420 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
+		9C27DB8025D4C5FF00DE2420 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		9C27DB8125D4C5FF00DE2420 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		9C27DB8225D4C5FF00DE2420 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		9C27DB8325D4C5FF00DE2420 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		9C27DB8C25D58B2A00DE2420 /* HTTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTRequest.swift; sourceTree = "<group>"; };
+		9C27DB8E25D58B5F00DE2420 /* HTTPRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestable.swift; sourceTree = "<group>"; };
+		9C27DB9025D58B7900DE2420 /* HTTPDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDomain.swift; sourceTree = "<group>"; };
+		9C27DB9225D58B9400DE2420 /* HTTPEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEnvironment.swift; sourceTree = "<group>"; };
+		9C27DB9525D5BC6700DE2420 /* PlanetariumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetariumModel.swift; sourceTree = "<group>"; };
+		9C27DB9725D5BF0100DE2420 /* NSErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSErrorExtension.swift; sourceTree = "<group>"; };
+		9C27DB9925D5F1AA00DE2420 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		9C992A5A25D772B500A5DC37 /* NASATests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NASATests-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C992A5B25D772B600A5DC37 /* HomeWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C13E8A725D75E310053AD22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C27DB3425D473C300DE2420 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C43F5C8E25860DF4BA3A20 /* Pods_NASA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78F7B2589B992F5639C8FBED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44A8657B4CBE2E547BB54913 /* Pods-NASA.debug.xcconfig */,
+				703BED736F0A8E86207C8FD1 /* Pods-NASA.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9C13E88E25D608FE0053AD22 /* Requestables */ = {
+			isa = PBXGroup;
+			children = (
+				9C13E88F25D609160053AD22 /* HomeWorkerRequestable.swift */,
+			);
+			path = Requestables;
+			sourceTree = "<group>";
+		};
+		9C13E89125D60B420053AD22 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9C13E89225D60B7D0053AD22 /* AppStyle.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9C13E89425D6B9B10053AD22 /* PlanetariumDetails */ = {
+			isa = PBXGroup;
+			children = (
+				9C13E89925D6E3E60053AD22 /* PlanetariumDetailsViewController.swift */,
+				9C13E89D25D6E5C10053AD22 /* Views */,
+			);
+			path = PlanetariumDetails;
+			sourceTree = "<group>";
+		};
+		9C13E89D25D6E5C10053AD22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C13E89E25D6E6820053AD22 /* PlanetariumDetailsView.swift */,
+				9C13E89F25D6E6820053AD22 /* PlanetariumDetailsView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C13E8AB25D75E310053AD22 /* NASATests */ = {
+			isa = PBXGroup;
+			children = (
+				9C13E8AE25D75E310053AD22 /* Info.plist */,
+				9C992A5B25D772B600A5DC37 /* HomeWorkerTests.swift */,
+				9C992A5A25D772B500A5DC37 /* NASATests-Bridging-Header.h */,
+			);
+			path = NASATests;
+			sourceTree = "<group>";
+		};
+		9C27DB2E25D473C300DE2420 = {
+			isa = PBXGroup;
+			children = (
+				9C27DB3925D473C300DE2420 /* NASA */,
+				9C13E8AB25D75E310053AD22 /* NASATests */,
+				9C27DB3825D473C300DE2420 /* Products */,
+				78F7B2589B992F5639C8FBED /* Pods */,
+				F443FF0BCAA2358135120A62 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9C27DB3825D473C300DE2420 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB3725D473C300DE2420 /* NASA.app */,
+				9C13E8AA25D75E310053AD22 /* NASATests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C27DB3925D473C300DE2420 /* NASA */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB5325D47EE600DE2420 /* Commons */,
+				9C13E88E25D608FE0053AD22 /* Requestables */,
+				9C27DB9425D597A300DE2420 /* Models */,
+				9C27DB5125D47E6400DE2420 /* Scenes */,
+				9C27DB4E25D4781200DE2420 /* App */,
+				9C27DB5225D47EA100DE2420 /* SupportingFiles */,
+				9C27DB4825D473C400DE2420 /* Info.plist */,
+			);
+			path = NASA;
+			sourceTree = "<group>";
+		};
+		9C27DB4E25D4781200DE2420 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB3A25D473C300DE2420 /* AppDelegate.swift */,
+				9C27DB4F25D4783700DE2420 /* AppNavigationController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9C27DB5125D47E6400DE2420 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB5725D47FB600DE2420 /* Home */,
+				9C13E89425D6B9B10053AD22 /* PlanetariumDetails */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9C27DB5225D47EA100DE2420 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7925D4C5DC00DE2420 /* Fonts */,
+				9C27DB4325D473C400DE2420 /* Assets.xcassets */,
+				9C27DB4525D473C400DE2420 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9C27DB5325D47EE600DE2420 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB6E25D4B73800DE2420 /* Views */,
+				9C27DB5425D47F1100DE2420 /* Networking */,
+				9C27DB5625D47F3300DE2420 /* Extensions */,
+				9C13E89125D60B420053AD22 /* Helpers */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		9C27DB5425D47F1100DE2420 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB5525D47F1D00DE2420 /* HTTPServices */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9C27DB5525D47F1D00DE2420 /* HTTPServices */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB8C25D58B2A00DE2420 /* HTTRequest.swift */,
+				9C27DB8E25D58B5F00DE2420 /* HTTPRequestable.swift */,
+				9C27DB9025D58B7900DE2420 /* HTTPDomain.swift */,
+				9C27DB9225D58B9400DE2420 /* HTTPEnvironment.swift */,
+			);
+			path = HTTPServices;
+			sourceTree = "<group>";
+		};
+		9C27DB5625D47F3300DE2420 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB6C25D4B60F00DE2420 /* UIViewExtension.swift */,
+				9C27DB7725D4C27C00DE2420 /* UITableViewExtension.swift */,
+				9C27DB9725D5BF0100DE2420 /* NSErrorExtension.swift */,
+				9C27DB9925D5F1AA00DE2420 /* UIImageViewExtension.swift */,
+				9C13E88A25D6011B0053AD22 /* NSStringExtension.swift */,
+				9C13E88C25D601770053AD22 /* DateExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9C27DB5725D47FB600DE2420 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB5825D4B16100DE2420 /* HomeViewController.swift */,
+				9C27DB5C25D4B18700DE2420 /* HomeInteractor.swift */,
+				9C27DB5E25D4B19F00DE2420 /* HomeWorker.swift */,
+				9C27DB6025D4B1B500DE2420 /* HomePresenter.swift */,
+				9C27DB6225D4B1C700DE2420 /* HomeRouter.swift */,
+				9C27DB6425D4B1E000DE2420 /* HomeModels.swift */,
+				9C27DB6625D4B3F400DE2420 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9C27DB6625D4B3F400DE2420 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB6725D4B44100DE2420 /* PlanetsListView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C27DB6725D4B44100DE2420 /* PlanetsListView */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB6825D4B4BE00DE2420 /* PlanetsListView.swift */,
+				9C27DB6925D4B4BE00DE2420 /* PlanetsListView.xib */,
+				9C27DB7225D4C0AF00DE2420 /* Cell */,
+			);
+			path = PlanetsListView;
+			sourceTree = "<group>";
+		};
+		9C27DB6E25D4B73800DE2420 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB6F25D4B77300DE2420 /* LayoutVerticalViewController */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C27DB6F25D4B77300DE2420 /* LayoutVerticalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7025D4B78200DE2420 /* LayoutVerticalViewController.swift */,
+			);
+			path = LayoutVerticalViewController;
+			sourceTree = "<group>";
+		};
+		9C27DB7225D4C0AF00DE2420 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7325D4C0D900DE2420 /* PlanetsListTableViewCell.swift */,
+				9C27DB7425D4C0D900DE2420 /* PlanetsListTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9C27DB7925D4C5DC00DE2420 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7F25D4C5FF00DE2420 /* Montserrat */,
+				9C27DB7A25D4C5FF00DE2420 /* Ubuntu */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9C27DB7A25D4C5FF00DE2420 /* Ubuntu */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB7B25D4C5FF00DE2420 /* Ubuntu-Medium.ttf */,
+				9C27DB7C25D4C5FF00DE2420 /* Ubuntu-Regular.ttf */,
+				9C27DB7D25D4C5FF00DE2420 /* Ubuntu-Bold.ttf */,
+				9C27DB7E25D4C5FF00DE2420 /* Ubuntu-Light.ttf */,
+			);
+			path = Ubuntu;
+			sourceTree = "<group>";
+		};
+		9C27DB7F25D4C5FF00DE2420 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB8025D4C5FF00DE2420 /* Montserrat-Medium.ttf */,
+				9C27DB8125D4C5FF00DE2420 /* Montserrat-Light.ttf */,
+				9C27DB8225D4C5FF00DE2420 /* Montserrat-Bold.ttf */,
+				9C27DB8325D4C5FF00DE2420 /* Montserrat-Regular.ttf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		9C27DB9425D597A300DE2420 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C27DB9525D5BC6700DE2420 /* PlanetariumModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F443FF0BCAA2358135120A62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				088C0F8FEFFCF40C7C38CB1D /* Pods_NASA.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C13E8A925D75E310053AD22 /* NASATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C13E8B125D75E310053AD22 /* Build configuration list for PBXNativeTarget "NASATests" */;
+			buildPhases = (
+				9C13E8A625D75E310053AD22 /* Sources */,
+				9C13E8A725D75E310053AD22 /* Frameworks */,
+				9C13E8A825D75E310053AD22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C13E8B025D75E310053AD22 /* PBXTargetDependency */,
+			);
+			name = NASATests;
+			productName = NASATests;
+			productReference = 9C13E8AA25D75E310053AD22 /* NASATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C27DB3625D473C300DE2420 /* NASA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C27DB4B25D473C400DE2420 /* Build configuration list for PBXNativeTarget "NASA" */;
+			buildPhases = (
+				E3DBEE51D70AD2947191C861 /* [CP] Check Pods Manifest.lock */,
+				9C27DB3325D473C300DE2420 /* Sources */,
+				9C27DB3425D473C300DE2420 /* Frameworks */,
+				9C27DB3525D473C300DE2420 /* Resources */,
+				C85339B33D69C2DA4EA696F9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NASA;
+			productName = NASA;
+			productReference = 9C27DB3725D473C300DE2420 /* NASA.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C27DB2F25D473C300DE2420 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = grleitao;
+				TargetAttributes = {
+					9C13E8A925D75E310053AD22 = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+						TestTargetID = 9C27DB3625D473C300DE2420;
+					};
+					9C27DB3625D473C300DE2420 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 9C27DB3225D473C300DE2420 /* Build configuration list for PBXProject "NASA" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C27DB2E25D473C300DE2420;
+			productRefGroup = 9C27DB3825D473C300DE2420 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C27DB3625D473C300DE2420 /* NASA */,
+				9C13E8A925D75E310053AD22 /* NASATests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C13E8A825D75E310053AD22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C27DB3525D473C300DE2420 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C27DB8925D4C5FF00DE2420 /* Montserrat-Light.ttf in Resources */,
+				9C27DB8525D4C5FF00DE2420 /* Ubuntu-Regular.ttf in Resources */,
+				9C27DB8B25D4C5FF00DE2420 /* Montserrat-Regular.ttf in Resources */,
+				9C27DB4725D473C400DE2420 /* LaunchScreen.storyboard in Resources */,
+				9C27DB8725D4C5FF00DE2420 /* Ubuntu-Light.ttf in Resources */,
+				9C27DB8A25D4C5FF00DE2420 /* Montserrat-Bold.ttf in Resources */,
+				9C27DB4425D473C400DE2420 /* Assets.xcassets in Resources */,
+				9C27DB8425D4C5FF00DE2420 /* Ubuntu-Medium.ttf in Resources */,
+				9C13E8A125D6E6820053AD22 /* PlanetariumDetailsView.xib in Resources */,
+				9C27DB7625D4C0D900DE2420 /* PlanetsListTableViewCell.xib in Resources */,
+				9C27DB6B25D4B4BE00DE2420 /* PlanetsListView.xib in Resources */,
+				9C27DB8825D4C5FF00DE2420 /* Montserrat-Medium.ttf in Resources */,
+				9C27DB8625D4C5FF00DE2420 /* Ubuntu-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C85339B33D69C2DA4EA696F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NASA/Pods-NASA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NASA/Pods-NASA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NASA/Pods-NASA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3DBEE51D70AD2947191C861 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NASA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C13E8A625D75E310053AD22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C992A5C25D772B600A5DC37 /* HomeWorkerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C27DB3325D473C300DE2420 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C27DB6A25D4B4BE00DE2420 /* PlanetsListView.swift in Sources */,
+				9C27DB8D25D58B2B00DE2420 /* HTTRequest.swift in Sources */,
+				9C13E89B25D6E3E60053AD22 /* PlanetariumDetailsViewController.swift in Sources */,
+				9C27DB6125D4B1B500DE2420 /* HomePresenter.swift in Sources */,
+				9C27DB7525D4C0D900DE2420 /* PlanetsListTableViewCell.swift in Sources */,
+				9C27DB6D25D4B60F00DE2420 /* UIViewExtension.swift in Sources */,
+				9C27DB6525D4B1E000DE2420 /* HomeModels.swift in Sources */,
+				9C13E89025D609160053AD22 /* HomeWorkerRequestable.swift in Sources */,
+				9C27DB5025D4783700DE2420 /* AppNavigationController.swift in Sources */,
+				9C27DB9325D58B9400DE2420 /* HTTPEnvironment.swift in Sources */,
+				9C27DB9A25D5F1AA00DE2420 /* UIImageViewExtension.swift in Sources */,
+				9C27DB9125D58B7900DE2420 /* HTTPDomain.swift in Sources */,
+				9C13E8A025D6E6820053AD22 /* PlanetariumDetailsView.swift in Sources */,
+				9C27DB3B25D473C300DE2420 /* AppDelegate.swift in Sources */,
+				9C27DB5D25D4B18700DE2420 /* HomeInteractor.swift in Sources */,
+				9C27DB7125D4B78200DE2420 /* LayoutVerticalViewController.swift in Sources */,
+				9C13E88D25D601770053AD22 /* DateExtension.swift in Sources */,
+				9C27DB6325D4B1C700DE2420 /* HomeRouter.swift in Sources */,
+				9C27DB5F25D4B19F00DE2420 /* HomeWorker.swift in Sources */,
+				9C27DB9625D5BC6700DE2420 /* PlanetariumModel.swift in Sources */,
+				9C27DB8F25D58B5F00DE2420 /* HTTPRequestable.swift in Sources */,
+				9C27DB9825D5BF0100DE2420 /* NSErrorExtension.swift in Sources */,
+				9C13E89325D60B7D0053AD22 /* AppStyle.swift in Sources */,
+				9C27DB5A25D4B16100DE2420 /* HomeViewController.swift in Sources */,
+				9C27DB7825D4C27C00DE2420 /* UITableViewExtension.swift in Sources */,
+				9C13E88B25D6011B0053AD22 /* NSStringExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C13E8B025D75E310053AD22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C27DB3625D473C300DE2420 /* NASA */;
+			targetProxy = 9C13E8AF25D75E310053AD22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C27DB4525D473C400DE2420 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C27DB4625D473C400DE2420 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C13E8B225D75E310053AD22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NHV522S4W;
+				INFOPLIST_FILE = NASATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grleitao.NASATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NASATests/NASATests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NASA.app/NASA";
+			};
+			name = Debug;
+		};
+		9C13E8B325D75E310053AD22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NHV522S4W;
+				INFOPLIST_FILE = NASATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grleitao.NASATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NASATests/NASATests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NASA.app/NASA";
+			};
+			name = Release;
+		};
+		9C27DB4925D473C400DE2420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C27DB4A25D473C400DE2420 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C27DB4C25D473C400DE2420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44A8657B4CBE2E547BB54913 /* Pods-NASA.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NHV522S4W;
+				INFOPLIST_FILE = NASA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grleitao.NASA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C27DB4D25D473C400DE2420 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 703BED736F0A8E86207C8FD1 /* Pods-NASA.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NHV522S4W;
+				INFOPLIST_FILE = NASA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grleitao.NASA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C13E8B125D75E310053AD22 /* Build configuration list for PBXNativeTarget "NASATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C13E8B225D75E310053AD22 /* Debug */,
+				9C13E8B325D75E310053AD22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C27DB3225D473C300DE2420 /* Build configuration list for PBXProject "NASA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C27DB4925D473C400DE2420 /* Debug */,
+				9C27DB4A25D473C400DE2420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C27DB4B25D473C400DE2420 /* Build configuration list for PBXNativeTarget "NASA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C27DB4C25D473C400DE2420 /* Debug */,
+				9C27DB4D25D473C400DE2420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C27DB2F25D473C300DE2420 /* Project object */;
+}
