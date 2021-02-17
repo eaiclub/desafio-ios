@@ -8,6 +8,16 @@
 
 import UIKit
 
-class HomeRouter: NSObject {
+protocol HomerRouterLogic {
+    func routerPlanetariumDetails(planetarium: PlanetariumModel)
+}
 
+class HomeRouter: HomerRouterLogic {
+    
+    weak var viewController : HomeViewController?
+    
+    func routerPlanetariumDetails(planetarium: PlanetariumModel) {
+        let planetariumDetailsViewController = PlanetariumDetailsViewController(planetarium: planetarium)
+        self.viewController?.navigationController?.pushViewController(planetariumDetailsViewController, animated: true)
+    }
 }

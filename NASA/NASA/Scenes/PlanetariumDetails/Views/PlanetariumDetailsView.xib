@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Bold.ttf">
+            <string>Ubuntu-Bold</string>
+        </array>
+        <array key="Ubuntu-Medium.ttf">
+            <string>Ubuntu-Medium</string>
+        </array>
+        <array key="Ubuntu-Regular.ttf">
+            <string>Ubuntu-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanetariumDetailsView" customModule="NASA" customModuleProvider="target">
+            <connections>
+                <outlet property="dateLabel" destination="8It-nk-hhU" id="KXm-W6-3Ir"/>
+                <outlet property="descriptionLabel" destination="wkU-Za-JwX" id="SXJ-DN-ApR"/>
+                <outlet property="planetariumImageView" destination="0w3-bP-ohh" id="Oo5-FK-sng"/>
+                <outlet property="planetariumLabel" destination="DTo-zr-uEA" id="itc-sb-Vdf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZnS-RT-TeJ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0w3-bP-ohh">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="211" id="yl3-h4-Ao4"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.35294117650000001" green="0.3921568627" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="0w3-bP-ohh" firstAttribute="leading" secondItem="ZnS-RT-TeJ" secondAttribute="leading" id="3LL-gX-1ME"/>
+                        <constraint firstAttribute="bottom" secondItem="0w3-bP-ohh" secondAttribute="bottom" id="GWN-9s-cwX"/>
+                        <constraint firstAttribute="trailing" secondItem="0w3-bP-ohh" secondAttribute="trailing" id="hUA-rI-O9f"/>
+                        <constraint firstItem="0w3-bP-ohh" firstAttribute="top" secondItem="ZnS-RT-TeJ" secondAttribute="top" id="kKy-aL-YkC"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4a-5n-ujW">
+                    <rect key="frame" x="0.0" y="211" width="414" height="507"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HNp-uJ-QiO">
+                            <rect key="frame" x="16" y="16" width="382" height="471"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ds7-ci-RFx">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="13.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTo-zr-uEA">
+                                            <rect key="frame" x="0.0" y="0.0" width="189" height="13.5"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="12"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8It-nk-hhU">
+                                            <rect key="frame" x="193" y="0.0" width="189" height="13.5"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="10"/>
+                                            <color key="textColor" red="0.14901960780000001" green="0.1960784314" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkU-Za-JwX">
+                                    <rect key="frame" x="0.0" y="21.5" width="382" height="449.5"/>
+                                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="12"/>
+                                    <color key="textColor" red="0.20784313730000001" green="0.2274509804" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="HNp-uJ-QiO" firstAttribute="leading" secondItem="c4a-5n-ujW" secondAttribute="leading" constant="16" id="L2i-4y-iD1"/>
+                        <constraint firstItem="HNp-uJ-QiO" firstAttribute="top" secondItem="c4a-5n-ujW" secondAttribute="top" constant="16" id="Mad-JZ-f5K"/>
+                        <constraint firstAttribute="trailing" secondItem="HNp-uJ-QiO" secondAttribute="trailing" constant="16" id="eQX-RQ-1SY"/>
+                        <constraint firstAttribute="bottom" secondItem="HNp-uJ-QiO" secondAttribute="bottom" constant="20" id="k2f-sH-P69"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZnS-RT-TeJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0eT-oy-aUq"/>
+                <constraint firstAttribute="trailing" secondItem="c4a-5n-ujW" secondAttribute="trailing" id="6Se-zO-e2R"/>
+                <constraint firstItem="ZnS-RT-TeJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Loc-si-D3E"/>
+                <constraint firstItem="c4a-5n-ujW" firstAttribute="top" secondItem="ZnS-RT-TeJ" secondAttribute="bottom" id="fB1-uD-iel"/>
+                <constraint firstItem="c4a-5n-ujW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nHh-C8-ohf"/>
+                <constraint firstAttribute="trailing" secondItem="ZnS-RT-TeJ" secondAttribute="trailing" id="odM-vQ-n42"/>
+                <constraint firstAttribute="bottom" secondItem="c4a-5n-ujW" secondAttribute="bottom" id="vq8-Cd-KEc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="93.75"/>
+        </view>
+    </objects>
+</document>
