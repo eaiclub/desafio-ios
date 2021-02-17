@@ -41,7 +41,7 @@ enum RoverPhotoCamera: String {
     case navcam = "NAVCAM"
     case pancam = "PANCAM"
     case minites = "MINITES"
-    case all = "Todas"
+    case all = "All Cameras"
     
     var descr: String {
         switch self {

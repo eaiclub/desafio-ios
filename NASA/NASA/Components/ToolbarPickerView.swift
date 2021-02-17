@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol ToolbarPickerViewDelegate: class {
+    func cancelButtonClicked(pickerView: ToolbarPickerView)
     func doneButtonClicked(pickerView: ToolbarPickerView)
 }
 
@@ -35,9 +36,10 @@ class ToolbarPickerView: UIPickerView {
         toolBar.tintColor = .black
         toolBar.sizeToFit()
 
-        let doneButton = UIBarButtonItem(title: "Pronto!", style: .plain, target: self, action: #selector(self.doneButtonClicked))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelButtonClicked))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneButtonClicked))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
 
         self.toolbar = toolBar
@@ -45,5 +47,9 @@ class ToolbarPickerView: UIPickerView {
 
     @objc func doneButtonClicked() {
         self.toolbarDelegate?.doneButtonClicked(pickerView: self)
+    }
+    
+    @objc func cancelButtonClicked() {
+        self.toolbarDelegate?.cancelButtonClicked(pickerView: self)
     }
 }

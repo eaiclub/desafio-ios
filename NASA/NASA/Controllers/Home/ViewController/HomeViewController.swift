@@ -162,30 +162,22 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             return ""
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch pickerView.tag {
-        case 1:
-            self.cameraTypeTextField.text = self.presenter.roverCameras.types[row].rawValue
-            self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[0].abbreviation.rawValue
-            self.selectedCameraType = self.presenter.roverCameras.types[row]
-        case 2:
-            self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation.rawValue
-            self.selectedCamera = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation
-        default:
-            break
-        }
-    }
 }
 
 extension HomeViewController: ToolbarPickerViewDelegate {
+    func cancelButtonClicked(pickerView: ToolbarPickerView) {
+        self.view.endEditing(true)
+    }
+    
     func doneButtonClicked(pickerView: ToolbarPickerView) {
         let row = pickerView.selectedRow(inComponent: 0)
         pickerView.selectRow(row, inComponent: 0, animated: false)
         
         if pickerView == self.cameraTypePicker {
             self.cameraTypeTextField.text = self.presenter.roverCameras.types[row].rawValue
+            self.selectedCameraType = self.presenter.roverCameras.types[row]
         } else if pickerView == self.cameraPicker {
+            self.selectedCamera = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation
             self.cameraTextField.text = self.presenter.roverCameras.camerasForType(self.selectedCameraType)[row].abbreviation.rawValue
         }
         self.view.endEditing(true)

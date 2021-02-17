@@ -41,12 +41,12 @@ class ApodDetailViewController: UIViewController {
         if let hdUrl = apod.hdUrl, let url = URL(string: hdUrl) {
             self.apodImageView.isHidden = false
             self.apodImageView.kf.indicatorType = .activity
-            let processor = DownsamplingImageProcessor(size: self.apodImageView.bounds.size)
-                |> RoundCornerImageProcessor(cornerRadius: 20)
+//            let processor = DownsamplingImageProcessor(size: self.apodImageView.bounds.size)
+//                |> RoundCornerImageProcessor(cornerRadius: 20)
             self.apodImageView.kf.setImage(
                 with: url,
                 options: [
-                    .processor(processor),
+//                    .processor(processor),
                     //                    .scaleFactor(UIScreen.main.scale),
                     .transition(.fade(1)),
                     .cacheOriginalImage

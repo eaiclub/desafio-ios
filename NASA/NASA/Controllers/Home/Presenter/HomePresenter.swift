@@ -53,7 +53,7 @@ class HomePresenter: NSObject {
     }
     
     private func resetRequestIfNeeded(type: RoverPhotoCameraType, camera: RoverPhotoCamera) {
-        if (type != self.selectedCameraType || camera != self.selectedCamera) ||  (type == self.selectedCameraType && camera == self.selectedCamera) {
+        if (type != self.selectedCameraType || camera != self.selectedCamera) ||  (type == self.selectedCameraType && camera == self.selectedCamera && page == 1) {
             self.hasMorePhotos = false
             self.page = 1
             self.roverPhotos.removeAll()
