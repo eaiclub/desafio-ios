@@ -12,6 +12,7 @@
 		9FA17BB225DC4B0300611A3F /* Extension+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA17BB125DC4B0300611A3F /* Extension+UITableView.swift */; };
 		9FA17BB625DC510600611A3F /* RoverPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA17BB425DC510600611A3F /* RoverPhotoTableViewCell.swift */; };
 		9FA17BB725DC510600611A3F /* RoverPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA17BB525DC510600611A3F /* RoverPhotoTableViewCell.xib */; };
+		9FA17BB925DC71BD00611A3F /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA17BB825DC71BD00611A3F /* Extension+UIView.swift */; };
 		9FA7C94725D73E5400C374FD /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94625D73E5400C374FD /* BaseService.swift */; };
 		9FA7C94925D74BC400C374FD /* APODService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94825D74BC400C374FD /* APODService.swift */; };
 		9FA7C94C25D74D7900C374FD /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94B25D74D7900C374FD /* APOD.swift */; };
@@ -57,6 +58,7 @@
 		9FA17BB125DC4B0300611A3F /* Extension+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITableView.swift"; sourceTree = "<group>"; };
 		9FA17BB425DC510600611A3F /* RoverPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		9FA17BB525DC510600611A3F /* RoverPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoverPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		9FA17BB825DC71BD00611A3F /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		9FA7C94625D73E5400C374FD /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		9FA7C94825D74BC400C374FD /* APODService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService.swift; sourceTree = "<group>"; };
 		9FA7C94B25D74D7900C374FD /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				9FA17BB125DC4B0300611A3F /* Extension+UITableView.swift */,
+				9FA17BB825DC71BD00611A3F /* Extension+UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			files = (
 				9FA17BB225DC4B0300611A3F /* Extension+UITableView.swift in Sources */,
 				9FC9667A25D71F1200830EF7 /* NASA.xcdatamodeld in Sources */,
+				9FA17BB925DC71BD00611A3F /* Extension+UIView.swift in Sources */,
 				9FC9667025D71F1200830EF7 /* AppDelegate.swift in Sources */,
 				9FB5EC8125D848E300829D1F /* RoverPhotosService.swift in Sources */,
 				9FA7C94C25D74D7900C374FD /* APOD.swift in Sources */,

@@ -36,9 +36,8 @@ class ToolbarPickerView: UIPickerView {
         toolBar.sizeToFit()
 
         let doneButton = UIBarButtonItem(title: "Pronto!", style: .plain, target: self, action: #selector(self.doneButtonClicked))
-//        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-//        toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.setItems([doneButton], animated: false)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
 
         self.toolbar = toolBar

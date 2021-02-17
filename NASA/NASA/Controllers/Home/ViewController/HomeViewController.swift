@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 import Kingfisher
+import youtube_ios_player_helper
 
 class HomeViewController: UIViewController {
-
+    
     let presenter = HomePresenter()
     private var selectedCamera: RoverPhotoCamera = .fhaz
     private var selectedCameraType: RoverPhotoCameraType = .curiosity
@@ -19,17 +21,31 @@ class HomeViewController: UIViewController {
     private let cameraPicker = ToolbarPickerView()
     @IBOutlet private weak var cameraTypeTextField: UITextField!
     @IBOutlet private weak var cameraTextField: UITextField!
+    @IBOutlet private weak var apodView: UIView!
     @IBOutlet private weak var apodImageView: UIImageView!
     @IBOutlet private weak var tableView: UITableView!
-    
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var moreInfoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "NASA"
+        self.setupSearchButton()
         self.setupTableView()
         self.configureCameraTypePicker()
         self.configureCameraPicker()
         self.getPictureOfTheDay()
         self.getRoversPhotos()
+    }
+    
+    private func setupSearchButton() {
+        self.searchButton.setImage(#imageLiteral(resourceName: "ic-search"), for: .normal)
+        self.searchButton.imageView?.contentMode = .scaleAspectFit
+        self.searchButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: self.searchButton.bounds.width - 32, bottom: 0, right: 16)
+        self.searchButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: ((self.searchButton.imageView?.frame.width ?? 0) / 2))
+        self.searchButton.layer.cornerRadius = 8
+        self.searchButton.layer.borderWidth = 1
+        self.searchButton.layer.borderColor = #colorLiteral(red: 0.003921568627, green: 0.4862745098, blue: 0.9215686275, alpha: 1)
     }
     
     private func setupTableView() {
@@ -61,35 +77,43 @@ class HomeViewController: UIViewController {
     }
     
     private func getPictureOfTheDay() {
-        self.apodImageView.kf.indicatorType = .activity
-                self.presenter.getPictureOfTheDay(success: { _ in
-                    guard let apod = self.presenter.apod, let _url = URL(string: apod.hdUrl) else { return }
-                    
-                    let processor = DownsamplingImageProcessor(size: self.apodImageView.bounds.size)
-                                |> RoundCornerImageProcessor(cornerRadius: 20)
-                    self.apodImageView.kf.setImage(
-                        with: _url,
-        //                placeholder: UIImage(named: "placeholderImage"),
-                        options: [
-                            .processor(processor),
-        //                    .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(1)),
-                            .cacheOriginalImage
-                        ])
-                    
-                }) { (error) in
-                    
-                }
+        self.apodView.showLoading()
+        self.presenter.getPictureOfTheDay(success: { _ in
+            guard let apod = self.presenter.apod else { return }
+            if let hdUrl = apod.hdUrl, let url = URL(string: hdUrl) {
+                self.apodImageView.isHidden = false
+                self.apodImageView.kf.indicatorType = .activity
+                let processor = DownsamplingImageProcessor(size: self.apodImageView.bounds.size)
+                    |> RoundCornerImageProcessor(cornerRadius: 20)
+                self.apodImageView.kf.setImage(
+                    with: url,
+                    options: [
+                        .processor(processor),
+                        //                    .scaleFactor(UIScreen.main.scale),
+                        .transition(.fade(1)),
+                        .cacheOriginalImage
+                ])
+            } else {
+                let ytId = apod.url.components(separatedBy: "https://www.youtube.com/embed/")[1]
+                let playerView = YTPlayerView(frame: self.apodView.bounds)
+                playerView.load(withVideoId: ytId)
+                self.apodView.addSubview(playerView)
+            }
+            self.moreInfoButton.isEnabled = true
+        }) { (error) in
+            self.moreInfoButton.isHidden = true
+            self.apodView.setErrorMessage("An error occurred. Try again later :(")
+        }
     }
     
     private func getRoversPhotos() {
         self.presenter.getRoversPhotos(type: self.selectedCameraType, camera: self.selectedCamera, success: { _ in
             if self.presenter.roverPhotos.count == 0 {
-                self.tableView.setEmptyMessage("There is no Mars Photos with the current filters. Try another combination :P")
+                self.tableView.setEmptyMessage("There is no Mars Photos with the current filters.\nTry another combination :P")
             } else {
                 self.tableView.restore()
-                self.tableView.reloadData()
             }
+            self.tableView.reloadData()
         }) { (error) in
             self.tableView.setEmptyMessage("An error occurred. Try again later :(")
         }
@@ -98,6 +122,11 @@ class HomeViewController: UIViewController {
     @IBAction func requestRoverPhotosButtonClicked(_ sender: Any) {
         self.getRoversPhotos()
     }
+    
+    @IBAction func moreApodInfoButtonClicked(_ sender: Any) {
+        self.navigationController?.pushViewController(UIViewController(), animated: true)
+    }
+    
 }
 
 extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
