@@ -8,6 +8,16 @@
 
 import UIKit
 
-class HomePresenter: NSObject {
+protocol PlanetariumPresentation {
+    func planetariumPresentation(response : HomeModels.Planetarium.Response)
+}
 
+class HomePresenter: PlanetariumPresentation {
+    
+    weak var viewController : HomeDisplay?
+    
+    func planetariumPresentation(response: HomeModels.Planetarium.Response) {
+        let viewModel = HomeModels.Planetarium.ViewModel(planetariumModel: response.planetariumModel)
+        self.viewController?.showViewModel(viewModel: viewModel)
+    }
 }

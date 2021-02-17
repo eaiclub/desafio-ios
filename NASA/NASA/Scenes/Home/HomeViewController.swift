@@ -8,9 +8,16 @@
 
 import UIKit
 
-class HomeViewController: LayoutVerticalViewController {
-    
+protocol HomeDisplay : class {
+    func showViewModel(viewModel : HomeModels.Planetarium.ViewModel)
+}
+
+class HomeViewController: LayoutVerticalViewController, HomeDisplay {
+        
     private var planetsListView : PlanetsListView = PlanetsListView()
+    
+    private var interactor  : HomeInteractor = HomeInteractor()
+    private var router      : HomeRouter = HomeRouter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +25,26 @@ class HomeViewController: LayoutVerticalViewController {
     }
     
     private func prepareLayout() {
+        self.navigationItem.title = "Home - Planetários"
+        self.planetsListView.delegate = self
         self.add(view: planetsListView)
-        
+        self.doLoadScreen()
+        self.interactor.presenter?.viewController = self
+        self.router.viewController = self
+    }
+    
+    private func doLoadScreen() {
+        self.interactor.doLoadScreenInfo()
+    }
+    
+    func showViewModel(viewModel: HomeModels.Planetarium.ViewModel) {
+        self.planetsListView.set(viewModel.planetariumModel)
+    }
+}
+
+extension HomeViewController: PlanetsListViewDelegate {
+    
+    func didSelectPlanetarium(planetarium: PlanetariumModel, view: PlanetsListView) {
+        self.router.routerPlanetariumDetails(planetarium: planetarium)
     }
 }

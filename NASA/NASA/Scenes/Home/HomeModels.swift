@@ -8,6 +8,16 @@
 
 import UIKit
 
-class HomeModels: NSObject {
-
+enum HomeModels {
+    
+    enum Planetarium {
+        struct Request {
+        }
+        struct Response {
+            var planetariumModel : [PlanetariumModel]
+        }
+        struct ViewModel {
+            var planetariumModel : [PlanetariumModel]
+        }
+    }
 }

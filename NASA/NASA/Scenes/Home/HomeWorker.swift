@@ -8,6 +8,26 @@
 
 import UIKit
 
-class HomeWorker: NSObject {
+typealias HomeWorkerHandler = ([PlanetariumModel]) -> Swift.Void
+typealias HomeWorkerFailure  = (NSError)-> Swift.Void
 
+protocol HomeWorkerProtocol {
+    func fetchPlanetarium(completion : @escaping HomeWorkerHandler, failure : @escaping HomeWorkerFailure)
+}
+ 
+class HomeWorker: HomeWorkerProtocol {
+
+    func fetchPlanetarium(completion : @escaping HomeWorkerHandler, failure : @escaping HomeWorkerFailure) {
+        let requestable = HomeWorkerRequestable(request: HomeModels.Planetarium.Request())
+        let request: HTTRequest<[PlanetariumModel]> = HTTRequest(requestable: requestable)
+        request.get(success: { response in
+            guard let planetarium = response else {
+                failure(NSError.generic)
+                return
+            }
+            completion(planetarium)
+        }, failure: { error in
+            failure(NSError.generic)
+        })
+    }
 }
