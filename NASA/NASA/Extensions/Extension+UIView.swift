@@ -30,4 +30,10 @@ extension UIView {
         spinner.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
+    
+    func hideLoading() {
+        if let spinner = self.subviews.filter({ $0 is UIActivityIndicatorView }).first as? UIActivityIndicatorView {
+            spinner.removeFromSuperview()
+        }
+    }
 }

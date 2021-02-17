@@ -51,6 +51,7 @@ class HomeViewController: UIViewController {
     private func setupTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.rowHeight = 159
         self.tableView.register(class: RoverPhotoTableViewCell.self)
     }
     
@@ -79,6 +80,7 @@ class HomeViewController: UIViewController {
     private func getPictureOfTheDay() {
         self.apodView.showLoading()
         self.presenter.getPictureOfTheDay(success: { _ in
+            self.apodView.hideLoading()
             guard let apod = self.presenter.apod else { return }
             if let hdUrl = apod.hdUrl, let url = URL(string: hdUrl) {
                 self.apodImageView.isHidden = false
@@ -101,13 +103,16 @@ class HomeViewController: UIViewController {
             }
             self.moreInfoButton.isEnabled = true
         }) { (error) in
+            self.apodView.hideLoading()
             self.moreInfoButton.isHidden = true
             self.apodView.setErrorMessage("An error occurred. Try again later :(")
         }
     }
     
     private func getRoversPhotos() {
+        self.tableView.showLoading()
         self.presenter.getRoversPhotos(type: self.selectedCameraType, camera: self.selectedCamera, success: { _ in
+            self.tableView.hideLoading()
             if self.presenter.roverPhotos.count == 0 {
                 self.tableView.setEmptyMessage("There is no Mars Photos with the current filters.\nTry another combination :P")
             } else {
@@ -115,6 +120,7 @@ class HomeViewController: UIViewController {
             }
             self.tableView.reloadData()
         }) { (error) in
+            self.tableView.hideLoading()
             self.tableView.setEmptyMessage("An error occurred. Try again later :(")
         }
     }
@@ -124,7 +130,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func moreApodInfoButtonClicked(_ sender: Any) {
-        self.navigationController?.pushViewController(UIViewController(), animated: true)
+        guard let apod = self.presenter.apod else { return }
+        self.navigationController?.pushViewController(ApodDetailViewController(apod: apod), animated: true)
     }
     
 }
@@ -197,5 +204,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.setRoverPhoto(self.presenter.roverPhotos[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

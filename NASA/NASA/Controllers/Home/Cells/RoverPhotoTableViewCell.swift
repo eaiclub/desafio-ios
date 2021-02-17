@@ -11,7 +11,12 @@ import Kingfisher
 
 class RoverPhotoTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var roverImageView: UIImageView!
+    @IBOutlet private weak var roverImageView: UIImageView!
+    @IBOutlet private weak var earthDateLabel: UILabel!
+    @IBOutlet private weak var roverNameLabel: UILabel!
+    @IBOutlet private weak var cameraNameLabel: UILabel!
+    @IBOutlet private weak var roverStatusLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,6 +29,11 @@ class RoverPhotoTableViewCell: UITableViewCell {
     }
     
     open func setRoverPhoto(_ photo: RoverPhoto) {
+        self.earthDateLabel.text = photo.earthDate.toDate()?.toString()
+        self.roverNameLabel.text = photo.rover.name
+        self.cameraNameLabel.text = photo.camera.name
+        self.roverStatusLabel.text = photo.rover.status
+        
         guard photo.imgSrc != "", let url = URL(string: photo.imgSrc) else { return }
         self.roverImageView.kf.indicatorType = .activity
         

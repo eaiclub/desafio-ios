@@ -13,6 +13,10 @@
 		9FA17BB625DC510600611A3F /* RoverPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA17BB425DC510600611A3F /* RoverPhotoTableViewCell.swift */; };
 		9FA17BB725DC510600611A3F /* RoverPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA17BB525DC510600611A3F /* RoverPhotoTableViewCell.xib */; };
 		9FA17BB925DC71BD00611A3F /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA17BB825DC71BD00611A3F /* Extension+UIView.swift */; };
+		9FA17BBB25DDAD8F00611A3F /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA17BBA25DDAD8F00611A3F /* Extension+String.swift */; };
+		9FA17BBD25DDAE1E00611A3F /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA17BBC25DDAE1E00611A3F /* Extension+Date.swift */; };
+		9FA17BC325DDB29300611A3F /* ApodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA17BC125DDB29300611A3F /* ApodDetailViewController.swift */; };
+		9FA17BC425DDB29300611A3F /* ApodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA17BC225DDB29300611A3F /* ApodDetailViewController.xib */; };
 		9FA7C94725D73E5400C374FD /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94625D73E5400C374FD /* BaseService.swift */; };
 		9FA7C94925D74BC400C374FD /* APODService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94825D74BC400C374FD /* APODService.swift */; };
 		9FA7C94C25D74D7900C374FD /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7C94B25D74D7900C374FD /* APOD.swift */; };
@@ -59,6 +63,10 @@
 		9FA17BB425DC510600611A3F /* RoverPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		9FA17BB525DC510600611A3F /* RoverPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoverPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		9FA17BB825DC71BD00611A3F /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		9FA17BBA25DDAD8F00611A3F /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		9FA17BBC25DDAE1E00611A3F /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
+		9FA17BC125DDB29300611A3F /* ApodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDetailViewController.swift; sourceTree = "<group>"; };
+		9FA17BC225DDB29300611A3F /* ApodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApodDetailViewController.xib; sourceTree = "<group>"; };
 		9FA7C94625D73E5400C374FD /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		9FA7C94825D74BC400C374FD /* APODService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService.swift; sourceTree = "<group>"; };
 		9FA7C94B25D74D7900C374FD /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
@@ -147,6 +155,8 @@
 			children = (
 				9FA17BB125DC4B0300611A3F /* Extension+UITableView.swift */,
 				9FA17BB825DC71BD00611A3F /* Extension+UIView.swift */,
+				9FA17BBA25DDAD8F00611A3F /* Extension+String.swift */,
+				9FA17BBC25DDAE1E00611A3F /* Extension+Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +168,23 @@
 				9FA17BB525DC510600611A3F /* RoverPhotoTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		9FA17BC025DDB23500611A3F /* APOD Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9FA17BC525DDB29700611A3F /* ViewController */,
+			);
+			path = "APOD Detail";
+			sourceTree = "<group>";
+		};
+		9FA17BC525DDB29700611A3F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9FA17BC125DDB29300611A3F /* ApodDetailViewController.swift */,
+				9FA17BC225DDB29300611A3F /* ApodDetailViewController.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9FA7C94525D73E4000C374FD /* Services */ = {
@@ -184,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB5EC8D25D9B34100829D1F /* Home */,
+				9FA17BC025DDB23500611A3F /* APOD Detail */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -391,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA17BC425DDB29300611A3F /* ApodDetailViewController.xib in Resources */,
 				9FC9667F25D71F1300830EF7 /* LaunchScreen.storyboard in Resources */,
 				9FC9667C25D71F1300830EF7 /* Assets.xcassets in Resources */,
 				9FB5EC8B25D9B25100829D1F /* HomeViewController.xib in Resources */,
@@ -505,10 +534,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA17BBB25DDAD8F00611A3F /* Extension+String.swift in Sources */,
 				9FA17BB225DC4B0300611A3F /* Extension+UITableView.swift in Sources */,
 				9FC9667A25D71F1200830EF7 /* NASA.xcdatamodeld in Sources */,
 				9FA17BB925DC71BD00611A3F /* Extension+UIView.swift in Sources */,
 				9FC9667025D71F1200830EF7 /* AppDelegate.swift in Sources */,
+				9FA17BC325DDB29300611A3F /* ApodDetailViewController.swift in Sources */,
+				9FA17BBD25DDAE1E00611A3F /* Extension+Date.swift in Sources */,
 				9FB5EC8125D848E300829D1F /* RoverPhotosService.swift in Sources */,
 				9FA7C94C25D74D7900C374FD /* APOD.swift in Sources */,
 				9FA7C94725D73E5400C374FD /* BaseService.swift in Sources */,
