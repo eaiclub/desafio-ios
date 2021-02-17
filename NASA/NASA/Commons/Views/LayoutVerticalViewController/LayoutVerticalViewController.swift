@@ -19,6 +19,12 @@ class LayoutVerticalViewController: UIViewController, LinearLayoutControllerProt
     
     var offset : UIEdgeInsets = .zero
     
+    var color : UIColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1) {
+        didSet {
+            self.view.backgroundColor = color
+        }
+    }
+    
     public init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,7 +43,7 @@ class LayoutVerticalViewController: UIViewController, LinearLayoutControllerProt
     }
     
     private func prepareLayout() {
-        self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.view.backgroundColor = color
         
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.bounces  = true
