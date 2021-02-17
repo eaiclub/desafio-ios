@@ -9,6 +9,7 @@
 enum HTTPEnvironment {
     case dev
     
+    
     public var host : String {
         switch self {
         case .dev:

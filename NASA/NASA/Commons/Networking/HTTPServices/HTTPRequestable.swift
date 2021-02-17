@@ -14,6 +14,8 @@ protocol HTTPRequestable : HTTPDomain {
     
     var url  : URL { get }
     
+    var token : String { get }
+    
     var params : [String : Any] { get }
 }
 
