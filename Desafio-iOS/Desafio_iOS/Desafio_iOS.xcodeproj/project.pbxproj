@@ -18,6 +18,13 @@
 		EB57BFBC263B82E60046BC39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB57BFBA263B82E60046BC39 /* LaunchScreen.storyboard */; };
 		EB57BFC7263B82E60046BC39 /* Desafio_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57BFC6263B82E60046BC39 /* Desafio_iOSTests.swift */; };
 		EB57BFD2263B82E60046BC39 /* Desafio_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57BFD1263B82E60046BC39 /* Desafio_iOSUITests.swift */; };
+		EB57C002263B82E60046BC39 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C001263B82E60046BC39 /* APIHandler.swift */; };
+		EB57C00A263B82E60046BC39 /* APIRequestHandler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C009263B82E60046BC39 /* APIRequestHandler+Extensions.swift */; };
+		EB57C00F263B82E60046BC39 /* APIResponseHandler+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C00E263B82E60046BC39 /* APIResponseHandler+Extension.swift */; };
+		EB57C014263B82E60046BC39 /* APILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C013263B82E60046BC39 /* APILoader.swift */; };
+		EB57C01A263B82E60046BC39 /* NasaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C019263B82E60046BC39 /* NasaApi.swift */; };
+		EB57C023263B82E60046BC39 /* CONSTANTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C022263B82E60046BC39 /* CONSTANTS.swift */; };
+		EB57C02B263B82E60046BC39 /* NasaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C02A263B82E60046BC39 /* NasaData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,13 @@
 		EB57BFCD263B82E60046BC39 /* Desafio_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Desafio_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB57BFD1263B82E60046BC39 /* Desafio_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_iOSUITests.swift; sourceTree = "<group>"; };
 		EB57BFD3263B82E60046BC39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB57C001263B82E60046BC39 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		EB57C009263B82E60046BC39 /* APIRequestHandler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIRequestHandler+Extensions.swift"; sourceTree = "<group>"; };
+		EB57C00E263B82E60046BC39 /* APIResponseHandler+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIResponseHandler+Extension.swift"; sourceTree = "<group>"; };
+		EB57C013263B82E60046BC39 /* APILoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoader.swift; sourceTree = "<group>"; };
+		EB57C019263B82E60046BC39 /* NasaApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaApi.swift; sourceTree = "<group>"; };
+		EB57C022263B82E60046BC39 /* CONSTANTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONSTANTS.swift; sourceTree = "<group>"; };
+		EB57C02A263B82E60046BC39 /* NasaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaData.swift; sourceTree = "<group>"; };
 		F7A166D0EE616A8B44505E69 /* Pods-Desafio_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_iOSTests/Pods-Desafio_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC27E15AFEA36B16F82372DD /* Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_iOS-Desafio_iOSUITests/Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,9 +153,14 @@
 		EB57BFAE263B82E60046BC39 /* Desafio_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EB57C021263B82E60046BC39 /* Common */,
+				EB57C018263B82E60046BC39 /* Services */,
+				EB57C000263B82E60046BC39 /* ViewModel */,
+				EB57BFFF263B82E60046BC39 /* View */,
+				EB57BFFE263B82E60046BC39 /* NetworkLayer */,
+				EB57BFFD263B82E60046BC39 /* Model */,
 				EB57BFAF263B82E60046BC39 /* AppDelegate.swift */,
 				EB57BFB1263B82E60046BC39 /* SceneDelegate.swift */,
-				EB57BFB3263B82E60046BC39 /* ViewController.swift */,
 				EB57BFB5263B82E60046BC39 /* Main.storyboard */,
 				EB57BFB8263B82E60046BC39 /* Assets.xcassets */,
 				EB57BFBA263B82E60046BC39 /* LaunchScreen.storyboard */,
@@ -166,6 +185,56 @@
 				EB57BFD3263B82E60046BC39 /* Info.plist */,
 			);
 			path = Desafio_iOSUITests;
+			sourceTree = "<group>";
+		};
+		EB57BFFD263B82E60046BC39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB57C02A263B82E60046BC39 /* NasaData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB57BFFE263B82E60046BC39 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EB57C001263B82E60046BC39 /* APIHandler.swift */,
+				EB57C009263B82E60046BC39 /* APIRequestHandler+Extensions.swift */,
+				EB57C00E263B82E60046BC39 /* APIResponseHandler+Extension.swift */,
+				EB57C013263B82E60046BC39 /* APILoader.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		EB57BFFF263B82E60046BC39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB57BFB3263B82E60046BC39 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB57C000263B82E60046BC39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB57C018263B82E60046BC39 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EB57C019263B82E60046BC39 /* NasaApi.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EB57C021263B82E60046BC39 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EB57C022263B82E60046BC39 /* CONSTANTS.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,9 +475,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB57C00A263B82E60046BC39 /* APIRequestHandler+Extensions.swift in Sources */,
 				EB57BFB4263B82E60046BC39 /* ViewController.swift in Sources */,
+				EB57C02B263B82E60046BC39 /* NasaData.swift in Sources */,
+				EB57C014263B82E60046BC39 /* APILoader.swift in Sources */,
 				EB57BFB0263B82E60046BC39 /* AppDelegate.swift in Sources */,
 				EB57BFB2263B82E60046BC39 /* SceneDelegate.swift in Sources */,
+				EB57C01A263B82E60046BC39 /* NasaApi.swift in Sources */,
+				EB57C00F263B82E60046BC39 /* APIResponseHandler+Extension.swift in Sources */,
+				EB57C023263B82E60046BC39 /* CONSTANTS.swift in Sources */,
+				EB57C002263B82E60046BC39 /* APIHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
