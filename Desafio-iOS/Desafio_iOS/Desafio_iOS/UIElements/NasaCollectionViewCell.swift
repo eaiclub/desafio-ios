@@ -18,6 +18,7 @@ class NasaCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.activityIndicator(show: true)
         
         self.contentView.layer.cornerRadius = 10
         self.contentView.layer.borderWidth = 1.0
@@ -48,6 +49,7 @@ class NasaCollectionViewCell: UICollectionViewCell {
          cacheImageAPI?.downloadImage(url: url) { (image) in
             DispatchQueue.main.async() { [weak self] in
                 self?.nasaImageView?.image = image
+                self?.activityIndicator(show: false)
             }
         }
         
@@ -61,6 +63,7 @@ class NasaCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         self.nasaImageView?.image = nil
+        self.activityIndicator(show: true)
     }
     
     required init?(coder: NSCoder) {

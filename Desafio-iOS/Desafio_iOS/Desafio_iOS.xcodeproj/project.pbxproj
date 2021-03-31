@@ -31,6 +31,7 @@
 		EB57C048263B82E60046BC39 /* Extensions+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C047263B82E60046BC39 /* Extensions+Date.swift */; };
 		EB57C050263B82E60046BC39 /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C04F263B82E60046BC39 /* Extensions+String.swift */; };
 		EB57C055263B82E60046BC39 /* DayTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C054263B82E60046BC39 /* DayTracker.swift */; };
+		EB57C05A263B82E60046BC39 /* Extensions+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C059263B82E60046BC39 /* Extensions+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		EB57C047263B82E60046BC39 /* Extensions+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Date.swift"; sourceTree = "<group>"; };
 		EB57C04F263B82E60046BC39 /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		EB57C054263B82E60046BC39 /* DayTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTracker.swift; sourceTree = "<group>"; };
+		EB57C059263B82E60046BC39 /* Extensions+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+View.swift"; sourceTree = "<group>"; };
 		F7A166D0EE616A8B44505E69 /* Pods-Desafio_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_iOSTests/Pods-Desafio_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC27E15AFEA36B16F82372DD /* Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_iOS-Desafio_iOSUITests/Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,6 +277,7 @@
 			children = (
 				EB57C047263B82E60046BC39 /* Extensions+Date.swift */,
 				EB57C04F263B82E60046BC39 /* Extensions+String.swift */,
+				EB57C059263B82E60046BC39 /* Extensions+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				EB57C042263B82E60046BC39 /* ViewModel.swift in Sources */,
 				EB57BFB0263B82E60046BC39 /* AppDelegate.swift in Sources */,
 				EB57BFB2263B82E60046BC39 /* SceneDelegate.swift in Sources */,
+				EB57C05A263B82E60046BC39 /* Extensions+View.swift in Sources */,
 				EB57C01A263B82E60046BC39 /* NasaApi.swift in Sources */,
 				EB57C00F263B82E60046BC39 /* APIResponseHandler+Extension.swift in Sources */,
 				EB57C023263B82E60046BC39 /* CONSTANTS.swift in Sources */,
