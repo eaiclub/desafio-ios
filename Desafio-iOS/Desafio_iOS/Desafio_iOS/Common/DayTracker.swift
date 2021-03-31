@@ -9,7 +9,6 @@ import Foundation
 
 class DayTracker{
     
-    //testar
     func getDateParamenter(statingDate: String, lowerBound: Int ) -> [String]{
         
         var daysArray : [String] = [statingDate]

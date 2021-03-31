@@ -13,6 +13,7 @@ class ImageCache{
     
     var imgCache = NSCache<NSString,UIImage>()
     private var dataTask : URLSessionDataTask?
+    private var currentRequest : [String:URLSessionDataTask] = [:]
     
     func downloadImage(url: URL, completion: @escaping (UIImage?) -> Void){
         
@@ -23,6 +24,10 @@ class ImageCache{
             
             let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 0)
             dataTask = URLSession.shared.dataTask(with: request) {  [weak self] data, response, error  in
+                
+                defer{
+                    self!.currentRequest.removeValue(forKey: request.url!.absoluteString)
+                }
                 
                 guard error == nil, data != nil else {
                     return
@@ -39,11 +44,17 @@ class ImageCache{
                 
             }
             dataTask?.resume()
+            currentRequest[url.absoluteString] = dataTask
         }
     }
 
-    
-    
+    func cancelRequest(with url: String){
+        
+        if let task = currentRequest[url]{
+            task.cancel()
+        }
+        
+    }
     
     
     

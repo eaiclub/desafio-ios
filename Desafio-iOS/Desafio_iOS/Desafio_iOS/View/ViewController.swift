@@ -79,12 +79,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NasaCollectionViewCell.id, for: indexPath) as! NasaCollectionViewCell
+        cell.cacheImageAPI = viewModel?.imgCache
+        cell.configure(with: viewModel?.datasourceData[indexPath.row] ?? "nill")
         return cell
         
         
     }
     
-        
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -100,7 +101,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         
     }
         
-    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if let datasource = viewModel?.datasourceData{
+            viewModel?.imgCache.cancelRequest(with: datasource[indexPath.row])
+        }
+        
+        
+        
+    }
     
     
 }

@@ -12,6 +12,8 @@ class NasaCollectionViewCell: UICollectionViewCell {
     static let id = "nasaCustomCell"
     
     private var nasaImageView : UIImageView?
+    var cacheImageAPI : ImageCache?
+    private var dataTask : URLSessionDataTask?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,8 +33,6 @@ class NasaCollectionViewCell: UICollectionViewCell {
             contentView.addSubview(imageView)
         }
         
-        self.backgroundColor = .blue
-        
     }
     
     override func layoutSubviews() {
@@ -42,6 +42,26 @@ class NasaCollectionViewCell: UICollectionViewCell {
         
     }
     
+    func getImage(from url: URL) {
+        
+        
+         cacheImageAPI?.downloadImage(url: url) { (image) in
+            DispatchQueue.main.async() { [weak self] in
+                self?.nasaImageView?.image = image
+            }
+        }
+        
+    }
+    
+    func configure(with url: String){
+
+            getImage(from: URL(string: url)!)
+        
+    }
+    
+    override func prepareForReuse() {
+        self.nasaImageView?.image = nil
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
