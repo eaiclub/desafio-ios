@@ -62,7 +62,10 @@ extension ViewController: SetupViewCoding{
         nasaCollectionView?.delegate = self
         nasaCollectionView?.dataSource = self
         
+        nasaCollectionView?.register(NasaFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: NasaFooterView.id)
+        
         self.view.addSubview(nasaCollectionView!)
+        
         
     }
     
@@ -111,6 +114,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+
+        switch kind {
+
+        case UICollectionView.elementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NasaFooterView.id, for: indexPath)
+            return footerView
+
+        default:
+            assert(false, "Unexpected element kind")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: self.nasaCollectionView?.contentSize.width ?? 60, height: 60.0)
+    }
     
 }
 
