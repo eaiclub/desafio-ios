@@ -75,13 +75,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         
     }
     
-
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: self.nasaCollectionView?.contentSize.width ?? 60, height: 60.0)
-    }
-    
         
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSetY = scrollView.contentOffset.y

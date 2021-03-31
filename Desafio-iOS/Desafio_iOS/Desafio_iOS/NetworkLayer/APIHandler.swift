@@ -13,6 +13,13 @@ public enum HTTPMethod: String{
     case put = "PUT"
 }
 
+public enum APIKeys: String{
+    case API_KEY = "api_key"
+    case API_VALUE = "DEMO_KEY"
+    case DATE_START_KEY = "start_date"
+    case DATE_END_KEY = "end_date"
+}
+
 protocol RequestHandler {
     associatedtype RequestDataType
     func makeRequest(from data: RequestDataType) -> URLRequest?
