@@ -16,13 +16,22 @@ class ViewController: UIViewController {
 
     var nasaCollectionView : UICollectionView?
     var fakeValue = 10
+    var isAble = false
+    var viewModel : ViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.viewModel = ViewModel()
         configureUIElements()
 
+        
+        viewModel?.readyToReload = {
+            DispatchQueue.main.async {
+                self.nasaCollectionView?.reloadData()
+                self.isAble.toggle()
+            }
+        }
         
     }
 
@@ -64,7 +73,7 @@ extension ViewController: SetupViewCoding{
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fakeValue
+        return viewModel?.datasourceData.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,9 +89,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         let offSetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if offSetY > contentHeight - scrollView.frame.height {
-            self.fakeValue += 10
-            self.nasaCollectionView?.reloadData()
+        if offSetY > contentHeight - scrollView.frame.height && isAble  {
+            
+            viewModel?.fetchMoreData()
+            self.isAble.toggle()
             
         }
         
