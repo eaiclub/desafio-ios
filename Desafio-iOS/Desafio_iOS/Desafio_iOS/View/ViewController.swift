@@ -15,6 +15,7 @@ protocol SetupViewCoding{
 class ViewController: UIViewController {
 
     var nasaCollectionView : UICollectionView?
+    var fakeValue = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,7 @@ extension ViewController: SetupViewCoding{
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return fakeValue
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,7 +83,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
         
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offSetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
         
+        if offSetY > contentHeight - scrollView.frame.height {
+            self.fakeValue += 10
+            self.nasaCollectionView?.reloadData()
+            
+        }
+        
+        
+        
+    }
         
     
     
