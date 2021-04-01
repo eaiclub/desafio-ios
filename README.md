@@ -9,6 +9,7 @@ Criar um aplicativo em swift para mostrar as fotos de uma API da NASA.
 * Linguagem Swift ✅
 * Gerenciamento de dependências "Cocoapods/Carthage"✅
 * Mapeamento JSON utilizando protocolo Codable✅
+* Scroll infinito ✅
 
 ### Plus
 
