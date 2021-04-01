@@ -11,7 +11,7 @@ class NasaRequestHandler{
     
     let request = NasaAPI()
     
-    func fetchNasaData(with dates: [String], completionHandler: @escaping ([String]) -> ()){
+    func fetchNasaData(with dates: [String], completionHandler: @escaping ([String]?, Error?) -> ()){
         let apiLoader = APILoader(apiRequest: request)
         var arrayData : [String] = []
         let queryParameters : KeyValuePairs<Any,Any> = [
@@ -22,7 +22,7 @@ class NasaRequestHandler{
         
         apiLoader.loadAPIRequest(requestData: queryParameters) { (model, error) in
                 if let error = error {
-                    print(error)
+                    completionHandler(nil, error)
                 } else {
                     
                     model?.forEach({ (url) in
@@ -33,7 +33,7 @@ class NasaRequestHandler{
                         }
                     })
                     
-                    completionHandler(arrayData)
+                    completionHandler(arrayData, nil)
 
                 }
             }

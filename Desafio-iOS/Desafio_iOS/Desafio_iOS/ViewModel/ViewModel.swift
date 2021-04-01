@@ -11,16 +11,13 @@ import Foundation
 class ViewModel {
     
     var imgCache = ImageCache()
-    
     let nasaRequestAPI = NasaRequestHandler()
-    
     let tracker = DayTracker()
-    
-    var readyToReload : (() -> Void)?
+    var readyToReload : ((Error?) -> Void)?
     
     var datasourceData: [String] = []
-    
     var dates : [String] = []
+    
     
     init() {
         dates = tracker.getDateParamenter(statingDate: Date().getFormattedDate(), lowerBound: 30)
@@ -37,12 +34,24 @@ class ViewModel {
     func getAPIData(){
     
         
-        nasaRequestAPI.fetchNasaData(with: dates) { (urlArray) in
+        nasaRequestAPI.fetchNasaData(with: dates) { (urlArray, error) in
             
-            urlArray.forEach { (item) in
-                self.datasourceData.append(item)
+            
+            if error == nil {
+                
+                urlArray?.forEach { (item) in
+                    self.datasourceData.append(item)
+                }
+                    self.readyToReload!(nil)
+                
+            } else {
+                
+                self.readyToReload!(error)
+                
             }
-                self.readyToReload!()
+            
+            
+            
         }
         
     }

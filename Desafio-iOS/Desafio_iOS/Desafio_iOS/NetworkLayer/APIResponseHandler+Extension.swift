@@ -21,7 +21,7 @@ extension ResponseHandler{
             if response.statusCode == 200 {
                 return body
             } else {
-                throw ServiceError(httpStatus: response.statusCode, message: "Unkown error")
+                throw ServiceError(httpStatus: response.statusCode, message: "Erro desconhecido")
             }
         } catch  {
             throw ServiceError(httpStatus: response.statusCode, message: error.localizedDescription)

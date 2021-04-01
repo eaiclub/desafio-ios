@@ -13,19 +13,31 @@ class ViewController: UIViewController {
     var fakeValue = 10
     var isAble = false
     var viewModel : ViewModel?
+    var alert = UIAlertController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.viewModel = ViewModel()
         configureUIElements()
-
         
-        viewModel?.readyToReload = {
-            DispatchQueue.main.async {
-                self.nasaCollectionView?.reloadData()
-                self.isAble.toggle()
+        viewModel?.readyToReload = { error in
+            
+            if error == nil {
+                DispatchQueue.main.async {
+                    self.nasaCollectionView?.reloadData()
+                    self.isAble.toggle()
+                }
+            } else {
+                let error = error as! ServiceError
+                self.alert = UIAlertController(title: "ERROR \(error.httpStatus)", message: error.message, preferredStyle: .alert)
+                self.alert.message = error.message
+                self.alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(self.alert, animated: true)
+                
+                
             }
+            
         }
         
     }
