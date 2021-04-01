@@ -15,8 +15,6 @@ class NasaFooterView: UICollectionReusableView {
  override init(frame: CGRect) {
     super.init(frame: frame)
     self.backgroundColor = UIColor.white
-
-    // Customize here
     
     self.activityIndicator(show: true)
 

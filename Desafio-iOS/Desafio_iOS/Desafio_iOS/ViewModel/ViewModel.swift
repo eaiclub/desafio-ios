@@ -10,13 +10,13 @@ import Foundation
 
 class ViewModel {
     
-    var imgCache = ImageCache()
-    let nasaRequestAPI = NasaRequestHandler()
-    let tracker = DayTracker()
+    lazy var imgCache = ImageCache()
+    private let nasaRequestAPI = NasaRequestHandler()
+    private let tracker = DayTracker()
     var readyToReload : ((Error?) -> Void)?
     
     var datasourceData: [String] = []
-    var dates : [String] = []
+    private var dates : [String] = []
     
     
     init() {
