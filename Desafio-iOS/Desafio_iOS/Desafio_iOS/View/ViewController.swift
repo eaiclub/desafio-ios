@@ -7,11 +7,6 @@
 
 import UIKit
 
-
-protocol SetupViewCoding{
-    func configureUIElements()
-}
-
 class ViewController: UIViewController {
 
     var nasaCollectionView : UICollectionView?
@@ -144,4 +139,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
 
         return CGSize(width: cellWidth , height:  cellheight)
     }
+}
+
+
+protocol SetupViewCoding{
+    func configureUIElements()
 }

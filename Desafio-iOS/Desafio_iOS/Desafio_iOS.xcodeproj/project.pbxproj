@@ -16,7 +16,6 @@
 		EB57BFB7263B82E60046BC39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB57BFB5263B82E60046BC39 /* Main.storyboard */; };
 		EB57BFB9263B82E60046BC39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB57BFB8263B82E60046BC39 /* Assets.xcassets */; };
 		EB57BFBC263B82E60046BC39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB57BFBA263B82E60046BC39 /* LaunchScreen.storyboard */; };
-		EB57BFC7263B82E60046BC39 /* Desafio_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57BFC6263B82E60046BC39 /* Desafio_iOSTests.swift */; };
 		EB57BFD2263B82E60046BC39 /* Desafio_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57BFD1263B82E60046BC39 /* Desafio_iOSUITests.swift */; };
 		EB57C002263B82E60046BC39 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C001263B82E60046BC39 /* APIHandler.swift */; };
 		EB57C00A263B82E60046BC39 /* APIRequestHandler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C009263B82E60046BC39 /* APIRequestHandler+Extensions.swift */; };
@@ -33,6 +32,9 @@
 		EB57C055263B82E60046BC39 /* DayTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C054263B82E60046BC39 /* DayTracker.swift */; };
 		EB57C05A263B82E60046BC39 /* Extensions+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C059263B82E60046BC39 /* Extensions+View.swift */; };
 		EB57C05F263B82E60046BC39 /* FooterNasaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C05E263B82E60046BC39 /* FooterNasaView.swift */; };
+		EB57C067263B82E60046BC39 /* ImageCacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C066263B82E60046BC39 /* ImageCacheTest.swift */; };
+		EB57C06F263B82E60046BC39 /* CommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C06E263B82E60046BC39 /* CommonTest.swift */; };
+		EB57C074263B82E60046BC39 /* APILoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C073263B82E60046BC39 /* APILoaderTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +71,6 @@
 		EB57BFBB263B82E60046BC39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB57BFBD263B82E60046BC39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB57BFC2263B82E60046BC39 /* Desafio_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Desafio_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB57BFC6263B82E60046BC39 /* Desafio_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_iOSTests.swift; sourceTree = "<group>"; };
 		EB57BFC8263B82E60046BC39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB57BFCD263B82E60046BC39 /* Desafio_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Desafio_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB57BFD1263B82E60046BC39 /* Desafio_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_iOSUITests.swift; sourceTree = "<group>"; };
@@ -89,6 +90,9 @@
 		EB57C054263B82E60046BC39 /* DayTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTracker.swift; sourceTree = "<group>"; };
 		EB57C059263B82E60046BC39 /* Extensions+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+View.swift"; sourceTree = "<group>"; };
 		EB57C05E263B82E60046BC39 /* FooterNasaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterNasaView.swift; sourceTree = "<group>"; };
+		EB57C066263B82E60046BC39 /* ImageCacheTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTest.swift; sourceTree = "<group>"; };
+		EB57C06E263B82E60046BC39 /* CommonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTest.swift; sourceTree = "<group>"; };
+		EB57C073263B82E60046BC39 /* APILoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderTest.swift; sourceTree = "<group>"; };
 		F7A166D0EE616A8B44505E69 /* Pods-Desafio_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_iOSTests/Pods-Desafio_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC27E15AFEA36B16F82372DD /* Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_iOS-Desafio_iOSUITests/Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,7 +195,9 @@
 		EB57BFC5263B82E60046BC39 /* Desafio_iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				EB57BFC6263B82E60046BC39 /* Desafio_iOSTests.swift */,
+				EB57C065263B82E60046BC39 /* APILoaderTest */,
+				EB57C064263B82E60046BC39 /* CommonTest */,
+				EB57C063263B82E60046BC39 /* ImageCacheTest */,
 				EB57BFC8263B82E60046BC39 /* Info.plist */,
 			);
 			path = Desafio_iOSTests;
@@ -283,6 +289,30 @@
 				EB57C059263B82E60046BC39 /* Extensions+View.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB57C063263B82E60046BC39 /* ImageCacheTest */ = {
+			isa = PBXGroup;
+			children = (
+				EB57C066263B82E60046BC39 /* ImageCacheTest.swift */,
+			);
+			path = ImageCacheTest;
+			sourceTree = "<group>";
+		};
+		EB57C064263B82E60046BC39 /* CommonTest */ = {
+			isa = PBXGroup;
+			children = (
+				EB57C06E263B82E60046BC39 /* CommonTest.swift */,
+			);
+			path = CommonTest;
+			sourceTree = "<group>";
+		};
+		EB57C065263B82E60046BC39 /* APILoaderTest */ = {
+			isa = PBXGroup;
+			children = (
+				EB57C073263B82E60046BC39 /* APILoaderTest.swift */,
+			);
+			path = APILoaderTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,7 +578,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB57BFC7263B82E60046BC39 /* Desafio_iOSTests.swift in Sources */,
+				EB57C06F263B82E60046BC39 /* CommonTest.swift in Sources */,
+				EB57C067263B82E60046BC39 /* ImageCacheTest.swift in Sources */,
+				EB57C074263B82E60046BC39 /* APILoaderTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
