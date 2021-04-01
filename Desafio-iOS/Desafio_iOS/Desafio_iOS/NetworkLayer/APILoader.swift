@@ -15,7 +15,12 @@ class APILoader<T: APIHandler>{
     init(apiRequest: T) {
         self.apiRequest = apiRequest
     }
-
+    
+    /// Método responsável por fazer a requisição HTTP.
+    /// - Parameters:
+    ///   - requestData: Parâmetros de query.
+    ///   - completionHandler: Callback com retorno do parse da requisição.
+    /// - Returns: Callback.
     func loadAPIRequest(requestData: T.RequestDataType, completionHandler: @escaping (Array<T.ResponseDataType>?, Error?) -> ()){
         
         

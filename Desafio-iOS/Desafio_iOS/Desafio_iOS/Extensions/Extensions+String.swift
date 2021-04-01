@@ -8,7 +8,10 @@
 import Foundation
 
 extension String {
-
+    
+    /// Método para transformar a string em data.
+    /// - Parameter format: String para ser transformado em data.
+    /// - Returns: Data.
     func toDate(withFormat format: String = "yyyy-MM-dd")-> Date?{
 
         let dateFormatter = DateFormatter()

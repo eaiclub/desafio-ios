@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Estrutura de Erro.
 struct ServiceError: Error,Codable {
     let httpStatus : Int
     let message: String
@@ -14,6 +15,12 @@ struct ServiceError: Error,Codable {
 
 extension ResponseHandler{
     
+    /// Método responsável por fazer o parse genérico.
+    /// - Parameters:
+    ///   - data: Tipo de data.
+    ///   - response: Responce do HTTPURLResponse
+    /// - Throws: Dispara erros.
+    /// - Returns: Tipo genérico traduzido.
     func defaultParseResponse<T: Codable>(data: Data, response: HTTPURLResponse) throws -> [T]{
         let decoder = JSONDecoder()
         do {

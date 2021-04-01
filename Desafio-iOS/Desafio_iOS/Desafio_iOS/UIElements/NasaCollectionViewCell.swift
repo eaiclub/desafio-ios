@@ -11,8 +11,11 @@ import UIKit
 class NasaCollectionViewCell: UICollectionViewCell {
     static let id = "nasaCustomCell"
     
+    /// Referência da imageView
     private var nasaImageView : UIImageView?
+    /// Cache de imagem.
     var cacheImageAPI : ImageCache?
+    /// Referência do URLSessionDataTask
     private var dataTask : URLSessionDataTask?
     
     override init(frame: CGRect) {
@@ -36,6 +39,7 @@ class NasaCollectionViewCell: UICollectionViewCell {
         
     }
     
+    /// "ViewdidLoad" da célula
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -43,6 +47,8 @@ class NasaCollectionViewCell: UICollectionViewCell {
         
     }
     
+    /// Método responsável por baixar a imagem
+    /// - Parameter url: URL da imagem.
     func getImage(from url: URL) {
         
         
@@ -55,6 +61,8 @@ class NasaCollectionViewCell: UICollectionViewCell {
         
     }
     
+    /// Método para configurar a célula
+    /// - Parameter url: URL  da imagem.
     func configure(with url: String){
 
             getImage(from: URL(string: url)!)

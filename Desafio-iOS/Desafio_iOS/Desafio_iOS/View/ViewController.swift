@@ -154,6 +154,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
 }
 
 
+/// Protocolo para implementação da configuração dos elementos visuais da View.
 protocol SetupViewCoding{
     func configureUIElements()
 }

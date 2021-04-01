@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Model das informações a serem retiradas da API
 struct NasaData: Codable {
     let title: String
     let url: String

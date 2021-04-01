@@ -7,10 +7,19 @@
 
 import Foundation
 
+
+/// Classe especialista de requisição.
 class NasaRequestHandler{
     
+    
+    /// Variável que guarda a referência da nasaAPI
     let request = NasaAPI()
     
+    /// Método responsável por fazer a requisição dos dados.
+    /// - Parameters:
+    ///   - dates: Range de datas para se fazer a pesquisa.
+    ///   - completionHandler: Callback com as url das imagens e possíveis erros.
+    /// - Returns: Closure.
     func fetchNasaData(with dates: [String], completionHandler: @escaping ([String]?, Error?) -> ()){
         let apiLoader = APILoader(apiRequest: request)
         var arrayData : [String] = []

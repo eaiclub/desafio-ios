@@ -11,10 +11,19 @@ import UIKit
 class ImageCache{
     
     
+    /// Dicionário que representa o Cache de imagens.
     var imgCache = NSCache<NSString,UIImage>()
+    
+    /// Variável para ter a referência da URLSessionDataTask
     private var dataTask : URLSessionDataTask?
+    
+    /// Dicionário com o array das requests sendo feitas.
     private var currentRequest : [String:URLSessionDataTask] = [:]
     
+    /// Método responsável por baixar a imagem
+    /// - Parameters:
+    ///   - url: URL da imagem
+    ///   - completion: Callback com a imagem baixada.
     func downloadImage(url: URL, completion: @escaping (UIImage?) -> Void){
         
         if let cachedImage = imgCache.object(forKey: url.absoluteString as NSString) {
@@ -47,7 +56,9 @@ class ImageCache{
             currentRequest[url.absoluteString] = dataTask
         }
     }
-
+    
+    /// Método responsável por cancelar a request.
+    /// - Parameter url: Chave para cancelar a requisição.
     func cancelRequest(with url: String){
         
         if let task = currentRequest[url]{
