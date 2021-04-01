@@ -35,6 +35,7 @@
 		EB57C067263B82E60046BC39 /* ImageCacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C066263B82E60046BC39 /* ImageCacheTest.swift */; };
 		EB57C06F263B82E60046BC39 /* CommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C06E263B82E60046BC39 /* CommonTest.swift */; };
 		EB57C074263B82E60046BC39 /* APILoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57C073263B82E60046BC39 /* APILoaderTest.swift */; };
+		EBE2E1332616085A0059B04B /* NasaRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2E1322616085A0059B04B /* NasaRequestHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		EB57C066263B82E60046BC39 /* ImageCacheTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTest.swift; sourceTree = "<group>"; };
 		EB57C06E263B82E60046BC39 /* CommonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTest.swift; sourceTree = "<group>"; };
 		EB57C073263B82E60046BC39 /* APILoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderTest.swift; sourceTree = "<group>"; };
+		EBE2E1322616085A0059B04B /* NasaRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaRequestHandler.swift; sourceTree = "<group>"; };
 		F7A166D0EE616A8B44505E69 /* Pods-Desafio_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_iOSTests/Pods-Desafio_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC27E15AFEA36B16F82372DD /* Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_iOS-Desafio_iOSUITests/Pods-Desafio_iOS-Desafio_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				EB57C019263B82E60046BC39 /* NasaApi.swift */,
+				EBE2E1322616085A0059B04B /* NasaRequestHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				EB57C01A263B82E60046BC39 /* NasaApi.swift in Sources */,
 				EB57C00F263B82E60046BC39 /* APIResponseHandler+Extension.swift in Sources */,
 				EB57C023263B82E60046BC39 /* CONSTANTS.swift in Sources */,
+				EBE2E1332616085A0059B04B /* NasaRequestHandler.swift in Sources */,
 				EB57C002263B82E60046BC39 /* APIHandler.swift in Sources */,
 				EB57C050263B82E60046BC39 /* Extensions+String.swift in Sources */,
 			);

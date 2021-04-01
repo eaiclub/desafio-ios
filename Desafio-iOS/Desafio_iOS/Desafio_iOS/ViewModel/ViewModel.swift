@@ -12,7 +12,7 @@ class ViewModel {
     
     var imgCache = ImageCache()
     
-    let request = NasaAPI()
+    let nasaRequestAPI = NasaRequestHandler()
     
     let tracker = DayTracker()
     
@@ -35,31 +35,15 @@ class ViewModel {
     }
     
     func getAPIData(){
+    
         
-        
-        let apiLoader = APILoader(apiRequest: request)
-        let queryParameters : KeyValuePairs<Any,Any> = [
-            APIKeys.API_KEY.rawValue: APIKeys.API_VALUE.rawValue,
-            APIKeys.DATE_START_KEY.rawValue : self.dates.first!,
-            APIKeys.DATE_END_KEY.rawValue : self.dates.last!
-        ]
-        apiLoader.loadAPIRequest(requestData: queryParameters) { (model, error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    
-                    model?.forEach({ (url) in
-                        if url.url.contains("youtube"){
-                            return
-                        } else {
-                        self.datasourceData.append(url.url)
-                        }
-                    })
-                    
-                    
-                    self.readyToReload!()
-                }
+        nasaRequestAPI.fetchNasaData(with: dates) { (urlArray) in
+            
+            urlArray.forEach { (item) in
+                self.datasourceData.append(item)
             }
+                self.readyToReload!()
+        }
         
     }
     
