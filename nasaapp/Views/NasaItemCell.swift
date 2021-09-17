@@ -3,7 +3,7 @@ import UIKit
 import SDWebImage
 import WebKit
 
-protocol NasaItemCellDelegate {
+protocol NasaItemCellDelegate: AnyObject {
     func showAlert(title: String, message: String)
 }
 
@@ -24,7 +24,7 @@ class NasaItemCell: UITableViewCell {
     
     private var explationExpanded = String()
     
-    var delegate : NasaItemCellDelegate?
+    weak var delegate : NasaItemCellDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -180,7 +180,6 @@ extension NasaItemCell: RenderViewProtocol {
         if let title = titleLabel.text {
             self.delegate?.showAlert(title: title, message: explationExpanded)
         }
-        
     }
     
 }
