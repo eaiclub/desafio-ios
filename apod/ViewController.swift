@@ -11,12 +11,17 @@ class ViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        
-        view.backgroundColor = .systemBackground
+        setup()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension ViewController: ViewCode {
+    func addTheme() {
+        view.backgroundColor = .systemBackground
     }
 }
 
