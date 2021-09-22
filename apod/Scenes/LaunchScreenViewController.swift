@@ -42,12 +42,7 @@ extension LaunchScreenViewController: ViewCode {
     }
     
     func addConstraints() {
-        NSLayoutConstraint.activate([
-            launchAnimationView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            launchAnimationView.topAnchor.constraint(equalTo: view.topAnchor),
-            launchAnimationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            launchAnimationView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        launchAnimationView.constrainTo(edgesOf: view)
     }
 }
 
