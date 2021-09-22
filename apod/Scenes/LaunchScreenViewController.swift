@@ -15,8 +15,7 @@ class LaunchScreenViewController: UIViewController {
         let animation = AnimationView(name: "LaunchAnimation")
         animation.translatesAutoresizingMaskIntoConstraints = false
         animation.contentMode = .scaleAspectFit
-        animation.loopMode = .playOnce
-        animation.animationSpeed = 2.5
+        animation.animationSpeed = 3
         return animation
     }()
 
@@ -28,7 +27,7 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        launchAnimationView.play()
+        launchAnimationView.play(fromFrame: 5, toFrame: 215, loopMode: .playOnce, completion: nil)
     }
 }
 
