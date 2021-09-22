@@ -10,12 +10,13 @@
 		3EBF600AB07E11ABF7389AAA /* libPods-apod-apodUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C4090DDDE3CDCFAE10B245 /* libPods-apod-apodUITests.a */; };
 		583F126B26FBBBB0007EECD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F126A26FBBBB0007EECD4 /* AppDelegate.swift */; };
 		583F126D26FBBBB0007EECD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F126C26FBBBB0007EECD4 /* SceneDelegate.swift */; };
-		583F126F26FBBBB0007EECD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F126E26FBBBB0007EECD4 /* ViewController.swift */; };
+		583F126F26FBBBB0007EECD4 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F126E26FBBBB0007EECD4 /* LaunchScreenViewController.swift */; };
 		583F127426FBBBB4007EECD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 583F127326FBBBB4007EECD4 /* Assets.xcassets */; };
 		583F127726FBBBB4007EECD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583F127526FBBBB4007EECD4 /* LaunchScreen.storyboard */; };
 		583F128226FBBBB5007EECD4 /* apodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F128126FBBBB5007EECD4 /* apodTests.swift */; };
 		583F128D26FBBBB5007EECD4 /* apodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F128C26FBBBB5007EECD4 /* apodUITests.swift */; };
 		583F129F26FBC4C4007EECD4 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F129E26FBC4C4007EECD4 /* ViewCode.swift */; };
+		583F12A426FBDF49007EECD4 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 583F12A326FBDF49007EECD4 /* LaunchAnimation.json */; };
 		5BA3D7F6F8AD178D89422D32 /* libPods-apodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6EDB4BCEABCE306D273AB5 /* libPods-apodTests.a */; };
 		76088ED5D76467E948961173 /* libPods-apod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5D1DB9E16590905B120FE9 /* libPods-apod.a */; };
 /* End PBXBuildFile section */
@@ -44,7 +45,7 @@
 		583F126726FBBBB0007EECD4 /* apod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583F126A26FBBBB0007EECD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		583F126C26FBBBB0007EECD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		583F126E26FBBBB0007EECD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		583F126E26FBBBB0007EECD4 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		583F127326FBBBB4007EECD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		583F127626FBBBB4007EECD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		583F127826FBBBB4007EECD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		583F128C26FBBBB5007EECD4 /* apodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apodUITests.swift; sourceTree = "<group>"; };
 		583F128E26FBBBB5007EECD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		583F129E26FBC4C4007EECD4 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		583F12A326FBDF49007EECD4 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 		5D5F485466374522CFC01BC1 /* Pods-apodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.release.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.release.xcconfig"; sourceTree = "<group>"; };
 		735335EC6EDFB1379CF31521 /* Pods-apodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.debug.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D5D1DB9E16590905B120FE9 /* libPods-apod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +103,6 @@
 				735335EC6EDFB1379CF31521 /* Pods-apodTests.debug.xcconfig */,
 				5D5F485466374522CFC01BC1 /* Pods-apodTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,10 +131,10 @@
 		583F126926FBBBB0007EECD4 /* apod */ = {
 			isa = PBXGroup;
 			children = (
+				583F12A126FBDEF9007EECD4 /* Assets */,
 				583F129C26FBC49E007EECD4 /* Common */,
+				583F12A026FBD89A007EECD4 /* Scenes */,
 				583F129A26FBBF0E007EECD4 /* SupportingFiles */,
-				583F127326FBBBB4007EECD4 /* Assets.xcassets */,
-				583F126E26FBBBB0007EECD4 /* ViewController.swift */,
 			);
 			path = apod;
 			sourceTree = "<group>";
@@ -181,6 +182,31 @@
 				583F129E26FBC4C4007EECD4 /* ViewCode.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		583F12A026FBD89A007EECD4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				583F126E26FBBBB0007EECD4 /* LaunchScreenViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		583F12A126FBDEF9007EECD4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				583F127326FBBBB4007EECD4 /* Assets.xcassets */,
+				583F12A226FBDF03007EECD4 /* Lottie */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		583F12A226FBDF03007EECD4 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				583F12A326FBDF49007EECD4 /* LaunchAnimation.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		795EAC3024384FE3CF213D68 /* Frameworks */ = {
@@ -300,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				583F127726FBBBB4007EECD4 /* LaunchScreen.storyboard in Resources */,
+				583F12A426FBDF49007EECD4 /* LaunchAnimation.json in Resources */,
 				583F127426FBBBB4007EECD4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				583F126F26FBBBB0007EECD4 /* ViewController.swift in Sources */,
+				583F126F26FBBBB0007EECD4 /* LaunchScreenViewController.swift in Sources */,
 				583F126B26FBBBB0007EECD4 /* AppDelegate.swift in Sources */,
 				583F126D26FBBBB0007EECD4 /* SceneDelegate.swift in Sources */,
 				583F129F26FBC4C4007EECD4 /* ViewCode.swift in Sources */,
