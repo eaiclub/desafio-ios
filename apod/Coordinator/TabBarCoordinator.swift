@@ -50,7 +50,7 @@ class TabBarCoordinator: NSObject, TabsCoordinator {
             viewControllers.append(rootViewController)
         }
         
-        let tabBarController = UITabBarController()
+        let tabBarController = BaseTabBarController()
         tabBarController.viewControllers = viewControllers
         
         rootViewController = tabBarController
