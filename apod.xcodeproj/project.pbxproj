@@ -28,6 +28,17 @@
 		58E26CE926FCD3F7004DE2EB /* AllPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CE826FCD3F7004DE2EB /* AllPhotosViewController.swift */; };
 		58E26CEC26FCD6F9004DE2EB /* ApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CEB26FCD6F9004DE2EB /* ApodViewController.swift */; };
 		58E26CEE26FCD728004DE2EB /* ApodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CED26FCD728004DE2EB /* ApodCoordinator.swift */; };
+		58E26CF026FCDCCF004DE2EB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CEF26FCDCCF004DE2EB /* BaseTabBarController.swift */; };
+		58E26CFC26FCF273004DE2EB /* Open Sans Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF226FCF273004DE2EB /* Open Sans Semibold.ttf */; };
+		58E26CFD26FCF273004DE2EB /* Open Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF326FCF273004DE2EB /* Open Sans Light.ttf */; };
+		58E26CFE26FCF273004DE2EB /* Open Sans Semibold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF426FCF273004DE2EB /* Open Sans Semibold Italic.ttf */; };
+		58E26CFF26FCF273004DE2EB /* Open Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF526FCF273004DE2EB /* Open Sans Bold.ttf */; };
+		58E26D0026FCF273004DE2EB /* Open Sans Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF626FCF273004DE2EB /* Open Sans Light Italic.ttf */; };
+		58E26D0126FCF273004DE2EB /* Open Sans Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF726FCF273004DE2EB /* Open Sans Italic.ttf */; };
+		58E26D0226FCF273004DE2EB /* Open Sans Extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF826FCF273004DE2EB /* Open Sans Extrabold.ttf */; };
+		58E26D0326FCF273004DE2EB /* Open Sans Extrabold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF926FCF273004DE2EB /* Open Sans Extrabold Italic.ttf */; };
+		58E26D0426FCF273004DE2EB /* Open Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CFA26FCF273004DE2EB /* Open Sans.ttf */; };
+		58E26D0526FCF273004DE2EB /* Open Sans Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CFB26FCF273004DE2EB /* Open Sans Bold Italic.ttf */; };
 		5BA3D7F6F8AD178D89422D32 /* libPods-apodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6EDB4BCEABCE306D273AB5 /* libPods-apodTests.a */; };
 		76088ED5D76467E948961173 /* libPods-apod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5D1DB9E16590905B120FE9 /* libPods-apod.a */; };
 /* End PBXBuildFile section */
@@ -79,6 +90,17 @@
 		58E26CE826FCD3F7004DE2EB /* AllPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosViewController.swift; sourceTree = "<group>"; };
 		58E26CEB26FCD6F9004DE2EB /* ApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewController.swift; sourceTree = "<group>"; };
 		58E26CED26FCD728004DE2EB /* ApodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodCoordinator.swift; sourceTree = "<group>"; };
+		58E26CEF26FCDCCF004DE2EB /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		58E26CF226FCF273004DE2EB /* Open Sans Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Semibold.ttf"; sourceTree = "<group>"; };
+		58E26CF326FCF273004DE2EB /* Open Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Light.ttf"; sourceTree = "<group>"; };
+		58E26CF426FCF273004DE2EB /* Open Sans Semibold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Semibold Italic.ttf"; sourceTree = "<group>"; };
+		58E26CF526FCF273004DE2EB /* Open Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Bold.ttf"; sourceTree = "<group>"; };
+		58E26CF626FCF273004DE2EB /* Open Sans Light Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Light Italic.ttf"; sourceTree = "<group>"; };
+		58E26CF726FCF273004DE2EB /* Open Sans Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Italic.ttf"; sourceTree = "<group>"; };
+		58E26CF826FCF273004DE2EB /* Open Sans Extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Extrabold.ttf"; sourceTree = "<group>"; };
+		58E26CF926FCF273004DE2EB /* Open Sans Extrabold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Extrabold Italic.ttf"; sourceTree = "<group>"; };
+		58E26CFA26FCF273004DE2EB /* Open Sans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans.ttf"; sourceTree = "<group>"; };
+		58E26CFB26FCF273004DE2EB /* Open Sans Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Bold Italic.ttf"; sourceTree = "<group>"; };
 		5D5F485466374522CFC01BC1 /* Pods-apodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.release.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.release.xcconfig"; sourceTree = "<group>"; };
 		735335EC6EDFB1379CF31521 /* Pods-apodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.debug.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D5D1DB9E16590905B120FE9 /* libPods-apod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +236,7 @@
 				58E26CE226FCD326004DE2EB /* Launch */,
 				58E26CE326FCD337004DE2EB /* AllPhotos */,
 				58E26CE426FCD34F004DE2EB /* Apod */,
+				58E26CEF26FCDCCF004DE2EB /* BaseTabBarController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -248,6 +271,8 @@
 		583F12A826FBF521007EECD4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				583F12AC26FBF657007EECD4 /* OFL.txt */,
+				58E26CF126FCF24F004DE2EB /* OpenSans */,
 				583F12AE26FBF669007EECD4 /* Galada */,
 			);
 			path = Fonts;
@@ -256,7 +281,6 @@
 		583F12AE26FBF669007EECD4 /* Galada */ = {
 			isa = PBXGroup;
 			children = (
-				583F12AC26FBF657007EECD4 /* OFL.txt */,
 				583F12AD26FBF65A007EECD4 /* Galada-Regular.ttf */,
 			);
 			path = Galada;
@@ -312,6 +336,23 @@
 				58E26CED26FCD728004DE2EB /* ApodCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		58E26CF126FCF24F004DE2EB /* OpenSans */ = {
+			isa = PBXGroup;
+			children = (
+				58E26CFB26FCF273004DE2EB /* Open Sans Bold Italic.ttf */,
+				58E26CF526FCF273004DE2EB /* Open Sans Bold.ttf */,
+				58E26CF926FCF273004DE2EB /* Open Sans Extrabold Italic.ttf */,
+				58E26CF826FCF273004DE2EB /* Open Sans Extrabold.ttf */,
+				58E26CF726FCF273004DE2EB /* Open Sans Italic.ttf */,
+				58E26CF626FCF273004DE2EB /* Open Sans Light Italic.ttf */,
+				58E26CF326FCF273004DE2EB /* Open Sans Light.ttf */,
+				58E26CF426FCF273004DE2EB /* Open Sans Semibold Italic.ttf */,
+				58E26CF226FCF273004DE2EB /* Open Sans Semibold.ttf */,
+				58E26CFA26FCF273004DE2EB /* Open Sans.ttf */,
+			);
+			path = OpenSans;
 			sourceTree = "<group>";
 		};
 		795EAC3024384FE3CF213D68 /* Frameworks */ = {
@@ -430,10 +471,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E26CFD26FCF273004DE2EB /* Open Sans Light.ttf in Resources */,
+				58E26CFC26FCF273004DE2EB /* Open Sans Semibold.ttf in Resources */,
+				58E26D0426FCF273004DE2EB /* Open Sans.ttf in Resources */,
 				583F12B026FBF67D007EECD4 /* OFL.txt in Resources */,
 				583F127726FBBBB4007EECD4 /* LaunchScreen.storyboard in Resources */,
+				58E26D0126FCF273004DE2EB /* Open Sans Italic.ttf in Resources */,
 				583F12A426FBDF49007EECD4 /* LaunchAnimation.json in Resources */,
+				58E26CFE26FCF273004DE2EB /* Open Sans Semibold Italic.ttf in Resources */,
+				58E26D0226FCF273004DE2EB /* Open Sans Extrabold.ttf in Resources */,
+				58E26D0326FCF273004DE2EB /* Open Sans Extrabold Italic.ttf in Resources */,
 				583F127426FBBBB4007EECD4 /* Assets.xcassets in Resources */,
+				58E26D0026FCF273004DE2EB /* Open Sans Light Italic.ttf in Resources */,
+				58E26D0526FCF273004DE2EB /* Open Sans Bold Italic.ttf in Resources */,
+				58E26CFF26FCF273004DE2EB /* Open Sans Bold.ttf in Resources */,
 				583F12AF26FBF67D007EECD4 /* Galada-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E26CF026FCDCCF004DE2EB /* BaseTabBarController.swift in Sources */,
 				583F126F26FBBBB0007EECD4 /* LaunchScreenViewController.swift in Sources */,
 				583F12B226FBF7A7007EECD4 /* Typography+UIFont.swift in Sources */,
 				58E26CEE26FCD728004DE2EB /* ApodCoordinator.swift in Sources */,

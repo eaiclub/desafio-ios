@@ -61,6 +61,16 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Galada-Regular.ttf</string>
+		<string>Open Sans Bold Italic.ttf</string>
+		<string>Open Sans Bold.ttf</string>
+		<string>Open Sans Extrabold Italic.ttf</string>
+		<string>Open Sans Extrabold.ttf</string>
+		<string>Open Sans Italic.ttf</string>
+		<string>Open Sans Light Italic.ttf</string>
+		<string>Open Sans Light.ttf</string>
+		<string>Open Sans Semibold Italic.ttf</string>
+		<string>Open Sans Semibold.ttf</string>
+		<string>Open Sans.ttf</string>
 	</array>
 </dict>
 </plist>
