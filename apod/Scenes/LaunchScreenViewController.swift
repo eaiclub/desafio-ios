@@ -18,6 +18,22 @@ class LaunchScreenViewController: UIViewController {
         animation.animationSpeed = 3
         return animation
     }()
+    
+    private lazy var logo: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .galada(size: 48)
+        label.textColor = .label
+        label.text = "Apod"
+        
+        label.layer.shadowOffset = .zero
+        label.layer.shadowOpacity = 0.5
+        label.layer.shadowRadius = 5
+        label.layer.shadowColor = UIColor.systemBackground.cgColor
+        
+        label.alpha = 0
+        return label
+    }()
 
     override func loadView() {
         super.loadView()
@@ -27,7 +43,21 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        launchAnimationView.play(fromFrame: 5, toFrame: 215, loopMode: .playOnce, completion: nil)
+        launchAnimationView.play(fromFrame: 5,
+                                 toFrame: 115,
+                                 loopMode: .playOnce) { [weak self] _ in
+            self?.animateLogo()
+        }
+    }
+    
+    private func animateLogo() {
+        UIView.transition(with: logo,
+                          duration: 0.3,
+                          options: .transitionFlipFromLeft) { [weak self] in
+            self?.logo.alpha = 1
+        } completion: { _ in
+            print("Launch animation completes")
+        }
     }
 }
 
@@ -38,10 +68,13 @@ extension LaunchScreenViewController: ViewCode {
     
     func addViews() {
         view.addSubview(launchAnimationView)
+        view.addSubview(logo)
     }
     
     func addConstraints() {
         launchAnimationView.constrainTo(edgesOf: view)
+        logo.anchorToCenter(of: launchAnimationView,
+                            withOffset: .init(x: 84, y: 42))
     }
 }
 
