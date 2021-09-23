@@ -12,3 +12,21 @@ protocol Coordinator: AnyObject {
     
     @discardableResult func start() -> UIViewController
 }
+
+protocol Tab {
+    func getTabBarItem() -> UITabBarItem
+}
+
+protocol TabsCoordinator: Coordinator {
+    var childCoordinators: [StackCoordinator] { get set }
+    
+    func moveTo(_ tab: Tab)
+}
+
+protocol StackCoordinator: Coordinator {
+    var navigationController: UINavigationController { get set }
+    
+    var relatedTab: Tab? { get }
+    var parentCoordinator: TabsCoordinator? { get set }
+}
+
