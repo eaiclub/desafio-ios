@@ -9,6 +9,10 @@
 import UIKit
 import Lottie
 
+protocol LaunchScreenViewControllerDelegate: AnyObject {
+    func launchScreenAnimationDidFinish(_ launchScreen: LaunchScreenViewController)
+}
+
 class LaunchScreenViewController: UIViewController {
     
     private lazy var launchAnimationView: AnimationView = {
@@ -35,6 +39,17 @@ class LaunchScreenViewController: UIViewController {
         return label
     }()
 
+    weak var delegate: LaunchScreenViewControllerDelegate?
+    
+    init(delegate: LaunchScreenViewControllerDelegate) {
+        super.init(nibName: nil, bundle: nil)
+        self.delegate = delegate
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
         setup()
@@ -51,12 +66,12 @@ class LaunchScreenViewController: UIViewController {
     }
     
     private func animateLogo() {
-        UIView.transition(with: logo,
-                          duration: 0.3,
+        UIView.transition(with: logo, duration: 0.3,
                           options: .transitionFlipFromLeft) { [weak self] in
             self?.logo.alpha = 1
-        } completion: { _ in
-            print("Launch animation completes")
+            
+        } completion: { [weak self] _ in
+            self?.delegate?.launchScreenAnimationDidFinish(self!)
         }
     }
 }
@@ -77,4 +92,3 @@ extension LaunchScreenViewController: ViewCode {
                             withOffset: .init(x: 78, y: 42))
     }
 }
-

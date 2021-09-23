@@ -31,10 +31,16 @@ class ApplicationCoordinator: Coordinator {
     }
     
     @discardableResult func start() -> UIViewController {
-        let initialViewController = LaunchScreenViewController()
-        rootViewController = initialViewController
+        let initialViewController = LaunchScreenViewController(delegate: self)
         
+        rootViewController = initialViewController
         return initialViewController
     }
 
+}
+
+extension ApplicationCoordinator: LaunchScreenViewControllerDelegate {
+    func launchScreenAnimationDidFinish(_ launchScreen: LaunchScreenViewController) {
+        rootViewController = UIViewController()
+    }
 }
