@@ -25,7 +25,7 @@ class AllPhotosViewController: UIViewController {
                                               collectionViewLayout: collectionViewLayout)
         collectionView.register(PostCell.self,
                                 forCellWithReuseIdentifier: PostCell.reuseId)
-        collectionView.dataSource = self
+        collectionView.dataSource = self.dataSource
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
@@ -34,10 +34,13 @@ class AllPhotosViewController: UIViewController {
     
     // MARK: - properties
     private var viewModel: AllPhotosViewModel
+    private var dataSource: AllPhotosDataSource
     
     // MARK: - view lifecycle
     init(viewModel: AllPhotosViewModel = AllPhotosViewModel()) {
         self.viewModel = viewModel
+        self.dataSource = AllPhotosDataSource(items: viewModel.colors)
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -76,25 +79,5 @@ extension AllPhotosViewController: ViewCode {
 extension AllPhotosViewController: ViewModelDelegate {
     func updateView() {
         collectionView.reloadData()
-    }
-}
-
-// MARK: - data source
-extension AllPhotosViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.colors.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCell.reuseId, for: indexPath) as? PostCell else {
-            fatalError("Provide an appropriate cell for post collection view")
-        }
-        
-        let color = viewModel.colors[indexPath.row]
-        
-        cell.setup(with: color, forPosition: indexPath.row)
-        return cell
     }
 }
