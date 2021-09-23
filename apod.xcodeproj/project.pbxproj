@@ -18,6 +18,9 @@
 		583F129F26FBC4C4007EECD4 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F129E26FBC4C4007EECD4 /* ViewCode.swift */; };
 		583F12A426FBDF49007EECD4 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 583F12A326FBDF49007EECD4 /* LaunchAnimation.json */; };
 		583F12A726FBE228007EECD4 /* LayoutHelpers+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F12A626FBE228007EECD4 /* LayoutHelpers+UIView.swift */; };
+		583F12AF26FBF67D007EECD4 /* Galada-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 583F12AD26FBF65A007EECD4 /* Galada-Regular.ttf */; };
+		583F12B026FBF67D007EECD4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 583F12AC26FBF657007EECD4 /* OFL.txt */; };
+		583F12B226FBF7A7007EECD4 /* Typography+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F12B126FBF7A7007EECD4 /* Typography+UIFont.swift */; };
 		5BA3D7F6F8AD178D89422D32 /* libPods-apodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6EDB4BCEABCE306D273AB5 /* libPods-apodTests.a */; };
 		76088ED5D76467E948961173 /* libPods-apod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5D1DB9E16590905B120FE9 /* libPods-apod.a */; };
 /* End PBXBuildFile section */
@@ -59,6 +62,9 @@
 		583F129E26FBC4C4007EECD4 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		583F12A326FBDF49007EECD4 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 		583F12A626FBE228007EECD4 /* LayoutHelpers+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutHelpers+UIView.swift"; sourceTree = "<group>"; };
+		583F12AC26FBF657007EECD4 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		583F12AD26FBF65A007EECD4 /* Galada-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Galada-Regular.ttf"; sourceTree = "<group>"; };
+		583F12B126FBF7A7007EECD4 /* Typography+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography+UIFont.swift"; sourceTree = "<group>"; };
 		5D5F485466374522CFC01BC1 /* Pods-apodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.release.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.release.xcconfig"; sourceTree = "<group>"; };
 		735335EC6EDFB1379CF31521 /* Pods-apodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.debug.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D5D1DB9E16590905B120FE9 /* libPods-apod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +206,7 @@
 			children = (
 				583F127326FBBBB4007EECD4 /* Assets.xcassets */,
 				583F12A226FBDF03007EECD4 /* Lottie */,
+				583F12A826FBF521007EECD4 /* Fonts */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -216,8 +223,26 @@
 			isa = PBXGroup;
 			children = (
 				583F12A626FBE228007EECD4 /* LayoutHelpers+UIView.swift */,
+				583F12B126FBF7A7007EECD4 /* Typography+UIFont.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		583F12A826FBF521007EECD4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				583F12AE26FBF669007EECD4 /* Galada */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		583F12AE26FBF669007EECD4 /* Galada */ = {
+			isa = PBXGroup;
+			children = (
+				583F12AC26FBF657007EECD4 /* OFL.txt */,
+				583F12AD26FBF65A007EECD4 /* Galada-Regular.ttf */,
+			);
+			path = Galada;
 			sourceTree = "<group>";
 		};
 		795EAC3024384FE3CF213D68 /* Frameworks */ = {
@@ -336,9 +361,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583F12B026FBF67D007EECD4 /* OFL.txt in Resources */,
 				583F127726FBBBB4007EECD4 /* LaunchScreen.storyboard in Resources */,
 				583F12A426FBDF49007EECD4 /* LaunchAnimation.json in Resources */,
 				583F127426FBBBB4007EECD4 /* Assets.xcassets in Resources */,
+				583F12AF26FBF67D007EECD4 /* Galada-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				583F126F26FBBBB0007EECD4 /* LaunchScreenViewController.swift in Sources */,
+				583F12B226FBF7A7007EECD4 /* Typography+UIFont.swift in Sources */,
 				583F126B26FBBBB0007EECD4 /* AppDelegate.swift in Sources */,
 				583F126D26FBBBB0007EECD4 /* SceneDelegate.swift in Sources */,
 				583F12A726FBE228007EECD4 /* LayoutHelpers+UIView.swift in Sources */,
