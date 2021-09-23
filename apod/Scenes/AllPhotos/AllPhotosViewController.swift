@@ -28,6 +28,7 @@ class AllPhotosViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
     
