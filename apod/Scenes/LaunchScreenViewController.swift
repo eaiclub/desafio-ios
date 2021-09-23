@@ -27,8 +27,8 @@ class LaunchScreenViewController: UIViewController {
         label.text = "Apod"
         
         label.layer.shadowOffset = .zero
-        label.layer.shadowOpacity = 0.5
-        label.layer.shadowRadius = 5
+        label.layer.shadowOpacity = 1
+        label.layer.shadowRadius = 2
         label.layer.shadowColor = UIColor.systemBackground.cgColor
         
         label.alpha = 0
@@ -74,7 +74,7 @@ extension LaunchScreenViewController: ViewCode {
     func addConstraints() {
         launchAnimationView.constrainTo(edgesOf: view)
         logo.anchorToCenter(of: launchAnimationView,
-                            withOffset: .init(x: 84, y: 42))
+                            withOffset: .init(x: 78, y: 42))
     }
 }
 
