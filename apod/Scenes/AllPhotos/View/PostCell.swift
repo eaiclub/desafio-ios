@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostCell: UICollectionViewCell {
+class PostCell: UICollectionViewCell, ReusableView {
     
     struct LayoutProps {
         static let radius: CGFloat = 24

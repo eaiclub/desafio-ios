@@ -42,6 +42,7 @@
 		58E26D0826FCFE45004DE2EB /* AllPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D0726FCFE45004DE2EB /* AllPhotosViewModel.swift */; };
 		58E26D0A26FD0081004DE2EB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D0926FD0081004DE2EB /* ViewModel.swift */; };
 		58E26D0D26FD06BA004DE2EB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D0C26FD06BA004DE2EB /* PostCell.swift */; };
+		58E26D1126FD141C004DE2EB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1026FD141C004DE2EB /* ReusableView.swift */; };
 		5BA3D7F6F8AD178D89422D32 /* libPods-apodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6EDB4BCEABCE306D273AB5 /* libPods-apodTests.a */; };
 		76088ED5D76467E948961173 /* libPods-apod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5D1DB9E16590905B120FE9 /* libPods-apod.a */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,7 @@
 		58E26D0726FCFE45004DE2EB /* AllPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosViewModel.swift; sourceTree = "<group>"; };
 		58E26D0926FD0081004DE2EB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		58E26D0C26FD06BA004DE2EB /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		58E26D1026FD141C004DE2EB /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5D5F485466374522CFC01BC1 /* Pods-apodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.release.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.release.xcconfig"; sourceTree = "<group>"; };
 		735335EC6EDFB1379CF31521 /* Pods-apodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.debug.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D5D1DB9E16590905B120FE9 /* libPods-apod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +235,7 @@
 			children = (
 				583F129E26FBC4C4007EECD4 /* ViewCode.swift */,
 				58E26D0926FD0081004DE2EB /* ViewModel.swift */,
+				58E26D1026FD141C004DE2EB /* ReusableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				58E26CEC26FCD6F9004DE2EB /* ApodViewController.swift in Sources */,
 				58E26D0A26FD0081004DE2EB /* ViewModel.swift in Sources */,
 				583F126B26FBBBB0007EECD4 /* AppDelegate.swift in Sources */,
+				58E26D1126FD141C004DE2EB /* ReusableView.swift in Sources */,
 				583F126D26FBBBB0007EECD4 /* SceneDelegate.swift in Sources */,
 				583F12A726FBE228007EECD4 /* LayoutHelpers+UIView.swift in Sources */,
 				58E26CE726FCD3D9004DE2EB /* AllPhotosCoordinator.swift in Sources */,

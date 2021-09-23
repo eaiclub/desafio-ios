@@ -24,7 +24,7 @@ class AllPhotosViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: collectionViewLayout)
         collectionView.register(PostCell.self,
-                                forCellWithReuseIdentifier: "PostCell")
+                                forCellWithReuseIdentifier: PostCell.reuseId)
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
@@ -87,7 +87,7 @@ extension AllPhotosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as? PostCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCell.reuseId, for: indexPath) as? PostCell else {
             fatalError("Provide an appropriate cell for post collection view")
         }
         
