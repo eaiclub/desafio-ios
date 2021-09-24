@@ -69,6 +69,30 @@ extension UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
+    /// Constrains the top and leading of your view code component to the
+    /// same edges of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to constrain to
+    ///     - topMargin: The margin to apply as the constant of the top anchor constraint
+    ///     - leadingMargin: The margin to apply as the constant of the leading anchor constraint
+    ///     - notchSafe: A boolean that flags whether it should use the `safeAreaLayoutGuide`'s
+    ///     topAnchor instead of the default one
+    ///
+    func constrainToTopAndLeading(of view: UIView,
+                                  topMargin: CGFloat = 0,
+                                  leadingMargin: CGFloat = 0,
+                                  notchSafe: Bool = false) {
+        let topAnchor = notchSafe ? view.safeTopAnchor : view.topAnchor
+        
+        let constraints = [
+            self.topAnchor.constraint(equalTo: topAnchor, constant: topMargin),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingMargin),
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+    }
+    
     /// Constrains the top, leading, and trailing of your view code component to
     /// the same edges of the target view
     ///
@@ -110,5 +134,22 @@ extension UIView {
         ]
         
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    // MARK: - sizing helpers
+    
+    /// Constrains the height of your view code component
+    ///
+    /// - Parameters:
+    ///     - constant: The `CGFloat` representing the desired height to the view.
+    ///     Define the constant of the heightAnchor constraint
+    ///
+    /// - Returns: The activated layout constraint's reference
+    ///
+    @discardableResult
+    func constrainHeight(to constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = self.heightAnchor.constraint(equalToConstant: constant)
+        constraint.isActive = true
+        return constraint
     }
 }
