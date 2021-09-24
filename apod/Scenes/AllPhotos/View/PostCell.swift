@@ -16,12 +16,6 @@ class PostCell: UICollectionViewCell, ReusableView {
         static let dateLabelHeight: CGFloat = 40
     }
     
-    private static var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM yyyy"
-        return formatter
-    }()
-    
     // MARK: - subviews
     private lazy var daylabel: UILabel = {
         let label = UILabel()
@@ -98,13 +92,9 @@ class PostCell: UICollectionViewCell, ReusableView {
         layer.zPosition = CGFloat(position)
         
         daylabel.text = getDay(of: post.date)
-        monthLabel.text = formatted(monthDate: post.date)
+        monthLabel.text = DateFormatter.format(to: .abbreviatedMonthOfYear, value: post.date)
     }
-    
-    private func formatted(monthDate: Date) -> String {
-        return PostCell.dateFormatter.string(from: monthDate)
-    }
-    
+
     private func getDay(of date: Date) -> String {
         let day = Calendar.current.component(.day, from: date)
         return String(day)
