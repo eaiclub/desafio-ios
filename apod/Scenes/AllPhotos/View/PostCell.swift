@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Lottie
 
 class PostCell: UICollectionViewCell, ReusableView {
     
+    // MARK: static
     struct LayoutProps {
         static let radius: CGFloat = 24
         static let dateLabelHeight: CGFloat = 40
@@ -20,6 +22,7 @@ class PostCell: UICollectionViewCell, ReusableView {
         return formatter
     }()
     
+    // MARK: - subviews
     private lazy var daylabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +55,16 @@ class PostCell: UICollectionViewCell, ReusableView {
         return view
     }()
     
+    private lazy var loaderView: AnimationView = {
+        let animation = AnimationView(name: "Loader")
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        animation.contentMode = .scaleToFill
+        animation.loopMode = .loop
+        animation.animationSpeed = 1.5
+        animation.play()
+        return animation
+    }()
+    
     private lazy var gradientLayer: CAGradientLayer = {
         let height: CGFloat = 54
         
@@ -62,6 +75,7 @@ class PostCell: UICollectionViewCell, ReusableView {
         return layer
     }()
     
+    // MARK - view lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -97,6 +111,7 @@ class PostCell: UICollectionViewCell, ReusableView {
     }
 }
 
+// MARK: - view code
 extension PostCell: ViewCode {
     func addTheme() {
         backgroundColor = .systemBackground
@@ -108,10 +123,14 @@ extension PostCell: ViewCode {
     }
     
     func addViews() {
+        addSubview(loaderView)
         addSubview(dateStackView)
     }
     
     func addConstraints() {
+        loaderView.constrainSize(to: .init(width: 94, height: 94))
+        loaderView.anchorToCenter(of: self)
+        
         dateStackView.constrainHeight(to: LayoutProps.dateLabelHeight)
         dateStackView.constrainToTopAndLeading(of: self, topMargin: 24, leadingMargin: 24)
     }

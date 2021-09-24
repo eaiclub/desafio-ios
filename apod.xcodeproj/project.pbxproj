@@ -48,6 +48,7 @@
 		58E26D1A26FD23AF004DE2EB /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1926FD23AF004DE2EB /* Apod.swift */; };
 		58E26D1D26FD26AE004DE2EB /* PostsSegmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1C26FD26AE004DE2EB /* PostsSegmentManager.swift */; };
 		58E26D1F26FD2C14004DE2EB /* DaysBetween+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1E26FD2C14004DE2EB /* DaysBetween+Calendar.swift */; };
+		58E26D2826FE0C68004DE2EB /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 58E26D2726FE0C68004DE2EB /* Loader.json */; };
 		5BA3D7F6F8AD178D89422D32 /* libPods-apodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6EDB4BCEABCE306D273AB5 /* libPods-apodTests.a */; };
 		76088ED5D76467E948961173 /* libPods-apod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5D1DB9E16590905B120FE9 /* libPods-apod.a */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		58E26D1926FD23AF004DE2EB /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
 		58E26D1C26FD26AE004DE2EB /* PostsSegmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsSegmentManager.swift; sourceTree = "<group>"; };
 		58E26D1E26FD2C14004DE2EB /* DaysBetween+Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysBetween+Calendar.swift"; sourceTree = "<group>"; };
+		58E26D2726FE0C68004DE2EB /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
 		5D5F485466374522CFC01BC1 /* Pods-apodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.release.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.release.xcconfig"; sourceTree = "<group>"; };
 		735335EC6EDFB1379CF31521 /* Pods-apodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.debug.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D5D1DB9E16590905B120FE9 /* libPods-apod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				583F12A326FBDF49007EECD4 /* LaunchAnimation.json */,
+				58E26D2726FE0C68004DE2EB /* Loader.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				58E26D0226FCF273004DE2EB /* Open Sans Extrabold.ttf in Resources */,
 				58E26D0326FCF273004DE2EB /* Open Sans Extrabold Italic.ttf in Resources */,
 				583F127426FBBBB4007EECD4 /* Assets.xcassets in Resources */,
+				58E26D2826FE0C68004DE2EB /* Loader.json in Resources */,
 				58E26D0026FCF273004DE2EB /* Open Sans Light Italic.ttf in Resources */,
 				58E26D0526FCF273004DE2EB /* Open Sans Bold Italic.ttf in Resources */,
 				58E26CFF26FCF273004DE2EB /* Open Sans Bold.ttf in Resources */,
