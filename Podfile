@@ -8,6 +8,7 @@ target 'apod' do
   # Pods for apod
 
   pod 'lottie-ios'
+  pod 'Alamofire', '~> 5.4'
 
   target 'apodTests' do
     inherit! :search_paths
