@@ -7,15 +7,6 @@
 
 import UIKit
 
-let shadesOfGray: [UIColor] = [
-    .systemGray6,
-    .systemGray5,
-    .systemGray4,
-    .systemGray3,
-    .systemGray2,
-    .systemGray
-]
-
 class AllPhotosViewModel: ViewModel {
     weak var delegate: ViewModelDelegate?
 

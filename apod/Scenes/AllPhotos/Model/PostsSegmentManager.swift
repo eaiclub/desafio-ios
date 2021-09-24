@@ -53,8 +53,10 @@ class PostsSegmentManager {
     }
     
     func nextChunk() -> [Post] {
-        return segment(for: currentPage).map { date in
-            return Post(date: date, apod: nil)
-        }
+        let posts = segment(for: currentPage)
+            .map { Post(date: $0, apod: nil) }
+
+        currentPage += 1
+        return posts
     }
 }
