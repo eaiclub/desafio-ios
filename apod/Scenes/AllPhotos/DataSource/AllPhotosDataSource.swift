@@ -9,9 +9,9 @@ import UIKit
 
 class AllPhotosDataSource: NSObject, UICollectionViewDataSource {
     
-    private var items: [UIColor]
+    private var items: [Post]
     
-    init(items: [UIColor]) {
+    init(items: [Post]) {
         self.items = items
     }
     
@@ -25,9 +25,9 @@ class AllPhotosDataSource: NSObject, UICollectionViewDataSource {
             fatalError("Provide an appropriate cell for post collection view")
         }
         
-        let color = items[indexPath.row]
+        let post = items[indexPath.row]
         
-        cell.setup(with: color, forPosition: indexPath.row)
+        cell.setup(with: post, forPosition: indexPath.row)
         return cell
     }
 

@@ -68,6 +68,31 @@ extension UIView {
         
         NSLayoutConstraint.activate(constraints)
     }
+    
+    /// Constrains the top, leading, and trailing of your view code component to
+    /// the same edges of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to constrain to
+    ///     - topMargin: The margin to apply as the constant of the top anchor constraint
+    ///     - horizontalMargin: The margin to apply as the constant of the leading and trailing anchor contraints
+    ///     - notchSafe: A boolean that flags whether it should use the `safeAreaLayoutGuide`'s topAnchor
+    ///     instead of the default one
+    ///
+    func constrainToTopAndSides(of view: UIView,
+                                topMargin: CGFloat = 0,
+                                horizontalMargins horizontalMargin: CGFloat = 0,
+                                notchSafe: Bool = false) {
+        let topAnchor = notchSafe ? view.safeTopAnchor : view.topAnchor
+        
+        let constraints = [
+            self.topAnchor.constraint(equalTo: topAnchor, constant: topMargin),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: horizontalMargin),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -horizontalMargin)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+    }
  
     // MARK: - positioning helpers
     

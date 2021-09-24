@@ -19,13 +19,15 @@ let shadesOfGray: [UIColor] = [
 class AllPhotosViewModel: ViewModel {
     weak var delegate: ViewModelDelegate?
 
-    private(set) var colors: [UIColor] = [] {
+    private(set) var posts: [Post] = [] {
         didSet {
             self.delegate?.updateView()
         }
     }
     
+    private var pager = PostsSegmentManager()
+    
     init() {
-        self.colors = shadesOfGray
+        self.posts = pager.nextChunk()
     }
 }

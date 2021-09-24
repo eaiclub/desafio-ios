@@ -39,7 +39,7 @@ class AllPhotosViewController: UIViewController {
     // MARK: - view lifecycle
     init(viewModel: AllPhotosViewModel = AllPhotosViewModel()) {
         self.viewModel = viewModel
-        self.dataSource = AllPhotosDataSource(items: viewModel.colors)
+        self.dataSource = AllPhotosDataSource(items: viewModel.posts)
         
         super.init(nibName: nil, bundle: nil)
     }
