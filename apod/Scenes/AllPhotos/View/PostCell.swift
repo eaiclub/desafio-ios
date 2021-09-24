@@ -52,6 +52,16 @@ class PostCell: UICollectionViewCell, ReusableView {
         return view
     }()
     
+    private lazy var gradientLayer: CAGradientLayer = {
+        let height: CGFloat = 54
+        
+        let layer = CAGradientLayer()
+        layer.colors = [UIColor.white.withAlphaComponent(0.0).cgColor,
+                        UIColor.quaternaryLabel.cgColor]
+        layer.frame = CGRect(x: 0, y: bounds.height - height, width: bounds.width, height: height)
+        return layer
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -93,6 +103,8 @@ extension PostCell: ViewCode {
         layer.masksToBounds = false
         layer.cornerRadius = LayoutProps.radius
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        layer.insertSublayer(gradientLayer, above: layer)
     }
     
     func addViews() {
