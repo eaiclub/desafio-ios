@@ -7,8 +7,9 @@
 
 import UIKit
 import Lottie
+import AlamofireImage
 
-class PostCell: UICollectionViewCell, ReusableView {
+class ApodCell: UICollectionViewCell, ReusableView {
     
     // MARK: static
     struct LayoutProps {
@@ -43,29 +44,33 @@ class PostCell: UICollectionViewCell, ReusableView {
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
         
-        view.backgroundColor = .tertiaryLabel.withAlphaComponent(0.2)
+        view.backgroundColor = .tertiaryLabel.withAlphaComponent(0.5)
         view.layer.masksToBounds = false
         view.layer.cornerRadius = LayoutProps.dateLabelHeight / 2
         return view
     }()
     
-    private lazy var loaderView: AnimationView = {
-        let animation = AnimationView(name: "Loader")
-        animation.translatesAutoresizingMaskIntoConstraints = false
-        animation.contentMode = .scaleToFill
-        animation.loopMode = .loop
-        animation.animationSpeed = 1.5
-        animation.play()
-        return animation
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = LayoutProps.radius
+        imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        return imageView
     }()
     
     private lazy var gradientLayer: CAGradientLayer = {
-        let height: CGFloat = 54
+        let height: CGFloat = 72
         
         let layer = CAGradientLayer()
-        layer.colors = [UIColor.white.withAlphaComponent(0.0).cgColor,
-                        UIColor.quaternaryLabel.cgColor]
-        layer.frame = CGRect(x: 0, y: bounds.height - height, width: bounds.width, height: height)
+        layer.frame = CGRect(x: 0, y: bounds.height - height,
+                             width: bounds.width, height: height)
+        layer.colors = [
+            UIColor.black.withAlphaComponent(0.0).cgColor,
+            UIColor.black.cgColor
+        ]
+        
         return layer
     }()
     
@@ -88,11 +93,18 @@ class PostCell: UICollectionViewCell, ReusableView {
         return layoutAttributes
     }
     
-    func setup(with post: Post, forPosition position: Int) {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.insertSublayer(gradientLayer, above: imageView.layer)
+    }
+    
+    func setup(with apod: Apod, forPosition position: Int) {
         layer.zPosition = CGFloat(position)
+        imageView.af.setImage(withURL: apod.resourcePath)
         
-        daylabel.text = getDay(of: post.date)
-        monthLabel.text = DateFormatter.format(to: .abbreviatedMonthOfYear, value: post.date)
+        daylabel.text = getDay(of: apod.date)
+        monthLabel.text = DateFormatter.format(to: .abbreviatedMonthOfYear, value: apod.date)
+    
     }
 
     private func getDay(of date: Date) -> String {
@@ -102,24 +114,21 @@ class PostCell: UICollectionViewCell, ReusableView {
 }
 
 // MARK: - view code
-extension PostCell: ViewCode {
+extension ApodCell: ViewCode {
     func addTheme() {
         backgroundColor = .systemBackground
         layer.masksToBounds = false
         layer.cornerRadius = LayoutProps.radius
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
-        layer.insertSublayer(gradientLayer, above: layer)
     }
     
     func addViews() {
-        addSubview(loaderView)
+        addSubview(imageView)
         addSubview(dateStackView)
     }
     
     func addConstraints() {
-        loaderView.constrainSize(to: .init(width: 94, height: 94))
-        loaderView.anchorToCenter(of: self)
+        imageView.constrainTo(edgesOf: self)
         
         dateStackView.constrainHeight(to: LayoutProps.dateLabelHeight)
         dateStackView.constrainToTopAndLeading(of: self, topMargin: 24, leadingMargin: 24)

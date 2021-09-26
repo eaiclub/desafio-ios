@@ -41,14 +41,16 @@
 		58E26D0526FCF273004DE2EB /* Open Sans Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CFB26FCF273004DE2EB /* Open Sans Bold Italic.ttf */; };
 		58E26D0826FCFE45004DE2EB /* AllPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D0726FCFE45004DE2EB /* AllPhotosViewModel.swift */; };
 		58E26D0A26FD0081004DE2EB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D0926FD0081004DE2EB /* ViewModel.swift */; };
-		58E26D0D26FD06BA004DE2EB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D0C26FD06BA004DE2EB /* PostCell.swift */; };
+		58E26D0D26FD06BA004DE2EB /* ApodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D0C26FD06BA004DE2EB /* ApodCell.swift */; };
 		58E26D1126FD141C004DE2EB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1026FD141C004DE2EB /* ReusableView.swift */; };
-		58E26D1426FD1B14004DE2EB /* AllPhotosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1326FD1B14004DE2EB /* AllPhotosDataSource.swift */; };
 		58E26D1726FD22A1004DE2EB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1626FD22A1004DE2EB /* Post.swift */; };
 		58E26D1A26FD23AF004DE2EB /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1926FD23AF004DE2EB /* Apod.swift */; };
 		58E26D1D26FD26AE004DE2EB /* PostsSegmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1C26FD26AE004DE2EB /* PostsSegmentManager.swift */; };
 		58E26D1F26FD2C14004DE2EB /* DaysBetween+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1E26FD2C14004DE2EB /* DaysBetween+Calendar.swift */; };
 		58E26D2826FE0C68004DE2EB /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 58E26D2726FE0C68004DE2EB /* Loader.json */; };
+		58E26D2C26FE5476004DE2EB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D2B26FE5476004DE2EB /* APIRequest.swift */; };
+		58E26D3026FE6251004DE2EB /* ApodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D2F26FE6251004DE2EB /* ApodRepository.swift */; };
+		58E26D3226FE6F8C004DE2EB /* Defaults+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D3126FE6F8C004DE2EB /* Defaults+DateFormatter.swift */; };
 		5BA3D7F6F8AD178D89422D32 /* libPods-apodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6EDB4BCEABCE306D273AB5 /* libPods-apodTests.a */; };
 		76088ED5D76467E948961173 /* libPods-apod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5D1DB9E16590905B120FE9 /* libPods-apod.a */; };
 /* End PBXBuildFile section */
@@ -113,14 +115,16 @@
 		58E26CFB26FCF273004DE2EB /* Open Sans Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Bold Italic.ttf"; sourceTree = "<group>"; };
 		58E26D0726FCFE45004DE2EB /* AllPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosViewModel.swift; sourceTree = "<group>"; };
 		58E26D0926FD0081004DE2EB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		58E26D0C26FD06BA004DE2EB /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		58E26D0C26FD06BA004DE2EB /* ApodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodCell.swift; sourceTree = "<group>"; };
 		58E26D1026FD141C004DE2EB /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		58E26D1326FD1B14004DE2EB /* AllPhotosDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosDataSource.swift; sourceTree = "<group>"; };
 		58E26D1626FD22A1004DE2EB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		58E26D1926FD23AF004DE2EB /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
 		58E26D1C26FD26AE004DE2EB /* PostsSegmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsSegmentManager.swift; sourceTree = "<group>"; };
 		58E26D1E26FD2C14004DE2EB /* DaysBetween+Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysBetween+Calendar.swift"; sourceTree = "<group>"; };
 		58E26D2726FE0C68004DE2EB /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
+		58E26D2B26FE5476004DE2EB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		58E26D2F26FE6251004DE2EB /* ApodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodRepository.swift; sourceTree = "<group>"; };
+		58E26D3126FE6F8C004DE2EB /* Defaults+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+DateFormatter.swift"; sourceTree = "<group>"; };
 		5D5F485466374522CFC01BC1 /* Pods-apodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.release.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.release.xcconfig"; sourceTree = "<group>"; };
 		735335EC6EDFB1379CF31521 /* Pods-apodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.debug.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D5D1DB9E16590905B120FE9 /* libPods-apod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,8 +202,9 @@
 				583F12A126FBDEF9007EECD4 /* Assets */,
 				583F129C26FBC49E007EECD4 /* Common */,
 				583F12B326FCB4A1007EECD4 /* Coordinator */,
-				58E26D1526FD227F004DE2EB /* Models */,
 				583F12A026FBD89A007EECD4 /* Scenes */,
+				58E26D1526FD227F004DE2EB /* Models */,
+				58E26D2926FE531D004DE2EB /* Service */,
 				583F129A26FBBF0E007EECD4 /* SupportingFiles */,
 			);
 			path = apod;
@@ -289,6 +294,7 @@
 				583F12A626FBE228007EECD4 /* LayoutHelpers+UIView.swift */,
 				583F12B126FBF7A7007EECD4 /* Typography+UIFont.swift */,
 				58E26D1E26FD2C14004DE2EB /* DaysBetween+Calendar.swift */,
+				58E26D3126FE6F8C004DE2EB /* Defaults+DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				58E26CE526FCD35E004DE2EB /* Coordinator */,
-				58E26D1226FD1AE8004DE2EB /* DataSource */,
 				58E26D1B26FD2696004DE2EB /* Model */,
 				58E26D0626FCFE29004DE2EB /* ViewModel */,
 				58E26D0B26FD068B004DE2EB /* View */,
@@ -395,17 +400,9 @@
 		58E26D0B26FD068B004DE2EB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				58E26D0C26FD06BA004DE2EB /* PostCell.swift */,
+				58E26D0C26FD06BA004DE2EB /* ApodCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		58E26D1226FD1AE8004DE2EB /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				58E26D1326FD1B14004DE2EB /* AllPhotosDataSource.swift */,
-			);
-			path = DataSource;
 			sourceTree = "<group>";
 		};
 		58E26D1526FD227F004DE2EB /* Models */ = {
@@ -413,6 +410,7 @@
 			children = (
 				58E26D1926FD23AF004DE2EB /* Apod.swift */,
 				58E26D1626FD22A1004DE2EB /* Post.swift */,
+				58E26D2F26FE6251004DE2EB /* ApodRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,6 +421,14 @@
 				58E26D1C26FD26AE004DE2EB /* PostsSegmentManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		58E26D2926FE531D004DE2EB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				58E26D2B26FE5476004DE2EB /* APIRequest.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		795EAC3024384FE3CF213D68 /* Frameworks */ = {
@@ -652,7 +658,7 @@
 			files = (
 				58E26D1F26FD2C14004DE2EB /* DaysBetween+Calendar.swift in Sources */,
 				58E26D1A26FD23AF004DE2EB /* Apod.swift in Sources */,
-				58E26D0D26FD06BA004DE2EB /* PostCell.swift in Sources */,
+				58E26D0D26FD06BA004DE2EB /* ApodCell.swift in Sources */,
 				58E26CF026FCDCCF004DE2EB /* BaseTabBarController.swift in Sources */,
 				583F126F26FBBBB0007EECD4 /* LaunchScreenViewController.swift in Sources */,
 				583F12B226FBF7A7007EECD4 /* Typography+UIFont.swift in Sources */,
@@ -662,16 +668,18 @@
 				58E26D0A26FD0081004DE2EB /* ViewModel.swift in Sources */,
 				583F126B26FBBBB0007EECD4 /* AppDelegate.swift in Sources */,
 				58E26D1126FD141C004DE2EB /* ReusableView.swift in Sources */,
+				58E26D3226FE6F8C004DE2EB /* Defaults+DateFormatter.swift in Sources */,
+				58E26D3026FE6251004DE2EB /* ApodRepository.swift in Sources */,
 				583F126D26FBBBB0007EECD4 /* SceneDelegate.swift in Sources */,
 				583F12A726FBE228007EECD4 /* LayoutHelpers+UIView.swift in Sources */,
 				58E26CE726FCD3D9004DE2EB /* AllPhotosCoordinator.swift in Sources */,
 				58E26D1D26FD26AE004DE2EB /* PostsSegmentManager.swift in Sources */,
 				58E26CE926FCD3F7004DE2EB /* AllPhotosViewController.swift in Sources */,
-				58E26D1426FD1B14004DE2EB /* AllPhotosDataSource.swift in Sources */,
 				583F129F26FBC4C4007EECD4 /* ViewCode.swift in Sources */,
 				583F12B526FCB4D7007EECD4 /* Coordinator.swift in Sources */,
 				583F12B726FCB503007EECD4 /* ApplicationCoordinator.swift in Sources */,
 				58E26CDD26FCC8FB004DE2EB /* TabBarCoordinator.swift in Sources */,
+				58E26D2C26FE5476004DE2EB /* APIRequest.swift in Sources */,
 				58E26D1726FD22A1004DE2EB /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

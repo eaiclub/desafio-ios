@@ -12,10 +12,10 @@ class AllPhotosViewController: UIViewController {
     // MARK: - subviews
     private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = -PostCell.LayoutProps.radius
+        layout.minimumLineSpacing = -ApodCell.LayoutProps.radius
         layout.itemSize = CGSize(
             width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.width
+            height: UIScreen.main.bounds.width * 1.4
         )
         return layout
     }()
@@ -23,9 +23,9 @@ class AllPhotosViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: collectionViewLayout)
-        collectionView.register(PostCell.self,
-                                forCellWithReuseIdentifier: PostCell.reuseId)
-        collectionView.dataSource = self.dataSource
+        collectionView.register(ApodCell.self,
+                                forCellWithReuseIdentifier: ApodCell.reuseId)
+        collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
@@ -34,13 +34,10 @@ class AllPhotosViewController: UIViewController {
     
     // MARK: - properties
     private var viewModel: AllPhotosViewModel
-    private var dataSource: AllPhotosDataSource
     
     // MARK: - view lifecycle
     init(viewModel: AllPhotosViewModel = AllPhotosViewModel()) {
         self.viewModel = viewModel
-        self.dataSource = AllPhotosDataSource(items: viewModel.posts)
-        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -55,15 +52,16 @@ class AllPhotosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.delegate = self
+        viewModel.loadApods()
     }
-
 }
 
 // MARK: - view code
 extension AllPhotosViewController: ViewCode {
     func addTheme() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .tertiarySystemBackground
     }
     
     func addViews() {
@@ -79,5 +77,23 @@ extension AllPhotosViewController: ViewCode {
 extension AllPhotosViewController: ViewModelDelegate {
     func updateView() {
         collectionView.reloadData()
+    }
+}
+
+extension AllPhotosViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.apods.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ApodCell.reuseId, for: indexPath) as? ApodCell else {
+            fatalError("Provide an appropriate cell for post collection view")
+        }
+        
+        let apod = viewModel.apods[indexPath.row]
+        
+        cell.setup(with: apod, forPosition: indexPath.row)
+        return cell
     }
 }
