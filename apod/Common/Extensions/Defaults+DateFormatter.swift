@@ -10,6 +10,7 @@ import Foundation
 extension DateFormatter {
     enum FormatDefaults: String {
         case abbreviatedMonthOfYear = "MMM yyyy"
+        case ISOLocalDate = "yyyy-MM-dd"
     }
     
     static func format(to pattern: FormatDefaults, value: Date) -> String {
