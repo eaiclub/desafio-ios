@@ -60,6 +60,16 @@ class ApodCell: UICollectionViewCell, ReusableView {
         return imageView
     }()
     
+    private lazy var loaderView: AnimationView = {
+        let animation = AnimationView(name: "Loader")
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        animation.contentMode = .scaleToFill
+        animation.loopMode = .loop
+        animation.animationSpeed = 1.5
+        animation.play()
+        return animation
+    }()
+    
     private lazy var gradientLayer: CAGradientLayer = {
         let height: CGFloat = 72
         
@@ -100,16 +110,23 @@ class ApodCell: UICollectionViewCell, ReusableView {
     
     func setup(with apod: Apod, forPosition position: Int) {
         layer.zPosition = CGFloat(position)
-        imageView.af.setImage(withURL: apod.resourcePath)
+        imageView.af.setImage(withURL: apod.resourcePath,
+                              completion: { [weak self] _ in
+            self?.removeLoader()
+        })
         
         daylabel.text = getDay(of: apod.date)
         monthLabel.text = DateFormatter.format(to: .abbreviatedMonthOfYear, value: apod.date)
-    
     }
 
     private func getDay(of date: Date) -> String {
         let day = Calendar.current.component(.day, from: date)
         return String(day)
+    }
+    
+    private func removeLoader() {
+        loaderView.stop()
+        loaderView.removeFromSuperview()
     }
 }
 
@@ -124,11 +141,15 @@ extension ApodCell: ViewCode {
     
     func addViews() {
         addSubview(imageView)
+        addSubview(loaderView)
         addSubview(dateStackView)
     }
     
     func addConstraints() {
         imageView.constrainTo(edgesOf: self)
+        
+        loaderView.constrainSize(to: .init(width: 94, height: 94))
+        loaderView.anchorToCenter(of: self)
         
         dateStackView.constrainHeight(to: LayoutProps.dateLabelHeight)
         dateStackView.constrainToTopAndLeading(of: self, topMargin: 24, leadingMargin: 24)

@@ -15,7 +15,7 @@ class AllPhotosViewController: UIViewController {
         layout.minimumLineSpacing = -ApodCell.LayoutProps.radius
         layout.itemSize = CGSize(
             width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.width * 1.4
+            height: UIScreen.main.bounds.width * 1.5
         )
         return layout
     }()
