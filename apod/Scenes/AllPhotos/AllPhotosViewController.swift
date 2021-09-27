@@ -15,7 +15,11 @@ class AllPhotosViewController: UIViewController {
         layout.minimumLineSpacing = -ApodCell.LayoutProps.radius
         layout.itemSize = CGSize(
             width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.width * 1.5
+            height: UIScreen.main.bounds.width
+        )
+        layout.headerReferenceSize = CGSize(
+            width: UIScreen.main.bounds.width,
+            height: AllPhotosHeaderView.LayoutProps.height
         )
         return layout
     }()
@@ -25,6 +29,9 @@ class AllPhotosViewController: UIViewController {
                                               collectionViewLayout: collectionViewLayout)
         collectionView.register(ApodCell.self,
                                 forCellWithReuseIdentifier: ApodCell.reuseId)
+        collectionView.register(AllPhotosHeaderView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: AllPhotosHeaderView.reuseId)
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
@@ -95,5 +102,23 @@ extension AllPhotosViewController: UICollectionViewDataSource {
         
         cell.setup(with: apod, forPosition: indexPath.row)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AllPhotosHeaderView.reuseId, for: indexPath)
+                    as? AllPhotosHeaderView else {
+                fatalError("Invalid view type for the all photos header")
+            }
+            
+            return headerView
+            
+        default:
+            assert(false, "Invalid element type")
+        }
     }
 }

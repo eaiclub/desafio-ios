@@ -13,7 +13,7 @@ class ApodCell: UICollectionViewCell, ReusableView {
     
     // MARK: static
     struct LayoutProps {
-        static let radius: CGFloat = 24
+        static let radius: CGFloat = 20
         static let dateLabelHeight: CGFloat = 40
     }
     
