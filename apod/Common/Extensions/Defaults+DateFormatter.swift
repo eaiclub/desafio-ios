@@ -19,4 +19,11 @@ extension DateFormatter {
         
         return formatter.string(from: value)
     }
+    
+    static func date(from string: String, using pattern: FormatDefaults) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = pattern.rawValue
+        
+        return formatter.date(from: string)!
+    }
 }

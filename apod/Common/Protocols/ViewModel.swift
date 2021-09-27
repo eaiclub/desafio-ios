@@ -14,3 +14,7 @@ protocol ViewModel: AnyObject {
 protocol ViewModelDelegate: AnyObject {
     func updateView()
 }
+
+extension ViewModelDelegate {
+    func updateView() {}
+}

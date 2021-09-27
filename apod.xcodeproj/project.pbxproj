@@ -45,7 +45,7 @@
 		58E26D1126FD141C004DE2EB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1026FD141C004DE2EB /* ReusableView.swift */; };
 		58E26D1726FD22A1004DE2EB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1626FD22A1004DE2EB /* Post.swift */; };
 		58E26D1A26FD23AF004DE2EB /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1926FD23AF004DE2EB /* Apod.swift */; };
-		58E26D1D26FD26AE004DE2EB /* PostsSegmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1C26FD26AE004DE2EB /* PostsSegmentManager.swift */; };
+		58E26D1D26FD26AE004DE2EB /* ApodSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1C26FD26AE004DE2EB /* ApodSegments.swift */; };
 		58E26D1F26FD2C14004DE2EB /* DaysBetween+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D1E26FD2C14004DE2EB /* DaysBetween+Calendar.swift */; };
 		58E26D2826FE0C68004DE2EB /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 58E26D2726FE0C68004DE2EB /* Loader.json */; };
 		58E26D2C26FE5476004DE2EB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D2B26FE5476004DE2EB /* APIRequest.swift */; };
@@ -120,7 +120,7 @@
 		58E26D1026FD141C004DE2EB /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		58E26D1626FD22A1004DE2EB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		58E26D1926FD23AF004DE2EB /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
-		58E26D1C26FD26AE004DE2EB /* PostsSegmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsSegmentManager.swift; sourceTree = "<group>"; };
+		58E26D1C26FD26AE004DE2EB /* ApodSegments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodSegments.swift; sourceTree = "<group>"; };
 		58E26D1E26FD2C14004DE2EB /* DaysBetween+Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysBetween+Calendar.swift"; sourceTree = "<group>"; };
 		58E26D2726FE0C68004DE2EB /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
 		58E26D2B26FE5476004DE2EB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -421,7 +421,7 @@
 		58E26D1B26FD2696004DE2EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				58E26D1C26FD26AE004DE2EB /* PostsSegmentManager.swift */,
+				58E26D1C26FD26AE004DE2EB /* ApodSegments.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -676,7 +676,7 @@
 				583F126D26FBBBB0007EECD4 /* SceneDelegate.swift in Sources */,
 				583F12A726FBE228007EECD4 /* LayoutHelpers+UIView.swift in Sources */,
 				58E26CE726FCD3D9004DE2EB /* AllPhotosCoordinator.swift in Sources */,
-				58E26D1D26FD26AE004DE2EB /* PostsSegmentManager.swift in Sources */,
+				58E26D1D26FD26AE004DE2EB /* ApodSegments.swift in Sources */,
 				58E26CE926FCD3F7004DE2EB /* AllPhotosViewController.swift in Sources */,
 				583F129F26FBC4C4007EECD4 /* ViewCode.swift in Sources */,
 				583F12B526FCB4D7007EECD4 /* Coordinator.swift in Sources */,

@@ -81,9 +81,14 @@ extension AllPhotosViewController: ViewCode {
 }
 
 // MARK: - view model
-extension AllPhotosViewController: ViewModelDelegate {
+extension AllPhotosViewController: AllPhotosViewModelDelegate {
     func updateView() {
         collectionView.reloadData()
+    }
+    
+    func allPhotosViewModel(_ viewModel: AllPhotosViewModel,
+                            didLoadApodsFor indexes: [IndexPath]) {
+        collectionView.reloadItems(at: indexes)
     }
 }
 

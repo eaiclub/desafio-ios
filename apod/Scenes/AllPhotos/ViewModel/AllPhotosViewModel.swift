@@ -7,23 +7,58 @@
 
 import UIKit
 
-class AllPhotosViewModel: ViewModel {
-    weak var delegate: ViewModelDelegate?
+protocol AllPhotosViewModelDelegate: ViewModelDelegate {
+    func allPhotosViewModel(_ viewModel: AllPhotosViewModel, didLoadApodsFor indexes: [IndexPath])
+}
 
+class AllPhotosViewModel {
+    weak var delegate: AllPhotosViewModelDelegate?
+    
+    private var isRequestingData: Bool = false
+    private var segments: ApodSegments
+    
     private(set) var apods: [Apod] = [] {
         didSet {
             self.delegate?.updateView()
         }
     }
     
+    init(segments: ApodSegments = ApodSegments()) {
+        self.segments = segments
+    }
+    
     func loadApods() {
-        let now: Date = .init()
-        let pastDate = Calendar.current.date(byAdding: .day, value: -6, to: now)!
+        guard !isRequestingData else {
+            return
+        }
         
-        ApodRepository.getApods(from: now, ultil: pastDate) { [weak self] apods in
-            self?.apods = apods
+        let dates = segments.nextChunk()
+        
+        isRequestingData = true
+        ApodRepository.getApods(from: dates.first!, ultil: dates.last!) { [weak self] newApods in
+            guard let self = self else { return }
+            
+            self.isRequestingData = false
+            self.apods.append(contentsOf: newApods)
+            
+            if self.segments.currentPage > 1 {
+                let indexes = self.indexesToReload(from: newApods)
+                self.delegate?.allPhotosViewModel(self, didLoadApodsFor: indexes)
+            } else {
+                self.apods = newApods
+            }
+            
         } onFailure: { error in
             print(error)
+        }
+    }
+    
+    private func indexesToReload(from loadedApods: [Apod]) -> [IndexPath] {
+        let startIndex = apods.count - loadedApods.count
+        let endIndex = startIndex + loadedApods.count
+        
+        return (startIndex..<endIndex).map { row in
+            return IndexPath(row: row, section: 0)
         }
     }
 }
