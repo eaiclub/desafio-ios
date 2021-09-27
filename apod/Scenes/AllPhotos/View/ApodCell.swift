@@ -110,10 +110,7 @@ class ApodCell: UICollectionViewCell, ReusableView {
     
     func setup(with apod: Apod, forPosition position: Int) {
         layer.zPosition = CGFloat(position)
-        imageView.af.setImage(withURL: apod.resourcePath,
-                              completion: { [weak self] _ in
-            self?.removeLoader()
-        })
+        setupImage(of: apod)
         
         daylabel.text = getDay(of: apod.date)
         monthLabel.text = DateFormatter.format(to: .abbreviatedMonthOfYear, value: apod.date)
@@ -122,6 +119,22 @@ class ApodCell: UICollectionViewCell, ReusableView {
     private func getDay(of date: Date) -> String {
         let day = Calendar.current.component(.day, from: date)
         return String(day)
+    }
+    
+    private func setupImage(of apod: Apod) {
+        let completionHandler: (AFIDataResponse<UIImage>) -> Void = { [weak self] _ in
+            self?.removeLoader()
+        }
+        
+        switch apod.mediaType {
+        case .video:
+            imageView.af.setImage(withURL: apod.thumbnailPath!,
+                                  completion: completionHandler)
+            
+        default:
+            imageView.af.setImage(withURL: apod.resourcePath,
+                                  completion: completionHandler)
+        }
     }
     
     private func removeLoader() {
