@@ -51,6 +51,7 @@
 		58E26D2C26FE5476004DE2EB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D2B26FE5476004DE2EB /* APIRequest.swift */; };
 		58E26D3026FE6251004DE2EB /* ApodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D2F26FE6251004DE2EB /* ApodRepository.swift */; };
 		58E26D3226FE6F8C004DE2EB /* Defaults+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D3126FE6F8C004DE2EB /* Defaults+DateFormatter.swift */; };
+		58E26D3627012FD8004DE2EB /* AllPhotosHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26D3527012FD7004DE2EB /* AllPhotosHeaderView.swift */; };
 		5BA3D7F6F8AD178D89422D32 /* libPods-apodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6EDB4BCEABCE306D273AB5 /* libPods-apodTests.a */; };
 		76088ED5D76467E948961173 /* libPods-apod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5D1DB9E16590905B120FE9 /* libPods-apod.a */; };
 /* End PBXBuildFile section */
@@ -125,6 +126,7 @@
 		58E26D2B26FE5476004DE2EB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		58E26D2F26FE6251004DE2EB /* ApodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodRepository.swift; sourceTree = "<group>"; };
 		58E26D3126FE6F8C004DE2EB /* Defaults+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+DateFormatter.swift"; sourceTree = "<group>"; };
+		58E26D3527012FD7004DE2EB /* AllPhotosHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosHeaderView.swift; sourceTree = "<group>"; };
 		5D5F485466374522CFC01BC1 /* Pods-apodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.release.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.release.xcconfig"; sourceTree = "<group>"; };
 		735335EC6EDFB1379CF31521 /* Pods-apodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apodTests.debug.xcconfig"; path = "Target Support Files/Pods-apodTests/Pods-apodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D5D1DB9E16590905B120FE9 /* libPods-apod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -401,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				58E26D0C26FD06BA004DE2EB /* ApodCell.swift */,
+				58E26D3527012FD7004DE2EB /* AllPhotosHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				58E26CDD26FCC8FB004DE2EB /* TabBarCoordinator.swift in Sources */,
 				58E26D2C26FE5476004DE2EB /* APIRequest.swift in Sources */,
 				58E26D1726FD22A1004DE2EB /* Post.swift in Sources */,
+				58E26D3627012FD8004DE2EB /* AllPhotosHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
