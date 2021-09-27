@@ -33,6 +33,7 @@ class AllPhotosViewController: UIViewController {
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: AllPhotosHeaderView.reuseId)
         collectionView.dataSource = self
+        collectionView.prefetchDataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
@@ -88,13 +89,15 @@ extension AllPhotosViewController: AllPhotosViewModelDelegate {
     
     func allPhotosViewModel(_ viewModel: AllPhotosViewModel,
                             didLoadApodsFor indexes: [IndexPath]) {
-        collectionView.reloadItems(at: indexes)
+        let indexesToReload = visibleIndexesToReload(intersecting: indexes)
+        
+        collectionView.reloadItems(at: indexesToReload)
     }
 }
 
 extension AllPhotosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.apods.count
+        return viewModel.totalApods
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -103,9 +106,12 @@ extension AllPhotosViewController: UICollectionViewDataSource {
             fatalError("Provide an appropriate cell for post collection view")
         }
         
-        let apod = viewModel.apods[indexPath.row]
+        if isLoadingCell(for: indexPath) {
+            cell.setup(forPosition: indexPath.row)
+        } else {
+            cell.setup(with: viewModel.apod(at: indexPath), forPosition: indexPath.row)
+        }
         
-        cell.setup(with: apod, forPosition: indexPath.row)
         return cell
     }
     
@@ -124,6 +130,28 @@ extension AllPhotosViewController: UICollectionViewDataSource {
             
         default:
             assert(false, "Invalid element type")
+        }
+    }
+}
+
+extension AllPhotosViewController: UICollectionViewDataSourcePrefetching {
+    
+    // verify if the cell for the index path is ahead of the current loaded apods
+    private func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        return indexPath.row >= viewModel.apods.count
+    }
+    
+    private func visibleIndexesToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+        let indexPathsForVisibleRows = collectionView.indexPathsForVisibleItems
+        
+        let indexesIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
+        
+        return Array(indexesIntersection)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLoadingCell) {
+            viewModel.loadApods()
         }
     }
 }

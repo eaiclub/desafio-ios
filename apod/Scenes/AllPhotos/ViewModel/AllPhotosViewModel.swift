@@ -23,6 +23,10 @@ class AllPhotosViewModel {
         }
     }
     
+    var totalApods: Int {
+        return segments.totalApods
+    }
+    
     init(segments: ApodSegments = ApodSegments()) {
         self.segments = segments
     }
@@ -60,5 +64,9 @@ class AllPhotosViewModel {
         return (startIndex..<endIndex).map { row in
             return IndexPath(row: row, section: 0)
         }
+    }
+    
+    func apod(at indexPath: IndexPath) -> Apod {
+        return apods[indexPath.row]
     }
 }

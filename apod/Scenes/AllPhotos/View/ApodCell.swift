@@ -128,8 +128,11 @@ class ApodCell: UICollectionViewCell, ReusableView {
         playIcon.isHidden = true
     }
     
-    func setup(with apod: Apod, forPosition position: Int) {
+    func setup(with apod: Apod? = nil, forPosition position: Int) {
         layer.zPosition = CGFloat(position)
+        
+        guard let apod = apod else { return }
+        
         setupImage(of: apod)
         
         daylabel.text = getDay(of: apod.date)
