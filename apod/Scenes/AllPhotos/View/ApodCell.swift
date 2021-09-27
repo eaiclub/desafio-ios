@@ -50,6 +50,19 @@ class ApodCell: UICollectionViewCell, ReusableView {
         return view
     }()
     
+    private lazy var playIcon: UIImageView = {
+        let asset = UIImage(systemName: "video.fill")?.withRenderingMode(.alwaysTemplate)
+        let icon = UIImageView(image: asset)
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        icon.contentMode = .center
+        icon.backgroundColor = .tertiaryLabel.withAlphaComponent(0.5)
+        icon.tintColor = .systemBackground
+        icon.layer.masksToBounds = true
+        icon.layer.cornerRadius = 12
+        icon.isHidden = true
+        return icon
+    }()
+    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -108,6 +121,13 @@ class ApodCell: UICollectionViewCell, ReusableView {
         layer.insertSublayer(gradientLayer, above: imageView.layer)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        imageView.image = nil
+        playIcon.isHidden = true
+    }
+    
     func setup(with apod: Apod, forPosition position: Int) {
         layer.zPosition = CGFloat(position)
         setupImage(of: apod)
@@ -130,6 +150,7 @@ class ApodCell: UICollectionViewCell, ReusableView {
         case .video:
             imageView.af.setImage(withURL: apod.thumbnailPath!,
                                   completion: completionHandler)
+            playIcon.isHidden = false
             
         default:
             imageView.af.setImage(withURL: apod.resourcePath,
@@ -156,6 +177,7 @@ extension ApodCell: ViewCode {
         addSubview(imageView)
         addSubview(loaderView)
         addSubview(dateStackView)
+        addSubview(playIcon)
     }
     
     func addConstraints() {
@@ -166,5 +188,9 @@ extension ApodCell: ViewCode {
         
         dateStackView.constrainHeight(to: LayoutProps.dateLabelHeight)
         dateStackView.constrainToTopAndLeading(of: self, topMargin: 24, leadingMargin: 24)
+        
+        playIcon.constrainSize(to: .init(width: 42, height: 42))
+        playIcon.constrainToBottomAndTrailing(of: self, bottomMargin: 32 + LayoutProps.radius,
+                                              trailingMargin: 24)
     }
 }

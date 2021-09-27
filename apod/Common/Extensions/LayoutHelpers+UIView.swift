@@ -117,6 +117,30 @@ extension UIView {
         
         NSLayoutConstraint.activate(constraints)
     }
+    
+    /// Constrains the bottom and trailing of your view code component to the
+    /// same edges of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to constrain to
+    ///     - bottomMargin: The margin to apply as the constant of the bottom anchor constraint
+    ///     - trailingMargin: The margin to apply as the constant of the trailing anchor constraint
+    ///     - footerSafe: A boolean that flags whether it should use the `safeAreaLayoutGuide`'s
+    ///     bottom anchor instead of the default one
+    ///
+    func constrainToBottomAndTrailing(of view: UIView,
+                                      bottomMargin: CGFloat = 0,
+                                      trailingMargin: CGFloat = 0,
+                                      footerSafe: Bool = false) {
+        let bottomAnchor = footerSafe ? view.safeBottomAnchor : view.bottomAnchor
+        
+        let constraints = [
+            self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -bottomMargin),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -trailingMargin),
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+    }
  
     // MARK: - positioning helpers
     
