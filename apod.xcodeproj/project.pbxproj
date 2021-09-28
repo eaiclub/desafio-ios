@@ -26,7 +26,6 @@
 		583F12B226FBF7A7007EECD4 /* Typography+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F12B126FBF7A7007EECD4 /* Typography+UIFont.swift */; };
 		583F12B526FCB4D7007EECD4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F12B426FCB4D7007EECD4 /* Coordinator.swift */; };
 		583F12B726FCB503007EECD4 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F12B626FCB503007EECD4 /* ApplicationCoordinator.swift */; };
-		58E26CDD26FCC8FB004DE2EB /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CDC26FCC8FB004DE2EB /* TabBarCoordinator.swift */; };
 		58E26CE726FCD3D9004DE2EB /* AllPhotosCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CE626FCD3D9004DE2EB /* AllPhotosCoordinator.swift */; };
 		58E26CE926FCD3F7004DE2EB /* AllPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CE826FCD3F7004DE2EB /* AllPhotosViewController.swift */; };
 		58E26CEC26FCD6F9004DE2EB /* ApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CEB26FCD6F9004DE2EB /* ApodViewController.swift */; };
@@ -104,7 +103,6 @@
 		583F12B126FBF7A7007EECD4 /* Typography+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography+UIFont.swift"; sourceTree = "<group>"; };
 		583F12B426FCB4D7007EECD4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		583F12B626FCB503007EECD4 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
-		58E26CDC26FCC8FB004DE2EB /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		58E26CE626FCD3D9004DE2EB /* AllPhotosCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosCoordinator.swift; sourceTree = "<group>"; };
 		58E26CE826FCD3F7004DE2EB /* AllPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosViewController.swift; sourceTree = "<group>"; };
 		58E26CEB26FCD6F9004DE2EB /* ApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewController.swift; sourceTree = "<group>"; };
@@ -332,7 +330,6 @@
 			children = (
 				583F12B426FCB4D7007EECD4 /* Coordinator.swift */,
 				583F12B626FCB503007EECD4 /* ApplicationCoordinator.swift */,
-				58E26CDC26FCC8FB004DE2EB /* TabBarCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -693,7 +690,6 @@
 				583F129F26FBC4C4007EECD4 /* ViewCode.swift in Sources */,
 				583F12B526FCB4D7007EECD4 /* Coordinator.swift in Sources */,
 				583F12B726FCB503007EECD4 /* ApplicationCoordinator.swift in Sources */,
-				58E26CDD26FCC8FB004DE2EB /* TabBarCoordinator.swift in Sources */,
 				58E26D2C26FE5476004DE2EB /* APIRequest.swift in Sources */,
 				58E26D1726FD22A1004DE2EB /* Post.swift in Sources */,
 				58E26D3627012FD8004DE2EB /* AllPhotosHeaderView.swift in Sources */,

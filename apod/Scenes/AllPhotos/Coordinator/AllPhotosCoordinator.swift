@@ -9,13 +9,8 @@ import UIKit
 
 class AllPhotosCoordinator: StackCoordinator {
     
-    var navigationController: UINavigationController
     var rootViewController: UIViewController?
-    
-    var parentCoordinator: TabsCoordinator?
-    var relatedTab: Tab? {
-        return TabBarCoordinator.BottomTab.allPhotos
-    }
+    var navigationController: UINavigationController
     
     init(navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController

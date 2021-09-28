@@ -8,13 +8,8 @@
 import UIKit
 
 class ApodCoordinator: StackCoordinator {
-    var navigationController: UINavigationController
     var rootViewController: UIViewController?
-    
-    var parentCoordinator: TabsCoordinator?
-    var relatedTab: Tab? {
-        return TabBarCoordinator.BottomTab.apod
-    }
+    var navigationController: UINavigationController
     
     init(navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController

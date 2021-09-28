@@ -41,6 +41,6 @@ class ApplicationCoordinator: Coordinator {
 
 extension ApplicationCoordinator: LaunchScreenViewControllerDelegate {
     func launchScreenAnimationDidFinish(_ launchScreen: LaunchScreenViewController) {
-        rootViewController = TabBarCoordinator().start()
+        rootViewController = AllPhotosCoordinator().start()
     }
 }
