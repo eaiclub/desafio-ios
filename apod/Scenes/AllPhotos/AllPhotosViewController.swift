@@ -37,7 +37,14 @@ class AllPhotosViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.alpha = 0
         return collectionView
+    }()
+    
+    private lazy var listSkeletonView: ApodListSkeleton = {
+        let view = ApodListSkeleton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     // MARK: - properties
@@ -73,18 +80,33 @@ extension AllPhotosViewController: ViewCode {
     }
     
     func addViews() {
-        view.addSubview(collectionView)
+        view.addSubview(listSkeletonView)
     }
     
     func addConstraints() {
+        listSkeletonView.constrainTo(edgesOf: view)
+    }
+    
+    private func addApodsCollectionView() {
+        view.addSubview(collectionView)
         collectionView.constrainTo(edgesOf: view)
+    }
+    
+    private func revealApodsCollectionAnimating() {
+        collectionView.reloadData()
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            self?.collectionView.alpha = 1
+        }
     }
 }
 
 // MARK: - view model
 extension AllPhotosViewController: AllPhotosViewModelDelegate {
     func updateView() {
-        collectionView.reloadData()
+        listSkeletonView.stopLoading()
+        
+        addApodsCollectionView()
+        revealApodsCollectionAnimating()
     }
     
     func allPhotosViewModel(_ viewModel: AllPhotosViewModel,
