@@ -118,6 +118,31 @@ extension UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
+    /// Constrains the bottom, leading, and trailing of your view code component to
+    /// the same edges of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to constrain to
+    ///     - bottomMargin: The margin to apply as the constant of the bottom anchor constraint
+    ///     - horizontalMargin: The margin to apply as the constant of the leading and trailing anchor contraints
+    ///     - footerSafe: A boolean that flags whether it should use the `safeAreaLayoutGuide`'s
+    ///     bottom anchor instead of the default one
+    ///
+    func constrainToBottomAndSides(of view: UIView,
+                                   bottomMargin: CGFloat = 0,
+                                   horizontalMargins horizontalMargin: CGFloat = 0,
+                                   footerSafe: Bool = false) {
+        let bottomAnchor = footerSafe ? view.safeBottomAnchor : view.bottomAnchor
+        
+        let constraints = [
+            self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -bottomMargin),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: horizontalMargin),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -horizontalMargin)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+    }
+    
     /// Constrains the bottom and trailing of your view code component to the
     /// same edges of the target view
     ///
@@ -158,6 +183,22 @@ extension UIView {
         ]
         
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    /// Positions your view code component below the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to anchor below
+    ///     - margin: The margin to apply as the constant of the constraint that adds some spacing
+    ///     between the view top anchor and the target view's bottom anchor
+    ///
+    /// - Returns: The activated layout constraint's reference
+    ///
+    @discardableResult
+    func anchorBelow(of view: UIView, withMargin margin: CGFloat = .zero) -> NSLayoutConstraint {
+        let constraint = self.topAnchor.constraint(equalTo: view.bottomAnchor, constant: margin)
+        constraint.isActive = true
+        return constraint
     }
     
     // MARK: - sizing helpers
