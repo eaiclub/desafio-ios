@@ -67,6 +67,7 @@ class ApodCell: UICollectionViewCell, ReusableView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.tintColor = .tertiaryLabel.withAlphaComponent(0.5)
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = LayoutProps.radius
         imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -124,7 +125,12 @@ class ApodCell: UICollectionViewCell, ReusableView {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        loaderView.play()
+        loaderView.isHidden = false
+        
         imageView.image = nil
+        imageView.contentMode = .scaleAspectFill
+        
         playIcon.isHidden = true
     }
     
@@ -145,25 +151,38 @@ class ApodCell: UICollectionViewCell, ReusableView {
     }
     
     private func setupImage(of apod: Apod) {
-        let completionHandler: (AFIDataResponse<UIImage>) -> Void = { [weak self] _ in
-            self?.removeLoader()
+        if apod.mediaType == .video {
+            playIcon.isHidden = false
         }
         
-        switch apod.mediaType {
-        case .video:
-            imageView.af.setImage(withURL: apod.thumbnailPath!,
-                                  completion: completionHandler)
-            playIcon.isHidden = false
-            
-        default:
-            imageView.af.setImage(withURL: apod.resourcePath,
-                                  completion: completionHandler)
+        guard let url = Apod.MediaType.resourceLocation(for: apod) else {
+            usePlaceholderImage()
+            return
         }
+        
+        imageView.af.setImage(withURL: url, completion: { [weak self] response in
+            switch response.result {
+            case .success:
+                self?.stopLoading()
+
+            case .failure(let error):
+                debugPrint("Could not possible to load image", error)
+                self?.usePlaceholderImage()
+            }
+        })
     }
     
-    private func removeLoader() {
+    private func stopLoading() {
         loaderView.stop()
-        loaderView.removeFromSuperview()
+        loaderView.isHidden = true
+    }
+    
+    private func usePlaceholderImage() {
+        stopLoading()
+        
+        imageView.contentMode = .center
+        imageView.image = UIImage(systemName: "photo.fill")?
+            .withRenderingMode(.alwaysTemplate)
     }
 }
 
@@ -177,8 +196,8 @@ extension ApodCell: ViewCode {
     }
     
     func addViews() {
-        addSubview(imageView)
         addSubview(loaderView)
+        addSubview(imageView)
         addSubview(dateStackView)
         addSubview(playIcon)
     }
