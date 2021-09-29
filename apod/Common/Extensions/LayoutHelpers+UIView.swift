@@ -69,6 +69,27 @@ extension UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
+    /// Constrains the top of your view code component to the top of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to constrain to the topAnchor
+    ///     - margin: The margin to apply as the constant of the top anchor constraint
+    ///     - notchSafe: A boolean that flags whether it should use the `safeAreaLayoutGuide`'s topAnchor
+    ///     instead of the default one
+    ///
+    /// - Returns: The activated layout constraint's reference
+    ///
+    @discardableResult
+    func constrainToTop(of view: UIView,
+                        withMargin margin: CGFloat = 0,
+                        notchSafe: Bool = false) -> NSLayoutConstraint {
+        let topAnchor = notchSafe ? view.safeTopAnchor : view.topAnchor
+        let constraint = self.topAnchor.constraint(equalTo: topAnchor, constant: margin)
+        
+        NSLayoutConstraint.activate([constraint])
+        return constraint
+    }
+    
     /// Constrains the top and leading of your view code component to the
     /// same edges of the target view
     ///
@@ -162,6 +183,22 @@ extension UIView {
         let constraints = [
             self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -bottomMargin),
             trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -trailingMargin),
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    /// Constrains the leading and trailing of your view code component to the same edges of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to constrain to
+    ///     - horizontalMargin: The margin to apply as the constant of the leading and trailing anchor contraints
+    ///
+    func constrainHorizontally(to view: UIView,
+                               withMargins horizontalMargin: CGFloat = 0) {
+        let constraints = [
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: horizontalMargin),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -horizontalMargin),
         ]
         
         NSLayoutConstraint.activate(constraints)
