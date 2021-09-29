@@ -74,6 +74,7 @@ class AllPhotosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "All Pictures"
         
         viewModel.delegate = self
         viewModel.loadApods()

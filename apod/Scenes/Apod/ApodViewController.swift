@@ -9,13 +9,49 @@ import UIKit
 
 class ApodViewController: UIViewController {
 
-    private lazy var dummyLabel: UILabel = {
+    // MARK: - subviews
+    private lazy var backButton: UIButton = {
+        let image = UIImage(systemName: "arrow.backward")?
+            .withRenderingMode(.alwaysTemplate)
+        
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        button.tintColor = .label
+        button.setImage(image, for: .normal)
+        button.contentMode = .center
+        return button
+    }()
+    
+    private lazy var backLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .galada(size: 24)
-        label.textColor = .secondaryLabel
-        label.text = "Apod"
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        label.font = .openSans(.bold ,size: 14)
+        label.textColor = .label
         return label
+    }()
+    
+    private lazy var topBarView: UIView = {
+        let view = UIStackView(arrangedSubviews: [ backButton, backLabel ])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        view.axis = .horizontal
+        view.distribution = .fill
+        view.alignment = .fill
+        view.spacing = 8
+        view.isLayoutMarginsRelativeArrangement = true
+        view.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+        return view
+    }()
+    
+    private lazy var containerView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [topBarView, UIView()])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.distribution = .fill
+        view.alignment = .fill
+        return view
     }()
     
     private var apod: Apod
@@ -36,7 +72,9 @@ class ApodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dummyLabel.text = apod.title
+        backLabel.text = navigationController?.previousViewController()?
+            .title ?? "back"
+        
     }
 
 }
@@ -47,10 +85,10 @@ extension ApodViewController: ViewCode {
     }
     
     func addViews() {
-        view.addSubview(dummyLabel)
+        view.addSubview(containerView)
     }
     
     func addConstraints() {
-        dummyLabel.anchorToCenter(of: view)
+        containerView.constrainTo(safeEdgesOf: view)
     }
 }
