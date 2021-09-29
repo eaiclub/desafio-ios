@@ -74,10 +74,44 @@ class ApodViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .openSans(.bold, size: 20)
+        label.textColor = .label
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var explanationLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .openSans(size: 14)
+        label.textColor = .label
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var titlesWrapperView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [
+            titleLabel,
+            explanationLabel
+        ])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.spacing = 20
+        view.isLayoutMarginsRelativeArrangement = true
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+        return view
+    }()
+    
     private lazy var contentContainerView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [
             authorWrapperView,
-            apodImageView
+            apodImageView,
+            titlesWrapperView
         ])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
@@ -148,6 +182,9 @@ class ApodViewController: UIViewController {
         authorLabel.text = "by \(copyrightInfo) ©"
         
         setupImage()
+        
+        titleLabel.text = apod.title
+        explanationLabel.text = apod.explanation
     }
     
     private func setupImage() {
@@ -180,7 +217,7 @@ extension ApodViewController: ViewCode {
     }
     
     func addConstraints() {
-        containerView.constrainTo(safeEdgesOf: view)
+        containerView.constrainTo(edgesOf: view)
         
         contentContainerView.constrainToTopAndSides(of: scrollView)
         let bottomConstraint = contentContainerView.constrainToBottom(of: scrollView)
