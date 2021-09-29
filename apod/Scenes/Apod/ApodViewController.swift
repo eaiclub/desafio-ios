@@ -18,6 +18,17 @@ class ApodViewController: UIViewController {
         return label
     }()
     
+    private var apod: Apod
+    
+    init(presenting apod: Apod) {
+        self.apod = apod
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
         setup()
@@ -25,6 +36,7 @@ class ApodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dummyLabel.text = apod.title
     }
 
 }

@@ -11,17 +11,17 @@ class ApodCoordinator: StackCoordinator {
     var rootViewController: UIViewController?
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController = UINavigationController()) {
+    private var apod: Apod
+    
+    init(with apod: Apod, navigationController: UINavigationController = UINavigationController()) {
+        self.apod = apod
         self.navigationController = navigationController
     }
     
     func start() -> UIViewController {
-        let controller = ApodViewController()
-        
-        navigationController.setViewControllers([controller], animated: false)
-        navigationController.isNavigationBarHidden = true
+        let controller = ApodViewController(presenting: apod)
         
         rootViewController = controller
-        return navigationController
+        return controller
     }
 }

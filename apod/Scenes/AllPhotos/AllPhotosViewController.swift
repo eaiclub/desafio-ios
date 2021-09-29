@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AllPhotosFlowCoordinatorDelegate: AnyObject {
+    func allPhotosViewController(_ controller: UIViewController, didSelectCellFor apod: Apod)
+}
+
 class AllPhotosViewController: UIViewController {
 
     // MARK: - subviews
@@ -32,6 +36,7 @@ class AllPhotosViewController: UIViewController {
         collectionView.register(AllPhotosHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: AllPhotosHeaderView.reuseId)
+        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +53,8 @@ class AllPhotosViewController: UIViewController {
     }()
     
     // MARK: - properties
+    var flowCoordinatorDelegate: AllPhotosFlowCoordinatorDelegate?
+    
     private var viewModel: AllPhotosViewModel
     
     // MARK: - view lifecycle
@@ -125,6 +132,14 @@ extension AllPhotosViewController: AllPhotosViewModelDelegate {
             message: "Something went wrong loading the photos of \(startDate) to \(endDate)",
             in: self
         )
+    }
+}
+
+extension AllPhotosViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        let apod = viewModel.apods[indexPath.row]
+        flowCoordinatorDelegate?.allPhotosViewController(self, didSelectCellFor: apod)
     }
 }
 

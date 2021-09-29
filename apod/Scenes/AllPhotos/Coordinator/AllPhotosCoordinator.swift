@@ -18,6 +18,7 @@ class AllPhotosCoordinator: StackCoordinator {
     
     func start() -> UIViewController {
         let controller = AllPhotosViewController()
+        controller.flowCoordinatorDelegate = self
         
         navigationController.setViewControllers([controller], animated: false)
         navigationController.isNavigationBarHidden = true
@@ -26,4 +27,13 @@ class AllPhotosCoordinator: StackCoordinator {
         return navigationController
     }
     
+}
+
+extension AllPhotosCoordinator: AllPhotosFlowCoordinatorDelegate {
+    func allPhotosViewController(_ controller: UIViewController,
+                                 didSelectCellFor apod: Apod) {
+        let viewController = ApodCoordinator.init(with: apod, navigationController: navigationController).start()
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
