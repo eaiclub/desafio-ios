@@ -45,8 +45,27 @@ class ApodViewController: UIViewController {
         return view
     }()
     
+    private lazy var contentContainerView: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.distribution = .fill
+        view.alignment = .fill
+        view.spacing = 12
+        view.isLayoutMarginsRelativeArrangement = true
+        view.layoutMargins = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+        return view
+    }()
+    
+    private lazy var scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(contentContainerView)
+        return view
+    }()
+    
     private lazy var containerView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [topBarView, UIView()])
+        let view = UIStackView(arrangedSubviews: [topBarView, scrollView])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.distribution = .fill
@@ -54,8 +73,10 @@ class ApodViewController: UIViewController {
         return view
     }()
     
+    // MARK: - properties
     private var apod: Apod
     
+    // MARK: - view lifecycle
     init(presenting apod: Apod) {
         self.apod = apod
         super.init(nibName: nil, bundle: nil)
@@ -74,7 +95,6 @@ class ApodViewController: UIViewController {
         super.viewDidLoad()
         backLabel.text = navigationController?.previousViewController()?
             .title ?? "back"
-        
     }
 
 }
@@ -90,5 +110,13 @@ extension ApodViewController: ViewCode {
     
     func addConstraints() {
         containerView.constrainTo(safeEdgesOf: view)
+        
+        contentContainerView.constrainToTopAndSides(of: scrollView)
+        let bottomConstraint = contentContainerView.constrainToBottom(of: scrollView)
+        bottomConstraint.priority = .defaultLow
+                
+        contentContainerView.anchorToCenterX(of: scrollView)
+        let centerYConstraint = contentContainerView.anchorToCenterY(of: scrollView)
+        centerYConstraint.priority = .defaultLow
     }
 }

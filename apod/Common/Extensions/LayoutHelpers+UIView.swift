@@ -139,6 +139,27 @@ extension UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
+    /// Constrains the bottom of your view code component to the bottom of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to constrain to the bottom anchor
+    ///     - margin: The margin to apply as the constant of the bottom anchor constraint
+    ///     - footerSafe: A boolean that flags whether it should use the `safeAreaLayoutGuide`'s bottom
+    ///     anchor instead of the default one
+    ///
+    /// - Returns: The activated layout constraint's reference
+    ///
+    @discardableResult
+    func constrainToBottom(of view: UIView,
+                           withMargin margin: CGFloat = 0,
+                           footerSafe: Bool = false) -> NSLayoutConstraint {
+        let bottomAnchor = footerSafe ? view.safeBottomAnchor : view.bottomAnchor
+        let constraint = self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin)
+        
+        constraint.isActive = true
+        return constraint
+    }
+    
     /// Constrains the bottom, leading, and trailing of your view code component to
     /// the same edges of the target view
     ///
@@ -220,6 +241,38 @@ extension UIView {
         ]
         
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    /// Positions your view code component centering on the X axis of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to anchor center horizontally
+    ///     - offset: A float representing the offset to apply as the constant of the
+    ///     centerX anchor constraint
+    ///
+    @discardableResult
+    func anchorToCenterX(of view: UIView, withOffset offset: CGFloat = .zero) -> NSLayoutConstraint {
+        let constraint = self.centerXAnchor
+            .constraint(equalTo: view.centerXAnchor, constant: offset)
+        
+        NSLayoutConstraint.activate([constraint])
+        return constraint
+    }
+    
+    /// Positions your view code component centering on the Y axis of the target view
+    ///
+    /// - Parameters:
+    ///     - view: The target view to anchor center vertically
+    ///     - offset: A float representing the offset to apply as the constant of the
+    ///     centerY anchor constraint
+    ///
+    @discardableResult
+    func anchorToCenterY(of view: UIView, withOffset offset: CGFloat = .zero) -> NSLayoutConstraint {
+        let constraint = self.centerYAnchor
+            .constraint(equalTo: view.centerYAnchor, constant: offset)
+        
+        NSLayoutConstraint.activate([constraint])
+        return constraint
     }
     
     /// Positions your view code component below the target view
