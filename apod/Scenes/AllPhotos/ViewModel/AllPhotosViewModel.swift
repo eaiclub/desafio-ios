@@ -9,6 +9,7 @@ import UIKit
 
 protocol AllPhotosViewModelDelegate: ViewModelDelegate {
     func allPhotosViewModel(_ viewModel: AllPhotosViewModel, didLoadApodsFor indexes: [IndexPath])
+    func allPhotosViewModel(_ viewModel: AllPhotosViewModel, didErrorOccurFor range: (Date, Date))
 }
 
 class AllPhotosViewModel {
@@ -52,8 +53,12 @@ class AllPhotosViewModel {
                 self.apods = newApods
             }
             
-        } onFailure: { error in
-            print(error)
+        } onFailure: { [weak self] error in
+            debugPrint(error)
+            guard let self = self else { return }
+            
+            self.isRequestingData = false
+            self.delegate?.allPhotosViewModel(self, didErrorOccurFor: (dates.first!, dates.last!))
         }
     }
     

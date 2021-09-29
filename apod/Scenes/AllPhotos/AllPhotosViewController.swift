@@ -94,6 +94,7 @@ extension AllPhotosViewController: ViewCode {
     
     private func revealApodsCollectionAnimating() {
         collectionView.reloadData()
+        
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.collectionView.alpha = 1
         }
@@ -114,6 +115,16 @@ extension AllPhotosViewController: AllPhotosViewModelDelegate {
         let indexesToReload = visibleIndexesToReload(intersecting: indexes)
         
         collectionView.reloadItems(at: indexesToReload)
+    }
+    
+    func allPhotosViewModel(_ viewModel: AllPhotosViewModel, didErrorOccurFor range: (Date, Date)) {
+        let startDate = DateFormatter.format(to: .monthDayYear, value: range.0)
+        let endDate = DateFormatter.format(to: .monthDayYear, value: range.1)
+        
+        CustomTopAlert.show(
+            message: "Something went wrong loading the photos of \(startDate) to \(endDate)",
+            in: self
+        )
     }
 }
 
