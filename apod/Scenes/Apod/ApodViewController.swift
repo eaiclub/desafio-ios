@@ -49,15 +49,43 @@ class ApodViewController: UIViewController {
         return view
     }()
     
+    private lazy var authorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .openSans(size: 14)
+        label.textColor = .label
+        return label
+    }()
+    
+    private lazy var authorWrapperView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [authorLabel])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isLayoutMarginsRelativeArrangement = true
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+        return view
+    }()
+    
+    private lazy var apodImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .tertiaryLabel.withAlphaComponent(0.5)
+        imageView.layer.masksToBounds = false
+        return imageView
+    }()
+    
     private lazy var contentContainerView: UIStackView = {
-        let view = UIStackView()
+        let view = UIStackView(arrangedSubviews: [
+            authorWrapperView,
+            apodImageView
+        ])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.distribution = .fill
         view.alignment = .fill
-        view.spacing = 12
+        view.spacing = 20
         view.isLayoutMarginsRelativeArrangement = true
-        view.layoutMargins = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+        view.layoutMargins = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
         return view
     }()
     
@@ -82,6 +110,8 @@ class ApodViewController: UIViewController {
     
     private var apod: Apod
     
+    private var imageHeightConstraint: NSLayoutConstraint?
+    
     // MARK: - view lifecycle
     init(presenting apod: Apod) {
         self.apod = apod
@@ -99,16 +129,44 @@ class ApodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backLabel.text = navigationController?.previousViewController()?
-            .title ?? "back"
-        
         backButton.addTarget(self,
                              action: #selector(backButtonPressed(_:)),
                              for: .touchUpInside)
+        
+        updateView()
     }
 
     @objc private func backButtonPressed(_ sender: UIButton) {
         flowCoordinatorDelegate?.apodViewController(self, didPressBackButton: sender)
+    }
+    
+    private func updateView() {
+        backLabel.text = navigationController?.previousViewController()?
+            .title ?? "back"
+        
+        let copyrightInfo = apod.author != nil ? apod.author! : "unknown owner"
+        authorLabel.text = "by \(copyrightInfo) ©"
+        
+        setupImage()
+    }
+    
+    private func setupImage() {
+        guard let url = Apod.MediaType.resourceLocation(for: apod) else {
+            return
+        }
+        
+        apodImageView.af.setImage(withURL: url, completion: { [weak self] response in
+            switch response.result {
+            case .success(let image):
+                let height = UIScreen.main.bounds.width * image.size.height / image.size.width
+                
+                self?.imageHeightConstraint?.constant = height
+                self?.view.layoutIfNeeded()
+
+            case .failure(let error):
+                debugPrint("Could not possible to load image", error)
+            }
+        })
     }
 }
 
@@ -131,5 +189,8 @@ extension ApodViewController: ViewCode {
         contentContainerView.anchorToCenterX(of: scrollView)
         let centerYConstraint = contentContainerView.anchorToCenterY(of: scrollView)
         centerYConstraint.priority = .defaultLow
+        
+        imageHeightConstraint = apodImageView
+            .constrainHeight(to: UIScreen.main.bounds.width)
     }
 }

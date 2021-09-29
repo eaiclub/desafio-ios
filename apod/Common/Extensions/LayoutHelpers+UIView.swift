@@ -322,4 +322,19 @@ extension UIView {
         constraint.isActive = true
         return constraint
     }
+    
+    /// Constrains the width of your view code component
+    ///
+    /// - Parameters:
+    ///     - constant: The `CGFloat` representing the desired width to the view.
+    ///     Define the constant of the widthAnchor constraint
+    ///
+    /// - Returns: The activated layout constraint's reference
+    ///
+    @discardableResult
+    func constrainWidth(to constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = self.widthAnchor.constraint(equalToConstant: constant)
+        constraint.isActive = true
+        return constraint
+    }
 }
