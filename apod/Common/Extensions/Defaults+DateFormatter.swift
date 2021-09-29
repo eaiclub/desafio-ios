@@ -11,6 +11,7 @@ extension DateFormatter {
     enum FormatDefaults: String {
         case abbreviatedMonthOfYear = "MMM yyyy"
         case ISOLocalDate = "yyyy-MM-dd"
+        case monthDayYear = "MM/dd/yyyy"
     }
     
     static func format(to pattern: FormatDefaults, value: Date) -> String {
