@@ -9,6 +9,7 @@ import Foundation
 
 extension DateFormatter {
     enum FormatDefaults: String {
+        case dayOfAbbreviatedMonthAndYear = "dd MMM yyyy"
         case abbreviatedMonthOfYear = "MMM yyyy"
         case ISOLocalDate = "yyyy-MM-dd"
         case monthDayYear = "MM/dd/yyyy"

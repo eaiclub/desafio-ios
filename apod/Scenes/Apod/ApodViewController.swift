@@ -36,8 +36,19 @@ class ApodViewController: UIViewController {
         return label
     }()
     
+    private lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        label.font = .openSans(.boldItalic ,size: 16)
+        label.textColor = .secondaryLabel
+        return label
+    }()
+    
     private lazy var topBarView: UIView = {
-        let view = UIStackView(arrangedSubviews: [ backButton, backLabel ])
+        let view = UIStackView(arrangedSubviews: [
+            backButton, backLabel, dateLabel
+        ])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         view.axis = .horizontal
@@ -177,6 +188,8 @@ class ApodViewController: UIViewController {
     private func updateView() {
         backLabel.text = navigationController?.previousViewController()?
             .title ?? "back"
+        dateLabel.text = DateFormatter.format(to: .dayOfAbbreviatedMonthAndYear,
+                                              value: apod.date)
         
         let copyrightInfo = apod.author != nil ? apod.author! : "unknown owner"
         authorLabel.text = "by \(copyrightInfo) ©"
