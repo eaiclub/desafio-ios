@@ -30,7 +30,7 @@ class AllPhotosCoordinator: StackCoordinator {
 }
 
 extension AllPhotosCoordinator: AllPhotosFlowCoordinatorDelegate {
-    func allPhotosViewController(_ controller: UIViewController,
+    func allPhotosViewController(_ controller: AllPhotosViewController,
                                  didSelectCellFor apod: Apod) {
         let viewController = ApodCoordinator.init(with: apod, navigationController: navigationController).start()
         

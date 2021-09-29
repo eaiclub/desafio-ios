@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AllPhotosFlowCoordinatorDelegate: AnyObject {
-    func allPhotosViewController(_ controller: UIViewController, didSelectCellFor apod: Apod)
+    func allPhotosViewController(_ controller: AllPhotosViewController, didSelectCellFor apod: Apod)
 }
 
 class AllPhotosViewController: UIViewController {
