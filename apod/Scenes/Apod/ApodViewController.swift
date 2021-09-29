@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ApodFlowCoordinatorDelegate: AnyObject {
+    func apodViewController(_ controller: ApodViewController, didPressBackButton sender: UIButton)
+}
+
 class ApodViewController: UIViewController {
 
     // MARK: - subviews
@@ -74,6 +78,8 @@ class ApodViewController: UIViewController {
     }()
     
     // MARK: - properties
+    var flowCoordinatorDelegate: ApodFlowCoordinatorDelegate?
+    
     private var apod: Apod
     
     // MARK: - view lifecycle
@@ -95,8 +101,15 @@ class ApodViewController: UIViewController {
         super.viewDidLoad()
         backLabel.text = navigationController?.previousViewController()?
             .title ?? "back"
+        
+        backButton.addTarget(self,
+                             action: #selector(backButtonPressed(_:)),
+                             for: .touchUpInside)
     }
 
+    @objc private func backButtonPressed(_ sender: UIButton) {
+        flowCoordinatorDelegate?.apodViewController(self, didPressBackButton: sender)
+    }
 }
 
 extension ApodViewController: ViewCode {

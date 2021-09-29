@@ -8,6 +8,7 @@
 import UIKit
 
 class ApodCoordinator: StackCoordinator {
+    
     var rootViewController: UIViewController?
     var navigationController: UINavigationController
     
@@ -20,8 +21,18 @@ class ApodCoordinator: StackCoordinator {
     
     func start() -> UIViewController {
         let controller = ApodViewController(presenting: apod)
+        controller.flowCoordinatorDelegate = self
         
         rootViewController = controller
         return controller
     }
+    
+}
+
+extension ApodCoordinator: ApodFlowCoordinatorDelegate {
+    
+    func apodViewController(_ controller: ApodViewController, didPressBackButton sender: UIButton) {
+        navigationController.popViewController(animated: true)
+    }
+    
 }
