@@ -32,7 +32,6 @@
 		58E26CE926FCD3F7004DE2EB /* AllPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CE826FCD3F7004DE2EB /* AllPhotosViewController.swift */; };
 		58E26CEC26FCD6F9004DE2EB /* ApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CEB26FCD6F9004DE2EB /* ApodViewController.swift */; };
 		58E26CEE26FCD728004DE2EB /* ApodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CED26FCD728004DE2EB /* ApodCoordinator.swift */; };
-		58E26CF026FCDCCF004DE2EB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CEF26FCDCCF004DE2EB /* BaseTabBarController.swift */; };
 		58E26CFC26FCF273004DE2EB /* Open Sans Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF226FCF273004DE2EB /* Open Sans Semibold.ttf */; };
 		58E26CFD26FCF273004DE2EB /* Open Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF326FCF273004DE2EB /* Open Sans Light.ttf */; };
 		58E26CFE26FCF273004DE2EB /* Open Sans Semibold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E26CF426FCF273004DE2EB /* Open Sans Semibold Italic.ttf */; };
@@ -111,7 +110,6 @@
 		58E26CE826FCD3F7004DE2EB /* AllPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosViewController.swift; sourceTree = "<group>"; };
 		58E26CEB26FCD6F9004DE2EB /* ApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewController.swift; sourceTree = "<group>"; };
 		58E26CED26FCD728004DE2EB /* ApodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodCoordinator.swift; sourceTree = "<group>"; };
-		58E26CEF26FCDCCF004DE2EB /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		58E26CF226FCF273004DE2EB /* Open Sans Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Semibold.ttf"; sourceTree = "<group>"; };
 		58E26CF326FCF273004DE2EB /* Open Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Light.ttf"; sourceTree = "<group>"; };
 		58E26CF426FCF273004DE2EB /* Open Sans Semibold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Semibold Italic.ttf"; sourceTree = "<group>"; };
@@ -283,7 +281,6 @@
 				58E26CE226FCD326004DE2EB /* Launch */,
 				58E26CE326FCD337004DE2EB /* AllPhotos */,
 				58E26CE426FCD34F004DE2EB /* Apod */,
-				58E26CEF26FCDCCF004DE2EB /* BaseTabBarController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -684,7 +681,6 @@
 				58E26D1F26FD2C14004DE2EB /* DaysBetween+Calendar.swift in Sources */,
 				58E26D1A26FD23AF004DE2EB /* Apod.swift in Sources */,
 				58E26D0D26FD06BA004DE2EB /* ApodCell.swift in Sources */,
-				58E26CF026FCDCCF004DE2EB /* BaseTabBarController.swift in Sources */,
 				583F126F26FBBBB0007EECD4 /* LaunchScreenViewController.swift in Sources */,
 				583F12B226FBF7A7007EECD4 /* Typography+UIFont.swift in Sources */,
 				58E26D0826FCFE45004DE2EB /* AllPhotosViewModel.swift in Sources */,
