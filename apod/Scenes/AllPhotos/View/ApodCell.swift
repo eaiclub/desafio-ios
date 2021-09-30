@@ -67,7 +67,6 @@ class ApodCell: UICollectionViewCell, ReusableView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.tintColor = .tertiaryLabel.withAlphaComponent(0.5)
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = LayoutProps.radius
         imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -129,8 +128,6 @@ class ApodCell: UICollectionViewCell, ReusableView {
         loaderView.isHidden = false
         
         imageView.image = nil
-        imageView.contentMode = .scaleAspectFill
-        
         playIcon.isHidden = true
     }
     
@@ -179,10 +176,7 @@ class ApodCell: UICollectionViewCell, ReusableView {
     
     private func usePlaceholderImage() {
         stopLoading()
-        
-        imageView.contentMode = .center
-        imageView.image = UIImage(systemName: "photo.fill")?
-            .withRenderingMode(.alwaysTemplate)
+        imageView.image = UIImage(named: "ApodCellPlaceholder")
     }
 }
 
