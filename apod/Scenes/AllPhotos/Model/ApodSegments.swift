@@ -50,4 +50,8 @@ class ApodSegments {
         currentPage += 1
         return segment(for: currentPage)
     }
+    
+    func reset() {
+        currentPage = 0
+    }
 }

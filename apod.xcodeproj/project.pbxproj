@@ -11,7 +11,7 @@
 		580B234B27033DF70054024F /* ApodListSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580B234A27033DF70054024F /* ApodListSkeleton.swift */; };
 		580B234D27033EC30054024F /* SkeletonRect.json in Resources */ = {isa = PBXBuildFile; fileRef = 580B234C27033EC30054024F /* SkeletonRect.json */; };
 		580B234F2703473D0054024F /* HeaderSkeleton.json in Resources */ = {isa = PBXBuildFile; fileRef = 580B234E2703473D0054024F /* HeaderSkeleton.json */; };
-		580B23522703B8110054024F /* CustomTopAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580B23512703B8110054024F /* CustomTopAlert.swift */; };
+		580B23522703B8110054024F /* TopAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580B23512703B8110054024F /* TopAlert.swift */; };
 		580B23542704A9190054024F /* StackHelpers+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580B23532704A9190054024F /* StackHelpers+UINavigationController.swift */; };
 		583F126B26FBBBB0007EECD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F126A26FBBBB0007EECD4 /* AppDelegate.swift */; };
 		583F126D26FBBBB0007EECD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F126C26FBBBB0007EECD4 /* SceneDelegate.swift */; };
@@ -84,7 +84,7 @@
 		580B234A27033DF70054024F /* ApodListSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodListSkeleton.swift; sourceTree = "<group>"; };
 		580B234C27033EC30054024F /* SkeletonRect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SkeletonRect.json; sourceTree = "<group>"; };
 		580B234E2703473D0054024F /* HeaderSkeleton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HeaderSkeleton.json; sourceTree = "<group>"; };
-		580B23512703B8110054024F /* CustomTopAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTopAlert.swift; sourceTree = "<group>"; };
+		580B23512703B8110054024F /* TopAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlert.swift; sourceTree = "<group>"; };
 		580B23532704A9190054024F /* StackHelpers+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackHelpers+UINavigationController.swift"; sourceTree = "<group>"; };
 		583F126726FBBBB0007EECD4 /* apod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583F126A26FBBBB0007EECD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		580B23502703B7EA0054024F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				580B23512703B8110054024F /* CustomTopAlert.swift */,
+				580B23512703B8110054024F /* TopAlert.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -700,7 +700,7 @@
 				583F12A726FBE228007EECD4 /* LayoutHelpers+UIView.swift in Sources */,
 				58E26CE726FCD3D9004DE2EB /* AllPhotosCoordinator.swift in Sources */,
 				580B234B27033DF70054024F /* ApodListSkeleton.swift in Sources */,
-				580B23522703B8110054024F /* CustomTopAlert.swift in Sources */,
+				580B23522703B8110054024F /* TopAlert.swift in Sources */,
 				58E26D1D26FD26AE004DE2EB /* ApodSegments.swift in Sources */,
 				58E26CE926FCD3F7004DE2EB /* AllPhotosViewController.swift in Sources */,
 				583F129F26FBC4C4007EECD4 /* ViewCode.swift in Sources */,

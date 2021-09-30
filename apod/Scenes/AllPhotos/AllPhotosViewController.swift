@@ -40,7 +40,7 @@ class AllPhotosViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .systemBackground
         collectionView.showsVerticalScrollIndicator = false
         collectionView.alpha = 0
         return collectionView
@@ -79,12 +79,35 @@ class AllPhotosViewController: UIViewController {
         viewModel.delegate = self
         viewModel.loadApods()
     }
+    
+    private func revealApodsCollectionAnimating() {
+        collectionView.reloadData()
+        
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            self?.collectionView.alpha = 1
+        }
+    }
+    
+    private func showErrorFor(page: Int, withDates dates: (Date, Date)) {
+        let action = TopAlert.Action(title: "Retry") { [weak self] in
+            self?.viewModel.loadApods()
+        }
+        
+        let startDate = DateFormatter.format(to: .monthDayYear, value: dates.0)
+        let endDate = DateFormatter.format(to: .monthDayYear, value: dates.1)
+        
+        TopAlert.show(
+            message: "Something went wrong loading the photos of \(startDate) to \(endDate)",
+            in: self,
+            action: page == 1 ? action : nil
+        )
+    }
 }
 
 // MARK: - view code
 extension AllPhotosViewController: ViewCode {
     func addTheme() {
-        view.backgroundColor = .tertiarySystemBackground
+        view.backgroundColor = .systemBackground
     }
     
     func addViews() {
@@ -98,14 +121,6 @@ extension AllPhotosViewController: ViewCode {
     private func addApodsCollectionView() {
         view.addSubview(collectionView)
         collectionView.constrainTo(edgesOf: view)
-    }
-    
-    private func revealApodsCollectionAnimating() {
-        collectionView.reloadData()
-        
-        UIView.animate(withDuration: 0.5) { [weak self] in
-            self?.collectionView.alpha = 1
-        }
     }
 }
 
@@ -125,14 +140,10 @@ extension AllPhotosViewController: AllPhotosViewModelDelegate {
         collectionView.reloadItems(at: indexesToReload)
     }
     
-    func allPhotosViewModel(_ viewModel: AllPhotosViewModel, didErrorOccurFor range: (Date, Date)) {
-        let startDate = DateFormatter.format(to: .monthDayYear, value: range.0)
-        let endDate = DateFormatter.format(to: .monthDayYear, value: range.1)
-        
-        CustomTopAlert.show(
-            message: "Something went wrong loading the photos of \(startDate) to \(endDate)",
-            in: self
-        )
+    func allPhotosViewModel(_ viewModel: AllPhotosViewModel,
+                            didErrorOccurFor page: Int,
+                            dates range: (Date, Date)) {
+        showErrorFor(page: page, withDates: range)
     }
 }
 

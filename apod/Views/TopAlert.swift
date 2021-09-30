@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTopAlert: UIView {
+fileprivate class CustomTopAlert: UIView {
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -18,6 +18,14 @@ class CustomTopAlert: UIView {
         label.lineBreakMode = .byWordWrapping
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         return label
+    }()
+    
+    private lazy var button: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = .openSans(.bold, size: 14)
+        button.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        return button
     }()
     
     private lazy var containerView: UIStackView = {
@@ -33,6 +41,8 @@ class CustomTopAlert: UIView {
             label.text = message
         }
     }
+    
+    var autoClosable: Bool = true
     
     var parent: UIView?
     var topConstraint: NSLayoutConstraint?
@@ -57,7 +67,7 @@ class CustomTopAlert: UIView {
         parent.layoutIfNeeded()
     }
     
-    fileprivate func show(in parent: UIView) {
+    func show(in parent: UIView) {
         addAsSubview(in: parent)
         
         self.topConstraint?.constant = 0
@@ -66,8 +76,11 @@ class CustomTopAlert: UIView {
             self?.parent?.layoutIfNeeded()
             
         } completion: { [weak self] _ in
+            guard let self = self,
+                  self.autoClosable else { return }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self?.close()
+                self.close()
             }
         }
     }
@@ -92,6 +105,19 @@ class CustomTopAlert: UIView {
             self?.removeFromSuperview()
         }
     }
+    
+    func configureButton(for action: TopAlert.Action) {
+        button.setTitle(action.title, for: .normal)
+    
+        let uiAction = UIAction { [weak self] _ in
+            action.handler()
+            self?.close()
+        }
+        button.addAction(uiAction, for: .touchUpInside)
+        
+        containerView.addArrangedSubview(button)
+        autoClosable = false
+    }
 }
 
 extension CustomTopAlert: ViewCode {
@@ -112,10 +138,27 @@ extension CustomTopAlert: ViewCode {
     }
 }
 
-extension CustomTopAlert {
-    static func show(message: String, in controller: UIViewController) {
+class TopAlert {
+    struct Action {
+        var title: String
+        var handler: () -> Void
+        
+        init(title: String, handler: @escaping () -> Void) {
+            self.title = title
+            self.handler = handler
+        }
+    }
+    
+    static func show(message: String,
+                     in controller: UIViewController,
+                     action: TopAlert.Action? = nil) {
+        
         let alert = CustomTopAlert()
         alert.message = message
+        
+        if let action = action {
+            alert.configureButton(for: action)
+        }
         
         alert.show(in: controller.view)
     }

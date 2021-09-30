@@ -9,7 +9,7 @@ import UIKit
 
 protocol AllPhotosViewModelDelegate: ViewModelDelegate {
     func allPhotosViewModel(_ viewModel: AllPhotosViewModel, didLoadApodsFor indexes: [IndexPath])
-    func allPhotosViewModel(_ viewModel: AllPhotosViewModel, didErrorOccurFor range: (Date, Date))
+    func allPhotosViewModel(_ viewModel: AllPhotosViewModel, didErrorOccurFor page: Int, dates range: (Date, Date))
 }
 
 class AllPhotosViewModel {
@@ -57,8 +57,13 @@ class AllPhotosViewModel {
             debugPrint(error)
             guard let self = self else { return }
             
+            let page = self.segments.currentPage
+            if page == 1 {
+                self.segments.reset()
+            }
+            
             self.isRequestingData = false
-            self.delegate?.allPhotosViewModel(self, didErrorOccurFor: (dates.first!, dates.last!))
+            self.delegate?.allPhotosViewModel(self, didErrorOccurFor: page, dates: (dates.first!, dates.last!))
         }
     }
     
