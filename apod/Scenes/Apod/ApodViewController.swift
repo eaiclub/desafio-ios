@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 protocol ApodFlowCoordinatorDelegate: AnyObject {
     func apodViewController(_ controller: ApodViewController, didPressBackButton sender: UIButton)
@@ -76,12 +77,23 @@ class ApodViewController: UIViewController {
         return view
     }()
     
+    private lazy var loaderView: AnimationView = {
+        let animation = AnimationView(name: "Loader")
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        animation.contentMode = .scaleAspectFill
+        animation.loopMode = .loop
+        animation.animationSpeed = 1.5
+        animation.play()
+        return animation
+    }()
+    
     private lazy var apodImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .tertiaryLabel.withAlphaComponent(0.5)
         imageView.layer.masksToBounds = false
+        imageView.addSubview(loaderView)
         return imageView
     }()
     
@@ -201,18 +213,24 @@ class ApodViewController: UIViewController {
     }
     
     private func setupImage() {
-        guard let url = Apod.MediaType.resourceLocation(for: apod) else {
+        guard let url = Apod.MediaType.resourceLocation(for: apod, hd: true) else {
             return
         }
         
         apodImageView.af.setImage(withURL: url, completion: { [weak self] response in
+            self?.loaderView.stop()
+            self?.loaderView.removeFromSuperview()
+            
             switch response.result {
             case .success(let image):
                 let height = UIScreen.main.bounds.width * image.size.height / image.size.width
                 
                 self?.imageHeightConstraint?.constant = height
-                self?.view.layoutIfNeeded()
-
+                
+                UIView.animate(withDuration: 0.7) {
+                    self?.view.layoutIfNeeded()
+                }
+        
             case .failure(let error):
                 debugPrint("Could not possible to load image", error)
             }
@@ -242,5 +260,8 @@ extension ApodViewController: ViewCode {
         
         imageHeightConstraint = apodImageView
             .constrainHeight(to: UIScreen.main.bounds.width)
+        
+        loaderView.anchorToCenter(of: apodImageView)
+        loaderView.constrainSize(to: .init(width: 94, height: 94))
     }
 }

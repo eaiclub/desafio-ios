@@ -13,13 +13,18 @@ struct Apod: Codable {
         case image
         case video
         
-        static func resourceLocation(for apod: Apod) -> URL? {
+        static func resourceLocation(for apod: Apod, hd: Bool = false) -> URL? {
             switch apod.mediaType {
             case .video:
                 guard let thumbPath = apod.thumbnailPath else { return nil }
                 return URL(string: thumbPath)
             default:
-                return URL(string: apod.resourcePath)
+                guard hd == true,
+                      let hdResourcePath = apod.hdResourcePath else {
+                    return URL(string: apod.resourcePath)
+                }
+                
+                return URL(string: hdResourcePath)
             }
         }
     }

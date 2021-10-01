@@ -76,7 +76,7 @@ class ApodCell: UICollectionViewCell, ReusableView {
     private lazy var loaderView: AnimationView = {
         let animation = AnimationView(name: "Loader")
         animation.translatesAutoresizingMaskIntoConstraints = false
-        animation.contentMode = .scaleToFill
+        animation.contentMode = .scaleAspectFill
         animation.loopMode = .loop
         animation.animationSpeed = 1.5
         animation.play()
