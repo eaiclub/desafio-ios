@@ -66,6 +66,8 @@ extension AppDelegate {
     ///     customized one, backed only by Alamofire's auto purging in-memory cache, the memory usage was reduced
     ///     for numbers about 100 to 150MB even when scrolling deeply.
     ///
+    /// [See docs](https://github.com/Alamofire/AlamofireImage#setting-ideal-capacity-limits)
+    ///
     private func configureAlamofireSharedImageDownloader() {
         let customImageDownloader = ImageDownloader(
             configuration: customSessionConfiguration(),
