@@ -37,7 +37,7 @@ class AllPhotosViewModel {
             return
         }
         
-        let dates = segments.nextChunk()
+        guard let dates = try? segments.nextChunk() else { return }
         
         isRequestingData = true
         ApodRepository.getApods(from: dates.first!, ultil: dates.last!) { [weak self] newApods in
