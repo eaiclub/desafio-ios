@@ -92,7 +92,7 @@ class ApodViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .tertiaryLabel.withAlphaComponent(0.5)
-        imageView.layer.masksToBounds = false
+        imageView.backgroundColor = .secondarySystemBackground.withAlphaComponent(0.5)
         imageView.addSubview(loaderView)
         return imageView
     }()
