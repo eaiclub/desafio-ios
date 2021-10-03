@@ -8,6 +8,15 @@ Abaixo segue a demo do app construído, assim como algumas issues relacionadas a
 |:---|:---:|---:|
 | <img alt="all apods demo" src="https://user-images.githubusercontent.com/13206745/135726399-56a9618b-f89d-40b6-a63f-383dfbc2cdd9.gif" height="420" /> | <img alt="infinite scrolling demo" src="https://user-images.githubusercontent.com/13206745/135726520-134dc13f-18b0-485e-9bb3-3ecf6096b2e1.gif" height="420" /> | <img alt="exploring apod demo" src="https://user-images.githubusercontent.com/13206745/135726870-f0e3a498-8c45-426d-8cd3-b0e28c33696f.gif" height="420" /> |
 
+## Ainda não implementado
+
+1. Requests em paralelo por fotos específicas em caso de falha na busca por uma página usando DispatchGroup
+2. Consumir API KEY através de .xcconfig file
+3. Criar componente ApodImageView cpara reutilização no ApodCell e no ApodViewController
+4. Zoom in na imagem do ApodViewController a partir de gesture
+5. ViewController para executar vídeo
+6. Aumentar cobertura de testes
+
 ## Criando um App de Scroll Infinito pra NASA
 
 ### **Descrição do aplicativo**
