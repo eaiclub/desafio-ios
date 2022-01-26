@@ -4,9 +4,23 @@ Abaixo segue a demo do app construído, assim como algumas issues relacionadas a
 
 ## Demonstração do app
 
-| Apod list  | Infinite Scroll | Exploring Apod |
-|:---|:---:|---:|
-| <img alt="all apods demo" src="https://user-images.githubusercontent.com/13206745/135726399-56a9618b-f89d-40b6-a63f-383dfbc2cdd9.gif" height="420" /> | <img alt="infinite scrolling demo" src="https://user-images.githubusercontent.com/13206745/135726520-134dc13f-18b0-485e-9bb3-3ecf6096b2e1.gif" height="420" /> | <img alt="exploring apod demo" src="https://user-images.githubusercontent.com/13206745/135726870-f0e3a498-8c45-426d-8cd3-b0e28c33696f.gif" height="420" /> |
+### Apod list
+
+<p align="center">
+<img alt="all apods demo" src="https://user-images.githubusercontent.com/13206745/135726399-56a9618b-f89d-40b6-a63f-383dfbc2cdd9.gif" height="420" />
+</p>
+
+### Infinite Scroll
+
+<p align="center">
+<img alt="infinite scrolling demo" src="https://user-images.githubusercontent.com/13206745/135726520-134dc13f-18b0-485e-9bb3-3ecf6096b2e1.gif" height="420" />
+</p>
+  
+### Exploring Apod
+
+<p align="center">
+<img alt="exploring apod demo" src="https://user-images.githubusercontent.com/13206745/135726870-f0e3a498-8c45-426d-8cd3-b0e28c33696f.gif" height="420" />
+</p>
 
 ## Ainda não implementado
 
