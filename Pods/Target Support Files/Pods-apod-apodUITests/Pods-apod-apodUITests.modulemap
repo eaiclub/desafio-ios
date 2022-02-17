@@ -1,0 +1,6 @@
+module Pods_apod_apodUITests {
+  umbrella header "Pods-apod-apodUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
