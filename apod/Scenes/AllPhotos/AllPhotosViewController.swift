@@ -12,7 +12,7 @@ protocol AllPhotosFlowCoordinatorDelegate: AnyObject {
 }
 
 class AllPhotosViewController: UIViewController {
-
+    
     // MARK: - subviews
     private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -107,6 +107,8 @@ class AllPhotosViewController: UIViewController {
 // MARK: - view code
 extension AllPhotosViewController: ViewCode {
     func addTheme() {
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.installStatusBarBackgroundView()
         view.backgroundColor = .systemBackground
     }
     
@@ -152,6 +154,13 @@ extension AllPhotosViewController: UICollectionViewDelegate {
                         didSelectItemAt indexPath: IndexPath) {
         let apod = viewModel.apods[indexPath.row]
         flowCoordinatorDelegate?.allPhotosViewController(self, didSelectCellFor: apod)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y / 150
+        let alpha = min(max(0, offset), 0.75)
+        
+        navigationController?.statusBarBackgroundView?.updateBackground(byChanging: alpha)
     }
 }
 
@@ -215,3 +224,4 @@ extension AllPhotosViewController: UICollectionViewDataSourcePrefetching {
         }
     }
 }
+

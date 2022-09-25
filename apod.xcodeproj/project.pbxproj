@@ -28,6 +28,7 @@
 		583F12B226FBF7A7007EECD4 /* Typography+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F12B126FBF7A7007EECD4 /* Typography+UIFont.swift */; };
 		583F12B526FCB4D7007EECD4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F12B426FCB4D7007EECD4 /* Coordinator.swift */; };
 		583F12B726FCB503007EECD4 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F12B626FCB503007EECD4 /* ApplicationCoordinator.swift */; };
+		584C90CF28E0E1740098A1FB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C90CE28E0E1740098A1FB /* Theme.swift */; };
 		588EA574270780FC00FAA400 /* ApodSegmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588EA573270780FC00FAA400 /* ApodSegmentsTests.swift */; };
 		58E26CE726FCD3D9004DE2EB /* AllPhotosCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CE626FCD3D9004DE2EB /* AllPhotosCoordinator.swift */; };
 		58E26CE926FCD3F7004DE2EB /* AllPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E26CE826FCD3F7004DE2EB /* AllPhotosViewController.swift */; };
@@ -107,6 +108,7 @@
 		583F12B126FBF7A7007EECD4 /* Typography+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography+UIFont.swift"; sourceTree = "<group>"; };
 		583F12B426FCB4D7007EECD4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		583F12B626FCB503007EECD4 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		584C90CE28E0E1740098A1FB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		588EA573270780FC00FAA400 /* ApodSegmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodSegmentsTests.swift; sourceTree = "<group>"; };
 		58E26CE626FCD3D9004DE2EB /* AllPhotosCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosCoordinator.swift; sourceTree = "<group>"; };
 		58E26CE826FCD3F7004DE2EB /* AllPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				583F126C26FBBBB0007EECD4 /* SceneDelegate.swift */,
 				583F127526FBBBB4007EECD4 /* LaunchScreen.storyboard */,
 				583F127826FBBBB4007EECD4 /* Info.plist */,
+				584C90CE28E0E1740098A1FB /* Theme.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				58E26D1126FD141C004DE2EB /* ReusableView.swift in Sources */,
 				58E26D3226FE6F8C004DE2EB /* Defaults+DateFormatter.swift in Sources */,
 				58E26D3026FE6251004DE2EB /* ApodRepository.swift in Sources */,
+				584C90CF28E0E1740098A1FB /* Theme.swift in Sources */,
 				580B23542704A9190054024F /* StackHelpers+UINavigationController.swift in Sources */,
 				583F126D26FBBBB0007EECD4 /* SceneDelegate.swift in Sources */,
 				583F12A726FBE228007EECD4 /* LayoutHelpers+UIView.swift in Sources */,
@@ -880,6 +884,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = apod/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -900,6 +905,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = apod/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

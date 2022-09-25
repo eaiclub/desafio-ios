@@ -21,7 +21,6 @@ class AllPhotosCoordinator: StackCoordinator {
         controller.flowCoordinatorDelegate = self
         
         navigationController.setViewControllers([controller], animated: false)
-        navigationController.isNavigationBarHidden = true
         
         rootViewController = controller
         return navigationController
